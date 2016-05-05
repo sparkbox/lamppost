@@ -16,3 +16,6 @@ Using Rails and PostgreSQL
 ## License
 
 &copy; 2016 Sparkbox Apprenticeship
+
+
+Hello this is an example commit.
