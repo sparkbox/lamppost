@@ -19,7 +19,3 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
-# Heroku
-gem 'rails_12factor'
-gem 'rails_stdout_logging'
