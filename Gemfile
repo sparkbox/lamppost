@@ -23,4 +23,3 @@ end
 # Heroku
 gem 'rails_12factor'
 gem 'rails_stdout_logging'
-gem 'rails3_serve_static_assets'
