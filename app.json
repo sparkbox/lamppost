@@ -1,0 +1,19 @@
+{
+  "name": "lamp-post",
+  "description": "",
+  "scripts": {
+    "postdeploy": "rake db:migrate"
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
