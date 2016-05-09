@@ -7,6 +7,8 @@ Using Rails and PostgreSQL
 #### Circle CI
 [![Circle CI](https://circleci.com/gh/sparkbox/local-events-project.svg?style=svg)](https://circleci.com/gh/sparkbox/local-events-project)
 
+Circle CI is an automated testing tool designed to make our code better. This badge shows whether tests have passed or failed. Read more in Circle CI's [getting started guide](https://circleci.com/docs/getting-started/).
+
 ## Development
 
 ### Quick Setup
