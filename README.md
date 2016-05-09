@@ -34,7 +34,7 @@ This setup assumes you have a version of the app in a GitHub repository.
   - connect the app to github
 3. Go to the new pipeline you just created:
   - enable review apps
-  - enable automatic deployment from master brach
+  - enable automatic deployment from master branch
 
 ## Production
 
