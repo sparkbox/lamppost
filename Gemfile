@@ -19,3 +19,4 @@ group :development do
 end
 
 gem 'puma'
+gem "codeclimate-test-reporter", group: :test, require: nil
