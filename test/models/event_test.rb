@@ -1,7 +1,10 @@
-require 'test_helper'
+require_relative '../test_helper'
 
 class EventTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "profane name" do
+    event = Event.new
+    event[:name] = "fuckthistest"
+
+    assert_not event.save
+  end
 end
