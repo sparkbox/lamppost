@@ -77,9 +77,9 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
   <<: *default
-  database: lamp-post_production
-  username: lamp-post
-  password: <%= ENV['LAMP-POST_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: lamp-post_production
+  # username: lamp-post
+  # password: <%= ENV['LAMP-POST_DATABASE_PASSWORD'] %>
