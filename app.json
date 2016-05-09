@@ -2,7 +2,7 @@
   "name": "lamp-post",
   "description": "",
   "scripts": {
-    "postdeploy": "rake db:migrate"
+    "postdeploy": "bundle install && rake db:migrate"
   },
   "env": {
   },
