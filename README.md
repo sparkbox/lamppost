@@ -29,7 +29,7 @@ Using Rails and PostgreSQL
 This setup assumes you have a version of the app in a GitHub repository.
 
 1. [Create a new app from the Heroku dashboard](https://dashboard.heroku.com/new)
-2. Under the the deploy section of the newly created app dashboard:
+2. Under the deploy section of the newly created app dashboard:
   - create a new pipeline
   - connect the app to github
 3. Go to the new pipeline you just created:
