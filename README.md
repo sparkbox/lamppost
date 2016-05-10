@@ -25,6 +25,12 @@ Using Rails and PostgreSQL
   - `$ rake db:create`
   - `$ rake db:migrate`
 
+### Testing
+Run the Rails tests with:
+```bash
+$ rake
+```
+
 ### Heroku Setup
 This setup assumes you have a version of the app in a GitHub repository.
 
