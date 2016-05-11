@@ -2,22 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// FONT
-@font-face {
-    font-family: Gotham-Book;
-    src: url(../fonts/Gotham-Book.otf);
-}
-
-@font-face {
-    font-family: Gotham-Light;
-    src: url(../fonts/Gotham-Light.ttf);
-}
-
-@font-face {
-    font-family: Gotham-Medium;
-    src: url(../fonts/Gotham-Medium.otf);
-}
-
 // VARIABLES
 
 $light: #ffffff;
@@ -25,20 +9,23 @@ $dark-gray: #292929;
 $mid-gray: #4A4A4A;
 $light-gray: #9B9B9B;
 $highlight: #F9ED00;
-$border-opacity: rgba(155, 155, 155, .3);
+$divider: 2px solid rgba(155, 155, 155, .3);
 
 $padding: .5em;
 $margin: .5em;
 $card-margin: 2em;
 
-$font-body: "Gotham-Light", Helvetica, Arial, sans-serif;
-$font-head: "Gotham-Medium", Helvetica, Arial, sans-serif;
-$font-display: "Gotham-Book", Helvetica, Arial, sans-serif;
+$font-family: "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+$font-body-weight: 300px;
+$font-head-weight: 500px;
+
+//STYLES
 
 body {
   background-color: $dark-gray;
   color: $light;
-  font-family: $font-body;
+  font-family: $font-family;
+  font-weight: $font-body-weight;
 }
 
 .event-card {
@@ -50,7 +37,7 @@ body {
   .left {
     min-height: calc(20em - (2 * #{$padding}));
     width: 35%;
-    border-right: 2px solid $border-opacity;
+    border-right: $divider;
   }
 
   .event-title {
@@ -58,7 +45,7 @@ body {
     margin: $margin;
     padding: 0;
     font-size: 2.5em;
-    font-family: $font-head;
+    font-weight: $font-head-weight;
 
   }
 
