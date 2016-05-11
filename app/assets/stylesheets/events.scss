@@ -50,3 +50,45 @@ body {
   }
 
 }
+
+.empty {
+  background-color: $mid-gray;
+  border: 3px solid $highlight;
+  text-align: center;
+  font-weight: 200px;
+
+  .empty-card {
+    width: 80%;
+    margin: auto;
+    min-height: 100%;
+    margin-top: 3em;
+  }
+
+  .empty-button {
+    background-color: $highlight;
+    border: 2px outset $light-gray;
+    width: 15em;
+    padding: $padding;
+    margin: auto;
+    font-size: .75em;
+    transition: all .25s ease;
+    box-sizing: border-box;
+    text-transform: uppercase;
+
+    & a:link, a:visited {
+      color: $mid-gray;
+
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    &:hover {
+      border: 2px inset $mid-gray;
+    }
+
+  }
+
+
+}
