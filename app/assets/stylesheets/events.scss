@@ -1,3 +1,52 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// VARIABLES
+
+$light: #ffffff;
+$dark-gray: #292929;
+$mid-gray: #4A4A4A;
+$light-gray: #9B9B9B;
+$highlight: #F9ED00;
+$divider: 2px solid rgba(155, 155, 155, .3);
+
+$padding: .5em;
+$margin: .5em;
+$card-margin: 2em;
+
+$font-family: "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+$font-body-weight: 300px;
+$font-head-weight: 500px;
+
+//STYLES
+
+body {
+  background-color: $dark-gray;
+  color: $light;
+  font-family: $font-family;
+  font-weight: $font-body-weight;
+}
+
+.event-card {
+  background-color: $light;
+  min-height: 20em;
+  margin: $card-margin;
+  padding: $padding;
+
+  .left {
+    min-height: calc(20em - (2 * #{$padding}));
+    width: 35%;
+    border-right: $divider;
+  }
+
+  .event-title {
+    color: $mid-gray;
+    margin: $margin;
+    padding: 0;
+    font-size: 2.5em;
+    font-weight: $font-head-weight;
+
+  }
+
+}
