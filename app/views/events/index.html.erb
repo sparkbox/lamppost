@@ -1,5 +1,7 @@
 This is the listings of events
-<%= test_error %>
+<% if Rails.env == "production" %>
+  <%= errorHere %>
+<% end %>
 <% @events.each do |event| %>
   <h2><%= event.name %></h2>
 <% end %>
