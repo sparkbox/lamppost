@@ -31,6 +31,8 @@ Run the Rails tests with:
 $ rake
 ```
 
+## Production
+
 ### Heroku Setup
 This setup assumes you have a version of the app in a GitHub repository.
 
@@ -42,13 +44,17 @@ This setup assumes you have a version of the app in a GitHub repository.
   - enable review apps
   - enable automatic deployment from master branch
 
-## Production
-
 ### Setup DNS with SSL on Heroku
 1. [Add an alias record to your domain](https://support.dnsimple.com/articles/domain-apex-heroku/#point-using-alias) (we use DNSimple)
 2. [Purchase an SSL certificate](https://dnsimple.com/ssl-certificates)
 3. [Add the SSL cert to Heroku](https://devcenter.heroku.com/articles/ssl-endpoint#setting-up-ssl-on-heroku)
 4. [configure the app to force ssl](https://robots.thoughtbot.com/ssl-for-rails-with-heroku-and-dnsimple#prepare-rails-app)
+
+### Debugging
+In production, [Rails doesn't send errors to stdout by default](https://devcenter.heroku.com/articles/logging#writing-to-your-log). To get those errors sent to the heroku log, `config/environments/development.rb` has been modified with `config.logger = Logger.new(STDOUT)`. With this configuration in place, use the heroku toolbelt to get runtime errors:
+```bash
+$ heroku logs --tail --app app-name
+```
 
 ## License
 
