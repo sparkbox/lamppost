@@ -5,6 +5,12 @@
     "postdeploy": "rake db:migrate"
   },
   "env": {
+    "DEV_USER_NAME": {
+      "required": true
+    },
+    "DEV_PASSWORD": {
+      "required": true
+    }
   },
   "formation": {
   },
