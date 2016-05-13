@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem "codeclimate-test-reporter", group: :test, require: nil
-
+gem 'rails_admin'
 group :development, :test do
   gem 'byebug'
 end
