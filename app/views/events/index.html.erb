@@ -1,7 +1,7 @@
-<% @events.each do |event| %>
-  <article class="event-card">
-    <section class="left">
-      <h3 class="event-title"><%= event.name %></h3>
-    </section>
-  </article>
-<% end %>
+<div>
+  <%= render 'layouts/header' %>
+  <%= render 'filters' %>
+</div>
+<div>
+  <%= render 'event_list', collection: @events %>
+</div>
