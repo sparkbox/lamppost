@@ -1,4 +1,7 @@
-This is the listings of events
-<% @events.each do |event| %>
-  <h2><%= event.name %></h2>
-<% end %>
+<div>
+  <%= render 'layouts/header' %>
+  <%= render 'filters' %>
+</div>
+<div>
+  <%= render 'event_list', collection: @events %>
+</div>
