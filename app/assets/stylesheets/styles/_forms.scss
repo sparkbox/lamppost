@@ -1,0 +1,26 @@
+[type='checkbox'] {
+  opacity: 0;
+  float: left;
+
+  + label {
+    position: absolute;
+    left: 0;
+    padding: 0 0 0 2em;
+    line-height: 1.5em;
+    cursor: pointer;
+  }
+
+  + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $highlight;
+    transition: background .1s ease-out;
+  }
+
+  &:checked + label:before {
+    background: $highlight;
+  }
+}
