@@ -11,4 +11,6 @@
   padding: $padding * 4;
   overflow-y: scroll;
   background: #333;
+  border-top: 4px solid $highlight;
+  color: $off-white;
 }
