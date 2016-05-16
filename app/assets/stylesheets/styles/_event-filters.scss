@@ -1,0 +1,28 @@
+.event-filters__heading {
+  margin-bottom: $margin * 4;
+  text-align: center;
+}
+
+.event-filters__group {
+  position: relative;
+  margin-bottom: $margin * 4;
+  border: 0;
+
+  &:last-of-type { margin-bottom: 0; }
+}
+
+.event-filters__group-heading {
+  font-size: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: .75em;
+}
+
+.event-filters__checkbox {
+  position: relative;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 46px;
+  font-weight: $font-weight-body;
+}

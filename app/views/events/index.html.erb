@@ -1,7 +1,11 @@
-<div>
+<div class="side-bar">
   <%= render 'layouts/header' %>
-  <%= render 'filters' %>
+  <div class="event-filters">
+    <div class="event-filters__heading">Filter events by:</div>
+    <%= render 'filters' %>
+  </div>
 </div>
-<div>
-  <%= render 'event_list', collection: @events %>
+
+<main class="main">
+  <%= render partial: 'event_list', collection: @events %>
 </div>
