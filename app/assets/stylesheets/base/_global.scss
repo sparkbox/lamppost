@@ -4,14 +4,17 @@ body {
   color: $light;
 }
 
+
+// Icons
 .icon-dark {
   fill: $mid-gray;
 }
-
 .icon-light {
   fill: $highlight;
 }
-
 .icon-stroke {
   stroke: $mid-gray;
+}
+.svg-icon {
+  height: 1em;
 }
