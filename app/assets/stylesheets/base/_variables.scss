@@ -1,9 +1,16 @@
+// Design
 $divider: 2px solid rgba(155, 155, 155, .3);
 
+// Space
 $padding: .5em;
 $margin: .5em;
 $card-margin: 2em;
 
-$font-family: "Gotham A", "Gotham B", Helvetica, Arial, sans-serif;
+// Typography
 $font-weight-body: 300;
+$font-weight-select: 400;
 $font-weight-head: 500;
+
+// Breakpoints
+$break-large: 71.75em;
+$break-small: 43.06em;

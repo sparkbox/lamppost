@@ -2,6 +2,8 @@
   <article class="event-card">
     <section class="left">
       <h3 class="event-title"><%= event.name %></h3>
+      <%= render 'location' %>
+      <%= render '_time' %>
     </section>
   </article>
 <% end %>
