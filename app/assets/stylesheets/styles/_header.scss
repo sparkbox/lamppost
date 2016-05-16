@@ -1,0 +1,33 @@
+.site-city {
+  margin: $margin 0;
+  font-size: 1.25em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  text-align: center;
+  color: $light;
+}
+
+.site-about {
+  margin: 0 0 ($margin * 4);
+  padding: ($padding * 4) 0;
+  border-top: $divider;
+  border-bottom: $divider;
+  color: $off-white;
+  font-weight: 400;
+  text-align: center;
+}
+
+.site-about__text {
+  margin-bottom: $margin * 4;
+}
+
+.site-about__link {
+  display: inline-block;
+  width: 40%;
+  color: $highlight;
+  font-size: .75em;
+  font-weight: 300;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
