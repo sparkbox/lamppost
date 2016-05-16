@@ -1,4 +1,11 @@
 RailsAdmin.config do |config|
+  config.authorize_with do
+    authenticate_or_request_with_http_basic('Hai this is Cat') do |username, password|
+      username == 'cat' && password == 'catagain'
+    end
+  end
+
+
 
   ### Popular gems integration
 
