@@ -25,6 +25,9 @@ Using Rails and PostgreSQL
   - `$ rake db:create`
   - `$ rake db:migrate`
 
+### Rails Admin
+This project uses Rails Admin for database entry. To set up your admin username and password, see the `.env.example` file in the project root folder. 
+
 ### Testing
 Run the Rails tests with:
 ```bash
