@@ -1,3 +1,24 @@
+.event-filters__toggle-button {
+  display: block;
+  margin: 0 0 ($margin * 4);
+  padding: ($padding * 3) 0;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: $divider-dark;
+  font-weight: $font-weight-body;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  color: $highlight;
+  cursor: pointer;
+
+  @media (min-width: $break-large) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
 .event-filters__heading {
   margin-bottom: $margin * 4;
   text-align: center;
@@ -5,10 +26,14 @@
 
 .event-filters__group {
   position: relative;
-  margin-bottom: $margin * 4;
+  margin: 0 ($margin * 4) ($margin * 4);
   border: 0;
 
   &:last-of-type { margin-bottom: 0;}
+
+  @media (min-width: $break-large) {
+    margin: 0 0 ($margin * 4);
+  }
 }
 
 .event-filters__group-heading {
@@ -16,6 +41,7 @@
   font-weight: $font-weight-select;
   text-transform: uppercase;
   margin-bottom: .75em;
+  color: $light;
 }
 
 .event-filters__checkbox {
@@ -23,6 +49,7 @@
   display: block;
   float: left;
   width: 50%;
-  height: 46px;
+  height: 56px;
   font-weight: $font-weight-body;
+  color: $off-white;
 }
