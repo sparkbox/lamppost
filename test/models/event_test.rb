@@ -14,6 +14,11 @@ class EventTest < ActiveSupport::TestCase
     assert_not @event.valid?
   end
 
+  test 'when should be present' do
+    @event.when = " "
+    assert_not @event.valid?
+  end
+
   test 'name should be unique' do
     @event.save
     event2 = Event.new(name: 'Dayton Web Developers')
