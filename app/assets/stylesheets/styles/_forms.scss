@@ -5,7 +5,7 @@
   + label {
     position: absolute;
     left: 0;
-    padding: 0 0 0 32px;
+    padding: 0 0 0 28px;
     line-height: 1.5em;
     cursor: pointer;
   }
@@ -20,7 +20,14 @@
     transition: background .1s ease-out;
   }
 
+  &:hover, &:focus {
+    + label:before {
+      background: $highlight-dim;
+    }
+  }
+
   &:checked + label:before {
     background: $highlight;
   }
+  
 }
