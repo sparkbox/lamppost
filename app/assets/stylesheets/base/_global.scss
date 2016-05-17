@@ -4,6 +4,13 @@ body {
   color: $light;
 }
 
+.main {
+  margin-top: 300px;
+
+  @media(min-width: $break-large) {
+    margin-top: 0;
+  }
+}
 
 // Icons
 .icon-dark {
