@@ -32,19 +32,11 @@
   }
 
   #logo-lightpost-small {
-<<<<<<< HEAD
     transform: scale(5) translate(-16em, .25em);
   }
 
   #logo-showerhead {
     transform: scale(5) translate(-16em, .25em);
-=======
-    transform: scale(6) translateX(-15em);
-  }
-
-  #logo-showerhead {
-    transform: scale(6) translateX(-15em);
->>>>>>> daf4781... Style: Update styles for mobile, add header styles
   }
 
   @media (min-width: $break-large) {
@@ -67,27 +59,3 @@
     }
   }
 }
-<<<<<<< HEAD
-=======
-
-.site-logo.large #lamp-post-logo {
-  height: auto;
-
-  #logo-text-lines {
-    display: initial;
-    visibility: visible;
-  }
-
-  #logo-lightpost-small {
-    display: none;
-    visibility: hidden;
-  }
-
-  #logo-text,
-  #logo-lightpost-small,
-  #logo-showerhead {
-    transform: scale(1) translate(0);
-  }
-
-}
->>>>>>> daf4781... Style: Update styles for mobile, add header styles
