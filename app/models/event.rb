@@ -4,6 +4,7 @@ class Event < ActiveRecord::Base
 
   validates :name, presence: true
   validates_uniqueness_of :name
+  mount_uploader :image, ImageUploader
 end
 
 def validate_name

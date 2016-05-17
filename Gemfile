@@ -13,6 +13,8 @@ gem 'puma'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'rails_admin'
 gem 'newrelic_rpm'
+gem 'carrierwave'
+gem 'mini_magick'
 group :development, :test do
   gem 'byebug'
 end
