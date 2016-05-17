@@ -13,6 +13,7 @@ gem 'puma'
 gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'rails_admin'
 gem 'newrelic_rpm'
+gem 'dotenv-rails', groups: [:development, :test]
 group :development, :test do
   gem 'byebug'
 end
