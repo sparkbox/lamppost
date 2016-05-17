@@ -7,6 +7,10 @@
   min-height: 15em;
   overflow: auto;
 
+  .card-button {
+    margin-right: $margin;
+  }
+
   .card-image {
   margin: auto auto;
   width: 90%;
@@ -16,11 +20,6 @@
     min-height: calc(15em + (2 * #{$padding}));
     padding: $card-padding;
     box-sizing: border-box;
-
-    li {
-      margin-top: 1em;
-    }
-
   }
 
   .left {
@@ -34,14 +33,6 @@
     width: 60%;
     float: right;
     clear: right;
-    ul {
-      list-style-type: disc;
-      list-style-position: inside;
-      columns: 3;
-      -webkit-columns: 3;
-      -moz-columns: 3;
-    }
-
   }
 
   .event-title {
@@ -58,18 +49,20 @@
     float: left;
   }
 
-  .info-subhead {
+  .subhead {
     color: $gray-30;
     text-transform: uppercase;
-    padding-left: 1.9em;
     font-size: .8em;
+    font-weight: $font-weight-body;
+  }
+  .info-subhead {
     width: calc(100% - 1.9em);
     float: right;
-
+    padding-left: 1.9em;
     li {
       margin-top: 0;
-    }
 
+    }
   }
 
   @media (min-width:$break-large) {
@@ -77,5 +70,30 @@
     float: right;
 
 
+  }
+}
+
+.card-front {
+  .right {
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      columns: 3;
+      -webkit-columns: 3;
+      -moz-columns: 3;
+      margin-top: $margin;
+    }
+  }
+}
+
+.card-back {
+  .right {
+    ul {
+      margin: 0;
+      li {
+        margin-top: 1em;
+        display: inline-block;
+      }
+    }
   }
 }

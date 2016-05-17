@@ -1,0 +1,19 @@
+.card-button {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1em;
+  transition: all .25s ease;
+  box-sizing: border-box;
+  color: $gray-50;
+  background-color: $highlight;
+  border: 2px solid $highlight;
+  font-size: .8em;
+
+  &:hover {
+    border: 2px solid $gray-50;
+  }
+
+  &:active {
+    background-color: $white;
+  }
+}
