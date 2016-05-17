@@ -1,0 +1,61 @@
+.icon-dark {
+  fill: #4A4A4A;
+}
+
+.icon-light {
+  fill: $highlight;
+}
+
+.icon-stroke {
+  stroke: #4A4A4A;
+}
+
+.icon-white {
+  fill: #fff;
+}
+
+.site-logo #lamp-post-logo {
+  width: 100%;
+  height: 2.5em;
+
+  g {
+    transition: transform .25s ease-out;
+  }
+
+  #logo-text-lines {
+    display: none;
+    visibility: hidden;
+  }
+
+  #logo-text {
+    transform: scale(3.6) translate(-5em, -13.7em);
+  }
+
+  #logo-lightpost-small {
+    transform: scale(5) translate(-16em, .25em);
+  }
+
+  #logo-showerhead {
+    transform: scale(5) translate(-16em, .25em);
+  }
+
+  @media (min-width: $break-large) {
+    height: auto;
+
+    #logo-text-lines {
+      display: initial;
+      visibility: visible;
+    }
+
+    #logo-lightpost-small {
+      display: none;
+      visibility: hidden;
+    }
+
+    #logo-text,
+    #logo-lightpost-small,
+    #logo-showerhead {
+      transform: scale(1) translate(0);
+    }
+  }
+}
