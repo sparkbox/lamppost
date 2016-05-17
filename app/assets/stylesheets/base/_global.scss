@@ -1,7 +1,7 @@
 body {
   @include font-family($font-weight-body);
-  background-color: $dark-gray;
-  color: $light;
+  background-color: $gray-70;
+  color: $white;
 }
 
 .main {
@@ -14,13 +14,13 @@ body {
 
 // Icons
 .icon-dark {
-  fill: $mid-gray;
+  fill: $gray-50;
 }
 .icon-light {
   fill: $highlight;
 }
 .icon-stroke {
-  stroke: $mid-gray;
+  stroke: $gray-50;
 }
 .svg-icon {
   height: 1em;

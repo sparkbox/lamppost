@@ -7,7 +7,7 @@
   text-transform: uppercase;
   letter-spacing: .5em;
   text-align: center;
-  color: $light;
+  color: $white;
 
   @media (min-width: $break-large) {
     margin: $margin 0;
@@ -21,7 +21,7 @@
   margin: 0 ($margin * 4) 0;
   padding: ($padding * 2) 0;
   border-bottom: $divider;
-  color: $off-white;
+  color: $gray-20;
   font-weight: 400;
   text-align: center;
 

@@ -1,6 +1,6 @@
 .card-front, .card-back {
-  background-color: $light;
-  color: $mid-gray;
+  background-color: $white;
+  color: $gray-50;
   margin: $card-margin;
   padding: $card-padding;
   box-sizing: border-box;
@@ -46,7 +46,7 @@
 
   .event-title {
     font-weight: $font-weight-head;
-    color: $mid-gray;
+    color: $gray-50;
     padding: 0;
     font-size: 2em;
 
@@ -59,7 +59,7 @@
   }
 
   .info-subhead {
-    color: $light-gray;
+    color: $gray-30;
     text-transform: uppercase;
     padding-left: 1.9em;
     font-size: .8em;
