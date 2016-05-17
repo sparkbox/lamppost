@@ -2,7 +2,7 @@ require_relative "../../lib/blacklist"
 class Event < ActiveRecord::Base
   before_create :validate_name
 
-  validates :name, :when, :location, :description, presence: true
+  validates :name, presence: true
   validates_uniqueness_of :name
 end
 
