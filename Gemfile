@@ -15,6 +15,8 @@ gem 'rails_admin'
 gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'autoprefixer-rails'
+
 group :development, :test do
   gem 'byebug'
 end
