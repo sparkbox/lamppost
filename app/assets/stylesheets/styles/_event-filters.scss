@@ -80,6 +80,11 @@
     position: absolute;
   }
 
+  [type='checkbox'] {
+    &:hover + label,
+    &:focus + label { background: $highlight-dim; }
+  }
+
   [type='checkbox']:checked + label {
     background: $highlight;
     color: $gray-70;
