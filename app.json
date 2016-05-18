@@ -5,7 +5,7 @@
     "postdeploy": "rake db:migrate"
   },
   "env": {
-    "HEROKU_POSTGRESQL_AQUA_URL": {
+    "DATABASE_URL": {
       "required": true
     },
     "DEV_USER_NAME": {
