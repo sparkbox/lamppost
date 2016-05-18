@@ -1,5 +1,6 @@
 require_relative "../../lib/blacklist"
 class Event < ActiveRecord::Base
+  has_many :links
   before_create :validate_name
 
   validates :name, presence: true
