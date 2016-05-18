@@ -5,20 +5,20 @@
     <div class="left">
       <h3 class="event-title"><%= event.name %></h3>
       <ul>
-        <li>
           <div class="card-left-info">
-            <div class="info-subhead">Recurring</div>
+            <li>
+            <div class="subhead info-subhead">Recurring</div>
             <div class="icon-container">
               <%= render 'time_icon.html.erb' %>
             </div>
-            Every month on the first Monday at 6:30pm
+            <span class="time-info">Every month on the first Monday at 6:30pm</span>
           </li>
           <li>
             <div class="icon-container">
               <%= render 'location_icon.html.erb' %>
             </div>
             Sparkbox
-            <ul class="info-subhead">
+            <ul class="subhead info-subhead">
               <li>123 Webster Street</li>
               <li>Dayton, OH 45402</li>
             </ul>
@@ -31,26 +31,49 @@
         you'll have to pay some monies to go. Maybe it'll be free. Maybe we'll
         pay you in pizza for showing up. Mmm pizza. </p>
 
-      <ul>
-        <li>Frontend</li>
-        <li>Writing</li>
-        <li>JavaScript</li>
-        <li>Ruby</li>
-        <li>UX</li>
-        <li>C#</li>
-        <li>Unity</li>
-        <li>Friendship</li>
-        <li>Pizza</li>
-      </ul>
-    </div>
-  </section>
+        <ul>
+          <li>Frontend</li>
+          <li>Writing</li>
+          <li>JavaScript</li>
+          <li>Ruby</li>
+          <li>UX</li>
+          <li>C#</li>
+          <li>Unity</li>
+          <li>Friendship</li>
+          <li>Pizza</li>
+        </ul>
+      </div>
+    </section>
 
-  <section class="card-back">
-    <div class="left">
-      <img class="card-image" src="http://placecorgi.com/300/300" alt="event logo" />
-    </div>
-    <div class="right">
-    </div>
-  </section>
-</article>
-<% end %>
+    <section class="card-back">
+      <div class="left">
+        <img class="card-image" src="http://placecorgi.com/300/300" alt="event logo" />
+      </div>
+      <div class="right">
+        <div class="card-offsite-links">
+          <h4 class="subhead">Offsite Links</h4>
+          <ul>
+            <li><a href="#" title="a-button" class="card-button">Register</a></li>
+            <li><a href="#" title="a-button" class="card-button">Event Website</a></li>
+            <li><a href="#" title="a-button" class="card-button">Twitter</a></li>
+            <li><a href="#" title="a-button" class="card-button">Register</a></li>
+            <li><a href="#" title="a-button" class="card-button">Event Website</a></li>
+            <li><a href="#" title="a-button" class="card-button">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="card-sharable-links">
+          <h4 class="subhead">Sharable Link</h4>
+          <div class="sharable-link">
+            <input type="text" value="seesparkbox.com"></input>
+            <a href="#" title="a-button" class="card-button copy-button">copy link to clipboard</a>
+          </div>
+        </div>
+        <div class="card-report">
+          <p>
+            See a problem? <a href="#" title="card-report" class="report-link">Let us know</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+  <% end %>
