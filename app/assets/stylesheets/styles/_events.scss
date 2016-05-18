@@ -7,6 +7,11 @@
   min-height: 15em;
   overflow: auto;
 
+  @media (min-width:$break-large) {
+    width: calc(100% - 30em);
+    float: right;
+  }
+
   .card-button {
     margin-right: $margin;
   }
@@ -43,10 +48,22 @@
 
   }
 
+  .card-left-info {
+    li {
+    padding-top: 1em;
+    }
+  }
+
   .icon-container {
     width: 1.5em;
-    height: 100%;
+    min-height: 100%;
     float: left;
+
+  }
+
+  .time-info {
+    display: inline-block;
+    width: calc(100% - 1.5em);
   }
 
   .subhead {
@@ -54,23 +71,70 @@
     text-transform: uppercase;
     font-size: .8em;
     font-weight: $font-weight-body;
+    margin-top: $margin;
   }
+
   .info-subhead {
     width: calc(100% - 1.9em);
     float: right;
     padding-left: 1.9em;
-    li {
-      margin-top: 0;
+    margin: 0;
+      li {
+        padding: 0;
+      }
+  }
+  .card-sharable-links {
+      margin-top: 2em;
+      box-sizing: border-box;
+      padding: 0;
+      width: 90%;
+      display: inline-block;
+      border-bottom: 2px solid $highlight;
 
+
+    .sharable-link{
+
+      input[type=text] {
+        border-style: none;
+        font: inherit;
+        color: inherit;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding-top: .7em;
+        white-space: nowrap;
+        width: calc(100% - 13em);
+        outline: none;
+        margin: 0;
+        &:focus {
+          font-weight: $font-weight-select;
+        }
+      }
+
+      .copy-button {
+        float: right;
+        margin: 0;
+        width: 16em;
+      }
     }
   }
 
-  @media (min-width:$break-large) {
-    width: calc(100% - 30em);
-    float: right;
+  .card-report {
+    color: $gray-30;
+    font-size: .8em;
+    margin-top: 2em;
 
+    .report-link {
+      border-bottom: 1px solid $gray-30;
+      color: $gray-30;
 
+      &:hover, &:active {
+        border-bottom: 1px solid $gray-70;
+        color: $gray-70;
+        font-weight: $font-weight-head;
+      }
+    }
   }
+
 }
 
 .card-front {
