@@ -5,6 +5,9 @@
     "postdeploy": "rake db:migrate"
   },
   "env": {
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
     "DATABASE_URL": {
       "required": true
     },
