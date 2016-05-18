@@ -1,62 +1,81 @@
-.main {
-  margin-top: 300px;
-  
-  @media(min-width: $break-large) {
-    margin-top: 0;
-  }
-}
-
-.event-card {
-  background-color: $light;
-  color: $mid-gray;
-  min-height: 15em;
+.card-front, .card-back {
+  background-color: $white;
+  color: $gray-50;
   margin: $card-margin;
   padding: $card-padding;
   box-sizing: border-box;
+  min-height: 15em;
+  overflow: auto;
 
-  .left {
-    min-height: calc(15em - (2 * #{$padding}));
-    width: 35%;
+  .card-image {
+  margin: auto auto;
+  width: 90%;
+  }
+
+  .left, .right {
+    min-height: calc(15em + (2 * #{$padding}));
     padding: $card-padding;
-    border-right: $divider;
-
-    .icon-container {
-      width: 1.5em;
-      height: 100%;
-      float: left;
-    }
+    box-sizing: border-box;
 
     li {
       margin-top: 1em;
     }
 
-    .info-subhead {
-      color: $light-gray;
-      text-transform: uppercase;
-      padding-left: 1.9em;
-      font-size: .8em;
-      width: calc(100% - 1.9em);
-      float: right;
+  }
 
-      li {
-        margin-top: 0;
-      }
+  .left {
+    width: 35%;
+    float: left;
+    clear: left;
+    border-right: $divider;
+  }
 
+  .right {
+    width: 60%;
+    float: right;
+    clear: right;
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      columns: 3;
+      -webkit-columns: 3;
+      -moz-columns: 3;
     }
 
   }
 
   .event-title {
     font-weight: $font-weight-head;
-    color: $mid-gray;
+    color: $gray-50;
     padding: 0;
     font-size: 2em;
+
+  }
+
+  .icon-container {
+    width: 1.5em;
+    height: 100%;
+    float: left;
+  }
+
+  .info-subhead {
+    color: $gray-30;
+    text-transform: uppercase;
+    padding-left: 1.9em;
+    font-size: .8em;
+    width: calc(100% - 1.9em);
+    float: right;
+
+    li {
+      margin-top: 0;
+    }
 
   }
 
   @media (min-width:$break-large) {
     width: calc(100% - 30em);
     float: right;
-  }
 
+
+  }
 }

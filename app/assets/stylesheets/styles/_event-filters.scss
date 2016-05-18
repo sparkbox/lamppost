@@ -60,7 +60,7 @@
   font-weight: $font-weight-select;
   text-transform: uppercase;
   margin-bottom: .75em;
-  color: $light;
+  color: $white;
 }
 
 .event-filters__checkbox {
@@ -69,7 +69,7 @@
   width: 50%;
   min-height: 56px;
   font-weight: $font-weight-body;
-  color: $off-white;
+  color: $gray-20;
 
   label {
     position: relative;

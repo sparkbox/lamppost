@@ -1,28 +1,56 @@
 <% @events.each do |event| %>
-  <article class="event-card">
-    <section class="left">
+<article class="event-card">
+  <section class="card-front">
+
+    <div class="left">
       <h3 class="event-title"><%= event.name %></h3>
       <ul>
         <li>
-        <div class="card-left-info">
-          <div class="info-subhead">Recurring</div>
-          <div class="icon-container">
-          <%= render 'time_icon.html.erb' %>
+          <div class="card-left-info">
+            <div class="info-subhead">Recurring</div>
+            <div class="icon-container">
+              <%= render 'time_icon.html.erb' %>
+            </div>
+            Every month on the first Monday at 6:30pm
+          </li>
+          <li>
+            <div class="icon-container">
+              <%= render 'location_icon.html.erb' %>
+            </div>
+            Sparkbox
+            <ul class="info-subhead">
+              <li>123 Webster Street</li>
+              <li>Dayton, OH 45402</li>
+            </ul>
           </div>
-          Every month on the first Monday at 6:30pm
-        </li>
-        <li>
-          <div class="icon-container">
-          <%= render 'location_icon.html.erb' %>
-          </div>
-          Sparkbox
-          <ul class="info-subhead">
-            <li>123 Webster Street</li>
-            <li>Dayton, OH 45402</li>
-          </ul>
-        </div>
         </li>
       </ul>
-    </section>
-  </article>
+    </div>
+    <div class="right">
+      <p>This is the event description. We can talk about code and stuff. Maybe
+        you'll have to pay some monies to go. Maybe it'll be free. Maybe we'll
+        pay you in pizza for showing up. Mmm pizza. </p>
+
+      <ul>
+        <li>Frontend</li>
+        <li>Writing</li>
+        <li>JavaScript</li>
+        <li>Ruby</li>
+        <li>UX</li>
+        <li>C#</li>
+        <li>Unity</li>
+        <li>Friendship</li>
+        <li>Pizza</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card-back">
+    <div class="left">
+      <img class="card-image" src="http://placecorgi.com/300/300" alt="event logo" />
+    </div>
+    <div class="right">
+    </div>
+  </section>
+</article>
 <% end %>
