@@ -21,6 +21,16 @@ class EventTest < ActiveSupport::TestCase
     assert_not event2.valid?
   end
 
+  test 'name should not be too long' do
+    @event.name = 'a' * 200
+    assert_not @event.valid?
+  end
+
+  test 'name should not be too short' do
+    @event.name = 'aaaaaa'
+    assert_not @event.valid?
+  end
+
   test "profane name" do
     event = Event.new
     event[:name] = "fuckthistest"
