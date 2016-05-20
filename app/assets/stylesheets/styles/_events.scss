@@ -1,4 +1,4 @@
-.card-front, .card-back {
+.event-card {
   background-color: $white;
   color: $gray-50;
   margin: $card-margin;
@@ -11,6 +11,12 @@
     width: calc(100% - 30em);
     float: right;
   }
+}
+
+.card-front, .card-back {
+
+
+
 
   .card-button {
     margin-right: $margin;
