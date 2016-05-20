@@ -2,11 +2,12 @@
 $divider: 2px solid rgba(155, 155, 155, .3);
 $divider-dark: 2px solid #191919;
 
-// Space
+// Sizing
 $padding: .5em;
 $margin: .5em;
 $card-margin: 2em;
 $card-padding: 1em;
+$sidebar-width: 25em;
 
 // Typography
 $font-weight-body: 300;
@@ -14,6 +15,6 @@ $font-weight-select: 400;
 $font-weight-head: 500;
 
 // Breakpoints
-$break-large: 71.75em;
-$break-small: 43.06em;
+$break-large: 60em;
+$break-small: 43em;
 $break-tiny: 20em;
