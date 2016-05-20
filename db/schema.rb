@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160520181814) do
     t.text     "city"
     t.text     "state"
     t.text     "zipcode"
-    t.text     "location"
+    t.text     "location_name"
   end
 
   create_table "links", force: :cascade do |t|
