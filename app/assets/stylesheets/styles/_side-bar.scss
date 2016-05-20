@@ -3,7 +3,7 @@
   & * { box-sizing: border-box; }
 
   box-sizing: border-box;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,10 +12,11 @@
   overflow-y: scroll;
   background: #333;
   border-top: 4px solid $highlight;
+  z-index: 1;
 
   @media (min-width:$break-large) {
-    width: 25em;
-    padding: $padding * 4;
+    width: $sidebar-width;
+    padding: ($padding * 4) 0 0;
   }
 }
 
