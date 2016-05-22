@@ -1,7 +1,26 @@
-var select = function(element) {
-  return document.querySelector(element);
-};
+var select = {
 
-var selectAll = function(element) {
-  return document.querySelectorAll(element);
+  element: function(element) {
+    return document.querySelector(element);
+  },
+
+  all: function(elements) {
+    return document.querySelectorAll(elements);
+  },
+
+  child: function(child) {
+    return {
+      from: function(parentElement) {
+        return parentElement.querySelector(child);
+      }
+    };
+  },
+
+  children: function(children) {
+    return {
+      from: function(parentElement) {
+        return parentElement.querySelectorAll(children);
+      }
+    };
+  }
 };
