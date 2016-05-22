@@ -22,19 +22,21 @@ function toggleFilters() {
 }
 
 function setupShareableLink(linkComponent) {
-  var linkInput = select.child('input').from(linkComponent),
-      copyButton = document.createElement('button');
+  var linkInput = select.child('input').from(linkComponent);
 
-  copyButton.classList.add('card-button', 'copy-button');
-  copyButton.innerHTML = 'Copy Link to Clipboard';
-  linkComponent.appendChild(copyButton);
-
-  linkInput.addEventListener('focus', function(e) {
+  linkInput.addEventListener('click', function(e) {
     linkInput.select();
   });
 
-  copyButton.addEventListener('click', function(e) {
-    linkInput.select();
-    document.execCommand('copy');
-  });
+  if(document.queryCommandSupported('copy')) {
+    copyButton = document.createElement('button');
+    copyButton.classList.add('card-button', 'copy-button');
+    copyButton.innerHTML = 'Copy Link to Clipboard';
+    linkComponent.appendChild(copyButton);
+
+    copyButton.addEventListener('click', function(e) {
+      linkInput.select();
+      document.execCommand('copy');
+    });
+  }
 }
