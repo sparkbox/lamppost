@@ -1,9 +1,15 @@
 // DOM Selections
 var DOM = {
-  btnToggleFilters: select.element('.event-filters__toggle-button'),
+  body: select.element('body'),
   sideBar: select.element('.side-bar'),
+  siteHeader: select.element('.site-header'),
+  siteLogo: select.element('.site-logo'),
+  btnToggleFilters: select.element('.event-filters__toggle-button'),
   eventFilters: select.element('.event-filters__filters'),
-  shareableLinks: select.all('.shareable-link')
+  shareableLinks: select.all('.sharable-link'),
+  scrollPosition: function() {
+    return document.documentElement.scrollTop || DOM.body.scrollTop;
+  }
 };
 
 
@@ -12,11 +18,28 @@ DOM.sideBar.classList.add('hide-filters'); // Hide filters on mobile view by def
 
 
 // Event Listeners
+window.addEventListener('scroll', throttle(updateHeader, 80));
 DOM.btnToggleFilters.addEventListener('click', toggleFilters);
 DOM.shareableLinks.forEach(setupShareableLink);
 
 
 // Event Handlers
+function shrinkLogo() {
+  DOM.siteHeader.classList.add('compact');
+}
+
+function expandLogo() {
+  DOM.siteHeader.classList.remove('compact');
+}
+
+function updateHeader(e) {
+  if(DOM.scrollPosition() > 40) {
+    shrinkLogo();
+  } else {
+    expandLogo();
+  }
+}
+
 function toggleFilters() {
   DOM.sideBar.classList.toggle('hide-filters');
 }
