@@ -28,32 +28,31 @@
     }
 
     .logo-text-lines {
-      will-change: opacity;
-      transition-delay: .4s;
-      transition: opacity .8s ease-out;
       opacity: 0;
+      will-change: opacity;
+      transition: opacity .4s ease-out;
     }
 
     .logo-text {
-      will-change: transform;
       transform: scale(0.6) translate(10em, -13.7em);
+      will-change: transform;
     }
 
     .logo-lightpost-small {
+      transform: scale(0.75) translate(-4em, .5em);
       will-change: transform, opacity;
       transition: opacity .8s ease-out, transform .4s ease-out;
-      transform: scale(0.75) translate(-4em, .5em);
     }
 
     .logo-showerhead {
-      will-change: transform;
       transform: scale(0.75) translate(-4em, .5em);
+      will-change: transform;
     }
 
     @media (min-width: $break-large) {
       height: 290px;
 
-      .logo-text-lines { opacity: 1; }
+      .logo-text-lines { transform: none; opacity: 1; }
       .logo-lightpost-small { opacity: 0; }
 
       .logo-text,
@@ -61,19 +60,6 @@
       .logo-showerhead {
         transform: none;
       }
-    }
-  }
-
-  &.compact {
-
-    .lamp-post-logo { height: 46px; }
-    .logo-text { transform: scale(0.6) translate(10em, -13.7em); }
-    .logo-text-lines { opacity: 0; }
-    .logo-showerhead { transform: scale(0.75) translate(-4em, .5em);}
-
-    .logo-lightpost-small {
-      transform: scale(0.75) translate(-4em, .5em);
-      opacity: 1;
     }
   }
 }
