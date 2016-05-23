@@ -89,7 +89,7 @@
         padding: 0;
       }
   }
-  .card-sharable-links {
+  .card-shareable-links {
       margin-top: 2em;
       box-sizing: border-box;
       padding: 0;
@@ -98,7 +98,7 @@
       border-bottom: 2px solid $highlight;
 
 
-    .sharable-link{
+    .shareable-link{
 
       input[type=text] {
         border-style: none;
@@ -117,9 +117,11 @@
       }
 
       .copy-button {
+        @include font-family($font-weight-body);
         float: right;
         margin: 0;
         width: 16em;
+        cursor: pointer;
       }
     }
   }
