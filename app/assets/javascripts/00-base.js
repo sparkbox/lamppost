@@ -5,7 +5,11 @@ var select = {
   },
 
   all: function(elements) {
-    return document.querySelectorAll(elements);
+    var nodeList = document.querySelectorAll(elements);
+    nodeList.forEach = function() {
+      return Array.prototype.forEach.apply(this, arguments);
+    };
+    return nodeList;
   },
 
   child: function(child) {
@@ -19,7 +23,11 @@ var select = {
   children: function(children) {
     return {
       from: function(parentElement) {
-        return parentElement.querySelectorAll(children);
+        var nodeList = parentElement.querySelectorAll(children);
+        nodeList.forEach = function() {
+          return Array.prototype.forEach.apply(this, arguments);
+        }
+        return nodeList;
       }
     };
   }

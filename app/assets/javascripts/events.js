@@ -3,7 +3,7 @@ var DOM = {
   btnToggleFilters: select.element('.event-filters__toggle-button'),
   sideBar: select.element('.side-bar'),
   eventFilters: select.element('.event-filters__filters'),
-  shareableLinks: select.all('.sharable-link')
+  shareableLinks: select.all('.shareable-link')
 };
 
 
@@ -22,7 +22,7 @@ function toggleFilters() {
 }
 
 function setupShareableLink(linkComponent) {
-  var linkInput = select.child('input').from(linkComponent);
+  var linkInput = select.child('.shareable-url-text-input').from(linkComponent);
 
   linkInput.addEventListener('click', function(e) {
     linkInput.select();
@@ -31,6 +31,7 @@ function setupShareableLink(linkComponent) {
   if(document.queryCommandSupported('copy')) {
     copyButton = document.createElement('button');
     copyButton.classList.add('card-button', 'copy-button');
+    copyButton.setAttribute('title', 'Copy Link');
     copyButton.innerHTML = 'Copy Link to Clipboard';
     linkComponent.appendChild(copyButton);
 
