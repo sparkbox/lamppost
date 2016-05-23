@@ -49,7 +49,8 @@
   padding: ($padding * 2) 0;
   border-bottom: $divider;
   color: $gray-20;
-  font-weight: 400;
+  font-weight: 300;
+  line-height: 1.6;
   text-align: center;
 
   @media (min-width: $break-large) {
