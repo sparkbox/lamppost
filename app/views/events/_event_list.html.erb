@@ -11,25 +11,23 @@
             <div class="icon-container">
               <%= render 'time_icon.html.erb' %>
             </div>
-            <span class="time-info">Every month on the first Monday at 6:30pm</span>
+            <span class="time-info"><%= event.when %></span>
           </li>
           <li>
             <div class="icon-container">
               <%= render 'location_icon.html.erb' %>
             </div>
-            Sparkbox
+            <%= event.location_name %>
             <ul class="subhead info-subhead">
-              <li>123 Webster Street</li>
-              <li>Dayton, OH 45402</li>
+              <li><%= event.street_address %></li>
+              <li><%= event.city %>, <%= event.state %> <%= event.zipcode %></li>
             </ul>
           </div>
         </li>
       </ul>
     </div>
     <div class="right">
-      <p>This is the event description. We can talk about code and stuff. Maybe
-        you'll have to pay some monies to go. Maybe it'll be free. Maybe we'll
-        pay you in pizza for showing up. Mmm pizza. </p>
+      <p><%= event.description %> </p>
 
         <ul>
           <li>Frontend</li>
