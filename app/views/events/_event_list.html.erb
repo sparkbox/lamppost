@@ -7,7 +7,9 @@
       <ul>
           <div class="card-left-info">
             <li>
-            <div class="subhead info-subhead">Recurring</div>
+            <% if event.recurring %>
+              <div class="subhead info-subhead">Recurring</div>
+            <% end %>
             <div class="icon-container">
               <%= render 'time_icon.html.erb' %>
             </div>
@@ -20,7 +22,7 @@
             <%= event.location_name %>
             <ul class="subhead info-subhead">
               <li><%= event.street_address %></li>
-              <li><%= event.city %>, <%= event.state %> <%= event.zipcode %></li>
+              <li><%= event.city %> <%= event.state %> <%= event.zipcode %></li>
             </ul>
           </div>
         </li>
