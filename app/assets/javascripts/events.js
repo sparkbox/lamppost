@@ -6,7 +6,7 @@ var DOM = {
   siteLogo: select.element('.site-logo'),
   btnToggleFilters: select.element('.event-filters__toggle-button'),
   eventFilters: select.element('.event-filters__filters'),
-  shareableLinks: select.all('.sharable-link'),
+  shareableLinks: select.all('.shareable-link'),
   scrollPosition: function() {
     return document.documentElement.scrollTop || DOM.body.scrollTop;
   }
@@ -24,19 +24,19 @@ DOM.shareableLinks.forEach(setupShareableLink);
 
 
 // Event Handlers
-function shrinkLogo() {
+function shrinkHeader() {
   DOM.siteHeader.classList.add('compact');
 }
 
-function expandLogo() {
+function expandHeader() {
   DOM.siteHeader.classList.remove('compact');
 }
 
 function updateHeader(e) {
   if(DOM.scrollPosition() > 40) {
-    shrinkLogo();
+    shrinkHeader();
   } else {
-    expandLogo();
+    expandHeader();
   }
 }
 
