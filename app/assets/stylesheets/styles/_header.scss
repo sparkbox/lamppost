@@ -1,3 +1,30 @@
+.site-header.compact {
+  .lamp-post-logo {
+    height: 46px;
+
+    .logo-text { transform: scale(0.6) translate(10em, -13.7em); }
+    .logo-text-lines { opacity: 0; }
+    .logo-showerhead { transform: scale(0.75) translate(-4em, .5em);}
+
+    .logo-lightpost-small {
+      transform: scale(0.75) translate(-4em, .5em);
+      opacity: 1;
+    }
+  }
+
+  .site-city {
+    margin: 0;
+    padding: 0 0 ($padding * 3);
+    border-bottom: $divider-dark;
+    font-size: 0.75em;
+  }
+
+  .site-about {
+    padding: ($padding * 2) 0;
+    border-top: 0;
+  }
+}
+
 .site-city {
   margin: 0;
   padding: 0 0 ($padding * 3);
@@ -26,7 +53,6 @@
   text-align: center;
 
   @media (min-width: $break-large) {
-    margin: 0 0 ($margin * 4);
     padding: ($padding * 4) 0;
     border-top: $divider;
   }

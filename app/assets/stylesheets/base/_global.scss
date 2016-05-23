@@ -4,11 +4,17 @@ body {
   color: $white;
 }
 
+.page-wrapper {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .main {
-  margin-top: 300px;
+  margin-left: 0;
 
   @media(min-width: $break-large) {
-    margin-top: 0;
+    margin-left: $sidebar-width;
   }
 }
 

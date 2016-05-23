@@ -8,8 +8,9 @@
   overflow: auto;
 
   @media (min-width:$break-large) {
-    width: calc(100% - 30em);
-    float: right;
+    // width: calc(100% - 30em);
+    // float: right;
+
   }
 }
 
@@ -142,7 +143,6 @@
       }
     }
   }
-
 }
 
 .card-front {

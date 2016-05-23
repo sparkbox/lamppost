@@ -1,101 +1,106 @@
-.event-filters__toggle-button {
-  display: block;
-  margin: 0;
-  padding: ($padding * 3) 0;
-  width: 100%;
-  background: transparent;
-  border: 0;
-  border-bottom: $divider-dark;
-  font-weight: $font-weight-body;
-  font-size: 0.75em;
-  text-transform: uppercase;
-  color: $highlight;
-  cursor: pointer;
+.event-filters {
 
-  @media (min-width: $break-large) {
-    display: none;
-    visibility: hidden;
+  &__toggle-button {
+    display: block;
+    margin: 0;
+    padding: ($padding * 3) 0;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: $divider-dark;
+    font-weight: $font-weight-body;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    color: $highlight;
+    cursor: pointer;
+
+    @media (min-width: $break-large) {
+      display: none;
+      visibility: hidden;
+    }
   }
-}
 
-.event-filters__filters {
-  height: auto;
-  overflow: visible;
-}
-
-.hide-filters .event-filters__filters {
-  height: 0;
-  overflow: hidden;
-
-  @media (min-width: $break-large) {
+  &__filters {
+    margin: 0 ($margin * 4);
     height: auto;
     overflow: visible;
   }
-}
 
-.event-filters__heading {
-  margin: ($margin * 4) 0;
-  text-align: center;
-}
+  .hide-filters &__filters {
+    height: 0;
+    overflow: hidden;
 
-.event-filters__group {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: relative;
-  margin: 0 ($margin * 4) ($margin * 4);
-  max-width: 35em;
-  border: 0;
-
-  &:last-of-type { margin-bottom: 0;}
-
-  @media (min-width: $break-small) {
-    margin: 0 auto ($margin * 4);
-  }
-}
-
-.event-filters__group-heading {
-  flex-basis: 100%;
-  font-size: 1em;
-  font-weight: $font-weight-select;
-  text-transform: uppercase;
-  margin-bottom: .75em;
-  color: $white;
-}
-
-.event-filters__checkbox {
-  min-width: 26%;
-  flex-grow: 1;
-  margin: 0 $margin $margin 0;
-  border: 1px solid $highlight;
-  font-size: .875em;
-  font-weight: $font-weight-body;
-  color: $gray-20;
-
-  &:last-of-type { flex-grow: 0; }
-
-  [type='checkbox'] {
-    opacity: 0;
-    position: absolute;
+    @media (min-width: $break-large) {
+      height: auto;
+      overflow: visible;
+    }
   }
 
-  [type='checkbox'] {
-    &:hover + label,
-    &:focus + label { background: $highlight-dim; }
-  }
-
-  [type='checkbox']:checked + label {
-    background: $highlight;
-    color: $gray-70;
-  }
-
-  label {
-    display: block;
-    padding: ($padding * 1.5) $padding;
-    width: 100%;
-    height: 100%;
+  &__heading {
+    margin: ($margin * 4) 0;
     text-align: center;
-    cursor: pointer;
+
+    @media (max-width: $break-large) {
+      display: none;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    margin: ($margin * 4) auto;
+    max-width: 35em;
+    border: 0;
+
+    &:first-of-type { padding-top: $padding * 4; }
+  }
+
+  &__group-heading {
+    flex-basis: 100%;
+    font-size: 1em;
+    font-weight: $font-weight-select;
+    text-transform: uppercase;
+    margin-bottom: .75em;
+    color: $white;
+  }
+
+  &__checkbox {
+    min-width: 26%;
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: 0 $margin $margin 0;
+    border: 1px solid $highlight;
+    font-size: .875em;
+    font-weight: $font-weight-body;
+    color: $gray-20;
+
+    &:last-of-type { flex-grow: 0; flex-basis: 28%; }
+
+    [type='checkbox'] {
+      opacity: 0;
+      position: absolute;
+    }
+
+    [type='checkbox'] {
+      &:hover + label,
+      &:focus + label { background: $gray-70; }
+    }
+
+    [type='checkbox']:checked + label {
+      background: $highlight;
+      color: $gray-70;
+    }
+
+    label {
+      display: block;
+      padding: ($padding * 1.5) $padding;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+    }
   }
 }
