@@ -26,10 +26,10 @@ function lampPostMain() {
     Page Init
   ================================================================
   */
-  // Reveal the filters. They are display:none unless this script loads
+  // Swap js class on html element
   DOM.html.classList.remove('no-js');
   DOM.html.classList.add('js');
-  // DOM.eventFilters.style.display = 'block';
+
 
   /*
   ================================================================
@@ -47,15 +47,18 @@ function lampPostMain() {
   ================================================================
   */
   function shrinkHeader() {
+    DOM.sideBar.classList.add('slide-up');
     DOM.siteHeader.classList.add('compact');
   }
 
   function expandHeader() {
+    DOM.sideBar.classList.remove('slide-up');
     DOM.siteHeader.classList.remove('compact');
   }
 
-  function updateHeader(e) {
-    if(DOM.scrollPosition() > 40) {
+  function updateHeader() {
+    var scrollPos = DOM.scrollPosition();
+    if(scrollPos > 40) {
       shrinkHeader();
     } else {
       expandHeader();

@@ -12,13 +12,19 @@
   overflow-y: scroll;
   background: #333;
   border-top: 4px solid $highlight;
+  transition: transform .4s ease-out;
   z-index: 1;
+
+  &.slide-up { transform: translateY(-203px); }
+
+  &.filters-open { height: 100%; }
 
   @media (min-width:$break-large) {
     width: $sidebar-width;
     height: 100%;
     padding: ($padding * 4) 0 0;
+
+    &.slide-up { transform: none; }
   }
 
-  &.filters-open { height: 100%; }
 }
