@@ -45,7 +45,7 @@
 }
 
 .site-about {
-  // About section will be hidden unless js loads
+  // "about" section will be hidden unless js loads
   display: none;
   margin: 0 ($margin * 4) 0;
   padding: ($padding * 2) 0;
@@ -58,6 +58,7 @@
   .js & { display: block; }
 
   @media (min-width: $break-large) {
+    // always show this section on large screens
     display: block;
     padding: ($padding * 4) 0;
     border-top: $divider;
