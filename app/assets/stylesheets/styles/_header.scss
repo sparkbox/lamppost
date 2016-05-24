@@ -10,7 +10,6 @@
   color: $white;
 
   .compact & {
-    display: none;
     margin: 0;
     padding: 0 0 ($padding * 3);
     border-bottom: $divider-dark;
@@ -22,8 +21,6 @@
     padding: 0;
     border: 0;
     font-size: 1.25em;
-
-    .compact & { display: block; }
   }
 }
 
