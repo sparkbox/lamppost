@@ -7,6 +7,19 @@
     height: 46px;
     transition: height .4s ease-out;
 
+    .compact & {
+      height: 46px;
+
+      .logo-text { transform: scale(0.6) translate(10em, -13.7em); }
+      .logo-text-lines { opacity: 0; }
+      .logo-showerhead { transform: scale(0.75) translate(-4em, .5em);}
+
+      .logo-lightpost-small {
+        transform: scale(0.75) translate(-4em, .5em);
+        opacity: 1;
+      }
+    }
+
     g {
       transition: transform .4s ease-out;
     }

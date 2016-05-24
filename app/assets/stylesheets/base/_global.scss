@@ -11,10 +11,17 @@ body {
 }
 
 .main {
-  margin-left: 0;
+  margin-top: 140px;
+
+  .js & {
+    margin-top: 320px;
+  }
 
   @media(min-width: $break-large) {
+    margin-top: 0;
     margin-left: $sidebar-width;
+
+    .js & { margin-top: 0; }
   }
 }
 
