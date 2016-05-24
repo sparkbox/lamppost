@@ -45,6 +45,8 @@
 }
 
 .site-about {
+  // About section will be hidden unless js loads
+  display: none;
   margin: 0 ($margin * 4) 0;
   padding: ($padding * 2) 0;
   border-bottom: $divider;
@@ -53,10 +55,14 @@
   line-height: 1.6;
   text-align: center;
 
+  .js & { display: block; }
+
   @media (min-width: $break-large) {
+    display: block;
     padding: ($padding * 4) 0;
     border-top: $divider;
   }
+
 }
 
 .site-about__text {

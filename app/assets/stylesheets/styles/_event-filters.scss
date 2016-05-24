@@ -1,6 +1,10 @@
 .event-filters {
-  // filters will be hidden until js loads and sets display:block
+  // filters will be hidden until js loads
   display: none;
+
+  .js & {
+    display: block;
+  }
 
   &__toggle-button {
     display: block;
