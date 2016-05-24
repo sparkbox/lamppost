@@ -31,6 +31,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
+  after :store, :store_binary
+  process :resize_to_fit => [400, 400]
+
+
+  def store_binary file
+     @model.image_binary = Base64.encode64(File.open(@model.image.file.file).read)
+     @model.image_content_type = self.content_type
+     @model.save
+  end
+
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fit => [50, 50]
