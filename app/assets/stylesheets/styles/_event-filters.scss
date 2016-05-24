@@ -1,4 +1,10 @@
 .event-filters {
+  // filters will be hidden until js loads
+  display: none;
+
+  .js & {
+    display: block;
+  }
 
   &__toggle-button {
     display: block;
@@ -22,11 +28,6 @@
 
   &__filters {
     margin: 0 ($margin * 4);
-    height: auto;
-    overflow: visible;
-  }
-
-  .hide-filters &__filters {
     height: 0;
     overflow: hidden;
 
@@ -34,6 +35,10 @@
       height: auto;
       overflow: visible;
     }
+  }
+
+  .filters-open &__filters {
+    height: auto;
   }
 
   &__heading {
