@@ -61,7 +61,7 @@
         <div class="card-shareable-links">
           <h4 class="subhead">Shareable Link</h4>
           <div class="shareable-link">
-            <input class="shareable-url-text-input" type="text" value="seesparkbox.com"></input>
+            <%= text_field_tag 'shareable-url', event_url(event), class: 'shareable-url-text-input' %>
           </div>
         </div>
         <div class="card-report">
