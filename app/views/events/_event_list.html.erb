@@ -47,7 +47,7 @@
 
     <section class="card-back">
       <div class="left">
-        <img class="card-image" src="data:image/<%= event.image_content_type %>;base64,<%= event.image_binary %>" alt="<%= event.name %> image" />
+        <img class="card-image" src="data:<%= event.image_content_type %>;base64,<%= event.image_binary %>" alt="<%= event.name %> image" />
       </div>
       <div class="right">
         <div class="card-offsite-links">
