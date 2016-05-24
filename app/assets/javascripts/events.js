@@ -6,6 +6,7 @@ function lampPostMain() {
   ================================================================
   */
   var DOM = {
+    html: select.element('html'),
     body: select.element('body'),
     sideBar: select.element('.side-bar'),
     siteHeader: select.element('.site-header'),
@@ -26,8 +27,9 @@ function lampPostMain() {
   ================================================================
   */
   // Reveal the filters. They are display:none unless this script loads
-  DOM.eventFilters.style.display = 'block';
-
+  DOM.html.classList.remove('no-js');
+  DOM.html.classList.add('js');
+  // DOM.eventFilters.style.display = 'block';
 
   /*
   ================================================================
