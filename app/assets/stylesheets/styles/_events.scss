@@ -6,18 +6,9 @@
   box-sizing: border-box;
   min-height: 15em;
   overflow: auto;
-
-  @media (min-width:$break-large) {
-    // width: calc(100% - 30em);
-    // float: right;
-
-  }
 }
 
 .card-front, .card-back {
-
-
-
 
   .card-button {
     margin-right: $margin;
@@ -25,27 +16,55 @@
 
   .card-image {
   margin: auto auto;
-  width: 90%;
+  max-width: 90%;
+  display: block;
+  max-height: 15em;
+  margin-bottom: 1em;
   }
 
   .left, .right {
     min-height: calc(15em + (2 * #{$padding}));
     padding: $card-padding;
     box-sizing: border-box;
+    width: 100%;
   }
 
   .left {
-    width: 35%;
-    float: left;
-    clear: left;
-    border-right: $divider;
+    border-bottom: $divider;
   }
 
   .right {
-    width: 60%;
-    float: right;
-    clear: right;
+
   }
+
+  @media (min-width: 62.19em) {
+    .left {
+      width: 50%;
+      float: left;
+      clear: left;
+      border-right: $divider;
+      border-bottom: none;
+    }
+
+    .right {
+      width: 50%;
+      float: right;
+      clear: right;
+    }
+
+  }
+
+  @media (min-width: 70.88em) {
+    .left {
+      width: 35%;
+    }
+
+    .right {
+      width: 60%;
+    }
+
+  }
+
 
   .event-title {
     font-weight: $font-weight-head;
@@ -96,10 +115,13 @@
       padding: 0;
       width: 90%;
       display: inline-block;
-      border-bottom: 2px solid $highlight;
-
+      border-bottom: none;
+      @media (min-width: 70.88em){
+        border-bottom: 2px solid $highlight;
+      }
 
     .shareable-link{
+
 
       input[type=text] {
         border-style: none;
@@ -109,20 +131,34 @@
         overflow: hidden;
         padding-top: .7em;
         white-space: nowrap;
-        width: calc(100% - 13em);
+        width: 100%;
         outline: none;
         margin: 0;
+        border-bottom: 2px solid $highlight;
         &:focus {
           font-weight: $font-weight-select;
+
+
         }
+
+        @media (min-width: 70.88em){
+          width: calc(100% - 13em);
+          border-bottom: none;
+        }
+
       }
 
       .copy-button {
         @include font-family($font-weight-body);
-        float: right;
-        margin: 0;
-        width: 16em;
+        text-align: center;
+        margin-top: 1em;
+        max-width: 16em;
         cursor: pointer;
+
+        @media (min-width: 70.88em) {
+          float: right;
+          margin: 0;
+        }
       }
     }
   }
@@ -150,10 +186,17 @@
     ul {
       list-style-type: disc;
       list-style-position: inside;
-      columns: 3;
-      -webkit-columns: 3;
-      -moz-columns: 3;
-      margin-top: $margin;
+      margin-top: 2em;
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+
+      @media (min-width: 71.63em) {
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+
+    }
     }
   }
 }
