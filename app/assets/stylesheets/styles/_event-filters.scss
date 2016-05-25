@@ -53,8 +53,7 @@
   &__group {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: flex-start;
     position: relative;
     margin: ($margin * 4) auto;
     max-width: 35em;
@@ -73,9 +72,10 @@
   }
 
   &__checkbox {
+    position: relative;
+    flex-flow: column nowrap;
+    flex: 1 0 26%;
     min-width: 26%;
-    flex-grow: 1;
-    flex-basis: auto;
     margin: 0 $margin $margin 0;
     border: 1px solid $highlight;
     font-size: .875em;
@@ -83,6 +83,10 @@
     color: $gray-20;
 
     &:last-of-type { flex-grow: 0; flex-basis: 28%; }
+
+    @media (min-width: $break-large) {
+      flex: 1 0 auto;
+    }
 
     [type='checkbox'] {
       opacity: 0;
