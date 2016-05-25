@@ -30,9 +30,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-
+  process :convert => 'png'
+  process :resize_to_fit => [400,400]
   after :store, :store_binary
-  process :resize_to_fit => [400, 400]
 
 
   def store_binary file
