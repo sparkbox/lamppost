@@ -2,9 +2,13 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    if params[:topics] || params[:times] || params[:days] || params[:frequencies]
+      @events = Event.tagged_with(params[:topics]||params[:times] || params[:days] ||params[:frequencies], :any => true)
+    end
     respond_to do |format|
       format.html  # index.html.erb
       format.json  { render :json => @events }
+      format.rss { render :layout => false }
     end
   end
 
@@ -26,6 +30,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :id)
+      params.require(:event).permit(:name, :id, :topic_list, :time_list, :day_list, :frequency_list)
     end
 end

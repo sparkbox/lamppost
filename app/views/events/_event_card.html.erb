@@ -1,4 +1,4 @@
-<article class="event-card">
+<article class="event-card" data-tags="<%= event.tag_list %>">
   <section class="card-front">
 
     <div class="left">
@@ -29,19 +29,21 @@
     </div>
     <div class="right">
       <p><%= event.description %> </p>
-
-        <ul>
-          <li>&bull; Frontend</li>
-          <li>&bull; Writing</li>
-          <li>&bull; JavaScript</li>
-          <li>&bull; Ruby</li>
-          <li>&bull; UX</li>
-          <li>&bull; C#</li>
-          <li>&bull; Unity</li>
-          <li>&bull; Friendship</li>
-          <li>&bull; Pizza</li>
-        </ul>
-      </div>
+      <ul>
+        <% event.topic_list.each do |topic| %>
+        <li><%= topic %></li>
+        <% end %>
+        <% event.time_list.each do |time| %>
+        <li><%= time %></li>
+        <% end %>
+        <% event.day_list.each do |day| %>
+        <li><%= day %></li>
+        <% end %>
+        <% event.frequency_list.each do |frequency| %>
+        <li><%= frequency %></li>
+        <% end %>
+      </ul>
+    </div>
     </section>
 
     <section class="card-back">

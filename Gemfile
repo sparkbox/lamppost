@@ -17,6 +17,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'autoprefixer-rails'
 
+gem 'rails_admin_tag_list'
+gem 'acts-as-taggable-on', '~> 3.4'
+
 group :development, :test do
   gem 'byebug'
 end
