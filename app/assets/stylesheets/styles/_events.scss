@@ -31,10 +31,10 @@
   }
 
   .left {
-    border-bottom: $divider;
   }
 
   .right {
+    border-top: $divider;
 
   }
 
@@ -43,14 +43,16 @@
       width: 50%;
       float: left;
       clear: left;
-      border-right: $divider;
-      border-bottom: none;
     }
 
     .right {
       width: 50%;
       float: right;
       clear: right;
+      border-left: $divider;
+      border-top: none;
+
+
     }
 
   }
@@ -185,19 +187,17 @@
 .card-front {
   .right {
     ul {
-      list-style-type: disc;
-      list-style-position: inside;
-      margin-top: 2em;
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
-
-      @media (min-width: 71.63em) {
-        columns: 3;
-        -webkit-columns: 3;
-        -moz-columns: 3;
-
-    }
+      margin-top: 1em;
+      li {
+        display: inline;
+        margin-right: .5em;
+        white-space: nowrap;
+      }
+    //   columns: 2;
+    //
+    //   @media (min-width: 71.63em) {
+    //     columns: 3;
+    // }
     }
   }
 }
