@@ -8,6 +8,7 @@ function lampPostMain() {
   var DOM = {
     html: select.element('html'),
     body: select.element('body'),
+    main: select.element('.main'),
     sideBar: select.element('.side-bar'),
     siteHeader: select.element('.site-header'),
     siteLogo: select.element('.site-logo'),
@@ -15,7 +16,8 @@ function lampPostMain() {
     eventFiltersToggleButton: select.element('.event-filters__toggle-button'),
     eventFiltersFilterGroups: select.element('.event-filters__filters'),
     shareableLinks: select.all('.shareable-link'),
-    scrollPosition: function() {
+    scrollPosition: function(element) {
+      if(element) return element.scrollTop;
       return document.documentElement.scrollTop || DOM.body.scrollTop;
     }
   };
@@ -36,7 +38,7 @@ function lampPostMain() {
     Event Listeners
   ================================================================
   */
-  window.addEventListener('scroll', throttle(updateHeader, 80));
+  DOM.main.addEventListener('scroll', throttle(updateHeader, 80));
   DOM.eventFiltersToggleButton.addEventListener('click', toggleFilters);
   DOM.shareableLinks.forEach(setupShareableLink);
 
@@ -57,7 +59,7 @@ function lampPostMain() {
   }
 
   function updateHeader() {
-    var scrollPos = DOM.scrollPosition();
+    var scrollPos = DOM.scrollPosition(DOM.main);
     if(scrollPos > 40) {
       shrinkHeader();
     } else {
