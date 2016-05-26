@@ -1,4 +1,5 @@
 body {
+  position: relative;
   @include font-family($font-weight-body);
   background-color: $gray-70;
   color: $white;
@@ -7,21 +8,23 @@ body {
 .page-wrapper {
   position: relative;
   max-width: 1440px;
+  height: 100%;
   margin: 0 auto;
 }
 
 .main {
-  margin-top: 140px;
+  box-sizing: border-box;
+  padding-top: 110px;
+  max-height: 100%;
+  overflow-y: scroll;
 
-  .js & {
-    margin-top: 320px;
-  }
+  .js & { padding-top: 280px; }
 
   @media(min-width: $break-large) {
-    margin-top: 0;
+    padding-top: 0;
     margin-left: $sidebar-width;
 
-    .js & { margin-top: 0; }
+    .js & { padding-top: 0; }
   }
 }
 
