@@ -138,6 +138,7 @@
         outline: none;
         margin: 0;
         border-bottom: 2px solid $highlight;
+        text-overflow: ellipsis;
         &:focus {
           font-weight: $font-weight-select;
 
@@ -145,8 +146,8 @@
         }
 
         @media (min-width: 70.88em){
-          width: calc(100% - 13em);
           border-bottom: none;
+          width: calc(100% - 13em);
         }
 
       }
@@ -159,6 +160,7 @@
         cursor: pointer;
 
         @media (min-width: 70.88em) {
+          position: relative;
           float: right;
           margin: 0;
         }
