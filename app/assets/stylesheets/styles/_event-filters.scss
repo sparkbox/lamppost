@@ -54,15 +54,6 @@
     }
   }
 
-  &__heading {
-    margin: ($margin * 4) 0;
-    text-align: center;
-
-    @media (max-width: $break-large) {
-      display: none;
-    }
-  }
-
   &__group {
     display: flex;
     flex-flow: row wrap;
