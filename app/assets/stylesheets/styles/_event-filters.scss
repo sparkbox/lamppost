@@ -24,7 +24,20 @@
       display: none;
       visibility: hidden;
     }
+
+    .toggle-arrow {
+      stroke: $highlight;
+      stroke-width: 1;
+      fill: none;
+      transform: rotateZ(2deg);
+      transition: transform .3s ease-out .3s;
+
+      .filters-open & {
+        transform: rotateZ(182deg);
+      }
+    }
   }
+
 
   &__filters {
     margin: 0 ($margin * 4);
@@ -35,10 +48,10 @@
       height: auto;
       overflow: visible;
     }
-  }
 
-  .filters-open &__filters {
-    height: auto;
+    .filters-open & {
+      height: auto;
+    }
   }
 
   &__heading {
