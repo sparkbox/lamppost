@@ -9,6 +9,7 @@
   </svg>
 </button>
 <div id="event-filters__filters" class="event-filters__filters">
+
   <div class="event-filters__group" data-filter-category="topics" role="group" aria-labelledby="filter-group-heading-topics">
     <h1 class="event-filters__group-heading" id="filter-group-heading-topics">Topics:</h1>
     <% @topics.each do |topic| %>
@@ -29,7 +30,6 @@
     <% end %>
   </div>
 ​
-​
   <div class="event-filters__group" data-filter-category="day-of-week" role="group" aria-labelledby="filter-group-heading-day">
     <h1 class="event-filters__group-heading" id="filter-group-heading-day">Day:</h1>
     <% @days.each do |day| %>
@@ -40,10 +40,8 @@
     <% end %>
   </div>
 ​
-​
   <div class="event-filters__group" data-filter-category="frequency" role="group" aria-labelledby="filter-group-heading-frequency">
     <h1 class="event-filters__group-heading" id="filter-group-heading-frequency">Frequency:</h1>
-
     <% @frequencies.each do |frequency| %>
     <div class="event-filters__checkbox">
       <input class="event-filters__filter" type="checkbox" data-tag="<%= frequency %>" id="tag-id-<%= frequency %>" name="tag-id-<%= frequency %>">
