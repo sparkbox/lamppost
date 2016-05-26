@@ -147,13 +147,13 @@ function lampPostMain() {
         } else {
           TAGS.remove(tag);
         }
-        updateEventListing(filter);
+        updateEventListing();
         e.stopPropagation();
       });
     });
   }
 
-  function updateEventListing(filter) {
+  function updateEventListing() {
     if(TAGS.list().length > 0) {
       DOM.eventCards.each(function(eventCard) {
         if(eventTagged(eventCard)) {
