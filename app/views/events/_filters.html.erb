@@ -11,103 +11,44 @@
 <div id="event-filters__filters" class="event-filters__filters">
   <div class="event-filters__group" data-filter-category="topics" role="group" aria-labelledby="filter-group-heading-topics">
     <h1 class="event-filters__group-heading" id="filter-group-heading-topics">Topics:</h1>
+    <% @topics.each do |topic| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="visual_design" id="tag-id-1" name="tag-id-1">
-      <label for="tag-id-1">Visual Design</label>
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= topic %>" id="tag-id-<%= topic %>" name="tag-id-<%= topic %>">
+      <label for="tag-id-<%= topic %>"><%= topic.parameterize.underscore %></label>
     </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="ux" id="tag-id-2" name="tag-id-2">
-      <label for="tag-id-2">UX</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="ruby" id="tag-id-3" name="tag-id-3">
-      <label for="tag-id-3">Ruby</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="project_management" id="tag-id-4" name="tag-id-4">
-      <label for="tag-id-4">Project Management</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="writing" id="tag-id-5" name="tag-id-5">
-      <label for="tag-id-5">Writing</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="making_friends" id="tag-id-6" name="tag-id-6">
-      <label for="tag-id-6">Making Friends</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="front-end" id="tag-id-7" name="tag-id-7">
-      <label for="tag-id-7">Front-end</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="back-end" id="tag-id-8" name="tag-id-7">
-      <label for="tag-id-8">Back-end</label>
-    </div>
+    <% end %>
   </div>
 ​
   <div class="event-filters__group" data-filter-category="time-of-day" role="group" aria-labelledby="filter-group-heading-timeofday">
     <h1 class="event-filters__group-heading" id="filter-group-heading-timeofday">Time of Day:</h1>
+    <% @times.each do |time| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="morning" id="tag-id-9" name="tag-id-1">
-      <label for="tag-id-9">Morning</label>
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= time %>" id="tag-id-<%= time %>" name="tag-id-<%= time %>">
+      <label for="tag-id-<%= time %>"><%= time %></label>
     </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="afternoon" id="tag-id-10" name="tag-id-2">
-      <label for="tag-id-10">Afternoon</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="evening" id="tag-id-11" name="tag-id-2">
-      <label for="tag-id-11">Evening</label>
-    </div>
+    <% end %>
   </div>
 ​
 ​
   <div class="event-filters__group" data-filter-category="day-of-week" role="group" aria-labelledby="filter-group-heading-day">
     <h1 class="event-filters__group-heading" id="filter-group-heading-day">Day:</h1>
+    <% @days.each do |day| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="monday" id="tag-id-12" name="tag-id-1">
-      <label for="tag-id-12">Monday</label>
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= day %>" id="tag-id-<%= day %>" name="tag-id-<%= day %>">
+      <label for="tag-id-<%= day %>"><%= day %></label>
     </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="tuesday" id="tag-id-13" name="tag-id-2">
-      <label for="tag-id-13">Tuesday</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="wednesday" id="tag-id-14" name="tag-id-3">
-      <label for="tag-id-14">Wednesday</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="thursday" id="tag-id-15" name="tag-id-4">
-      <label for="tag-id-15">Thursday</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="friday" id="tag-id-16" name="tag-id-5">
-      <label for="tag-id-16">Friday</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="saturday" id="tag-id-17" name="tag-id-6">
-      <label for="tag-id-17">Saturday</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="sunday" id="tag-id-18" name="tag-id-7">
-      <label for="tag-id-18">Sunday</label>
-    </div>
+    <% end %>
   </div>
 ​
 ​
   <div class="event-filters__group" data-filter-category="frequency" role="group" aria-labelledby="filter-group-heading-frequency">
     <h1 class="event-filters__group-heading" id="filter-group-heading-frequency">Frequency:</h1>
+
+    <% @frequencies.each do |frequency| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="one-time" id="tag-id-19" name="tag-id-1">
-      <label for="tag-id-19">One-Time</label>
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= frequency %>" id="tag-id-<%= frequency %>" name="tag-id-<%= frequency %>">
+      <label for="tag-id-<%= frequency %>"><%= frequency %></label>
     </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="weekly" id="tag-id-20" name="tag-id-2">
-      <label for="tag-id-20">Weekly</label>
-    </div>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="monthly" id="tag-id-21" name="tag-id-2">
-      <label for="tag-id-21">Monthly</label>
-    </div>
+    <% end %>
   </div>
 </div>
