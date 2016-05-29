@@ -3,12 +3,12 @@ body {
   @include font-family($font-weight-body);
   background-color: $gray-70;
   color: $white;
+  overflow-y: scroll;
 }
 
 .page-wrapper {
   position: relative;
-  max-width: 1440px;
-  height: 100%;
+  max-width: $page-wrapper-width;
   margin: 0 auto;
 }
 
@@ -16,7 +16,6 @@ body {
   box-sizing: border-box;
   padding-top: 110px;
   max-height: 100%;
-  overflow-y: scroll;
 
   .js & { padding-top: 280px; }
 

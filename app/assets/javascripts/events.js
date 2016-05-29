@@ -38,7 +38,7 @@ function lampPostMain() {
     Event Listeners
   ================================================================
   */
-  DOM.main.addEventListener('scroll', throttle(updateHeader, 80));
+  window.addEventListener('scroll', throttle(updateHeader, 80));
   DOM.eventFiltersToggleButton.addEventListener('click', toggleFilters);
   DOM.shareableLinks.forEach(setupShareableLink);
 
@@ -59,7 +59,7 @@ function lampPostMain() {
   }
 
   function updateHeader() {
-    var scrollPos = DOM.scrollPosition(DOM.main);
+    var scrollPos = DOM.scrollPosition();
     if(scrollPos > 40) {
       shrinkHeader();
     } else {
