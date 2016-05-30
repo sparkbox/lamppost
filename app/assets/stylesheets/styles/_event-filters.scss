@@ -1,9 +1,16 @@
 .event-filters {
   // filters will be hidden until js loads
   display: none;
+  position: relative;
 
-  .js & {
-    display: block;
+  .js & { display: block; }
+
+  &.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
   }
 
   &__toggle-button {
@@ -11,7 +18,7 @@
     margin: 0;
     padding: ($padding * 3) 0;
     width: 100%;
-    background: transparent;
+    background-color: #333;
     border: 0;
     border-bottom: $divider-dark;
     font-weight: $font-weight-body;
@@ -30,7 +37,7 @@
       stroke-width: 1;
       fill: none;
       transform: rotateZ(2deg);
-      transition: transform .3s ease-out .3s;
+      transition: transform .3s ease-out;
 
       .filters-open & {
         transform: rotateZ(182deg);
@@ -40,8 +47,10 @@
 
 
   &__filters {
-    margin: 0 ($margin * 4);
+    // margin: 0 ($margin * 4);
+    padding: 0 ($padding * 4);
     height: 0;
+    background-color: #333;
     overflow: hidden;
 
     @media (min-width: $break-large) {
@@ -50,7 +59,9 @@
     }
 
     .filters-open & {
-      height: auto;
+      height: 100%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
     }
   }
 

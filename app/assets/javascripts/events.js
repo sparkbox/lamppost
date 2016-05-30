@@ -49,21 +49,35 @@ function lampPostMain() {
   ================================================================
   */
   function shrinkHeader() {
-    DOM.sideBar.classList.add('slide-up');
     DOM.siteHeader.classList.add('compact');
   }
 
   function expandHeader() {
-    DOM.sideBar.classList.remove('slide-up');
     DOM.siteHeader.classList.remove('compact');
   }
 
+  function fixPositionFilters() {
+    DOM.eventFilters.classList.add('fixed-top');
+  }
+
+  function relPositionFilters() {
+    DOM.eventFilters.classList.remove('fixed-top');
+  }
+
   function updateHeader() {
-    var scrollPos = DOM.scrollPosition();
+    var scrollPos = DOM.scrollPosition(),
+        filtersTop = DOM.siteHeader.getBoundingClientRect().bottom;
+
     if(scrollPos > 40) {
       shrinkHeader();
     } else {
       expandHeader();
+    }
+
+    if(filtersTop < 1) {
+      fixPositionFilters();
+    } else {
+      relPositionFilters();
     }
   }
 

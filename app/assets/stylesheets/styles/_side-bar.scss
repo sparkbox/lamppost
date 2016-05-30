@@ -3,43 +3,23 @@
   & * { box-sizing: border-box; }
 
   box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   height: auto;
   padding: ($padding * 3) 0 0;
   background: #333;
   border-top: 4px solid $highlight;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
   transition: transform .4s ease-out, margin .4s ease-out;
   z-index: 1;
 
-  &.slide-up {
-    transform: translateY(-100%);
-    margin-top: 53px;
-  }
-
-  &.filters-open {
-    transform: none;
-    margin-top: 0;
-    height: 100%;
-  }
-
   @media (min-width: $break-large) {
+    position: fixed;
     width: $sidebar-width;
     height: 100%;
     padding: ($padding * 4) 0 0;
-
-    &.slide-up {
-      transform: none;
-      margin-top: 0;
-    }
   }
 
   @media (min-width: $page-wrapper-width) {
     margin-left: calc((100% - #{$page-wrapper-width}) / 2);
   }
-
 }
