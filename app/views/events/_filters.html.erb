@@ -14,7 +14,7 @@
     <% @topics.each do |topic| %>
     <div class="event-filters__checkbox">
       <input class="event-filters__filter" type="checkbox" data-tag="<%= topic %>" id="tag-id-<%= topic %>" name="tag-id-<%= topic %>">
-      <label for="tag-id-<%= topic %>"><%= topic.parameterize.underscore %></label>
+      <label for="tag-id-<%= topic %>"><%= topic %></label>
     </div>
     <% end %>
   </div>
