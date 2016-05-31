@@ -13,11 +13,16 @@
 
     @media (min-width: $break-large) {
       position: relative;
-      height: auto;
     }
   }
 
-  .filters-open & { height: 100%; }
+  .filters-open & {
+    height: 100%;
+
+    @media (min-width: $break-large) {
+      height: auto;
+    }
+  }
 
   &__toggle-button {
     display: block;
