@@ -14,7 +14,7 @@
     <h1 class="event-filters__group-heading" id="filter-group-heading-topics">Topics:</h1>
     <% @topics.each do |topic| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= topic.parameterize.underscore %>" id="tag-id-<%= topic %>" name="tag-id-<%= topic %>">
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= topic.tr(" ", "_") %>" id="tag-id-<%= topic %>" name="tag-id-<%= topic %>">
       <label for="tag-id-<%= topic %>"><%= topic %></label>
     </div>
     <% end %>
@@ -24,7 +24,7 @@
     <h1 class="event-filters__group-heading" id="filter-group-heading-timeofday">Time of Day:</h1>
     <% @times.each do |time| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= time.parameterize.underscore %>" id="tag-id-<%= time %>" name="tag-id-<%= time %>">
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= time.tr(" ", "_") %>" id="tag-id-<%= time %>" name="tag-id-<%= time %>">
       <label for="tag-id-<%= time %>"><%= time %></label>
     </div>
     <% end %>
@@ -34,7 +34,7 @@
     <h1 class="event-filters__group-heading" id="filter-group-heading-day">Day:</h1>
     <% @days.each do |day| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= day.parameterize.underscore %>" id="tag-id-<%= day %>" name="tag-id-<%= day %>">
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= day.tr(" ", "_") %>" id="tag-id-<%= day %>" name="tag-id-<%= day %>">
       <label for="tag-id-<%= day %>"><%= day %></label>
     </div>
     <% end %>
@@ -44,7 +44,7 @@
     <h1 class="event-filters__group-heading" id="filter-group-heading-frequency">Frequency:</h1>
     <% @frequencies.each do |frequency| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= frequency.parameterize.underscore %>" id="tag-id-<%= frequency %>" name="tag-id-<%= frequency %>">
+      <input class="event-filters__filter" type="checkbox" data-tag="<%= frequency.tr(" ", "_") %>" id="tag-id-<%= frequency %>" name="tag-id-<%= frequency %>">
       <label for="tag-id-<%= frequency %>"><%= frequency %></label>
     </div>
     <% end %>
