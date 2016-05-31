@@ -1,7 +1,7 @@
 .event-card {
   background-color: $white;
   color: $gray-50;
-  margin: $card-margin;
+  margin: 0 $card-margin $card-margin;
   padding: $card-padding;
   box-sizing: border-box;
   min-height: 15em;

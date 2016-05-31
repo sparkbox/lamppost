@@ -5,12 +5,17 @@
 
   .js & { display: block; }
 
-  &.fixed-top {
+  .fixed-top & {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 100%;
+    height: calc(100% - #{$toggle-filters-button-height});
+
+    @media (min-width: $break-large) {
+      position: relative;
+      height: auto;
+    }
   }
 
   &__toggle-button {
@@ -47,21 +52,20 @@
 
 
   &__filters {
-    // margin: 0 ($margin * 4);
     padding: 0 ($padding * 4);
     height: 0;
     background-color: #333;
     overflow: hidden;
 
-    @media (min-width: $break-large) {
-      height: auto;
-      overflow: visible;
-    }
-
     .filters-open & {
       height: 100%;
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
+    }
+
+    @media (min-width: $break-large) {
+      height: auto;
+      overflow: visible;
     }
   }
 

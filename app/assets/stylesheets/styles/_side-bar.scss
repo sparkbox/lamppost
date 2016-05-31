@@ -9,7 +9,7 @@
   background: #333;
   border-top: 4px solid $highlight;
   overflow: visible;
-  transition: transform .4s ease-out, margin .4s ease-out;
+  transition: transform .4s ease-out;
   z-index: 1;
 
   @media (min-width: $break-large) {
@@ -17,9 +17,8 @@
     width: $sidebar-width;
     height: 100%;
     padding: ($padding * 4) 0 0;
+    overflow-y: scroll;
   }
 
-  @media (min-width: $page-wrapper-width) {
-    margin-left: calc((100% - #{$page-wrapper-width}) / 2);
-  }
+  &.fixed-top { margin-bottom: $toggle-filters-button-height; }
 }

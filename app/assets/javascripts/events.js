@@ -38,7 +38,7 @@ function lampPostMain() {
     Event Listeners
   ================================================================
   */
-  window.addEventListener('scroll', throttle(updateHeader, 80));
+  window.addEventListener('scroll', throttle(updateHeader, 50));
   DOM.eventFiltersToggleButton.addEventListener('click', toggleFilters);
   DOM.shareableLinks.forEach(setupShareableLink);
 
@@ -57,11 +57,11 @@ function lampPostMain() {
   }
 
   function fixPositionFilters() {
-    DOM.eventFilters.classList.add('fixed-top');
+    DOM.sideBar.classList.add('fixed-top');
   }
 
   function relPositionFilters() {
-    DOM.eventFilters.classList.remove('fixed-top');
+    DOM.sideBar.classList.remove('fixed-top');
   }
 
   function updateHeader() {
