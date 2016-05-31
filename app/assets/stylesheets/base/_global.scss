@@ -1,5 +1,7 @@
 body {
   position: relative;
+  min-height: 1000px; // This fixes a bug when no events are present
+  // could maybe remove when we have an empty state card
   @include font-family($font-weight-body);
   background-color: $gray-70;
   color: $white;
