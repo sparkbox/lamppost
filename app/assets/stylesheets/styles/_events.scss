@@ -1,11 +1,16 @@
+.single-card {
+  margin-top: $card-margin;
+}
+
 .event-card {
   background-color: $white;
   color: $gray-50;
   margin: 0 $card-margin $card-margin;
   padding: $card-padding;
   box-sizing: border-box;
-  min-height: 15em;
+  min-height: 20em;
   overflow: auto;
+  line-height: 1.5em;
 }
 
 .card-front, .card-back {
@@ -17,17 +22,20 @@
   .card-image {
   margin: auto auto;
   max-width: 90%;
+  max-height: 12em;
   display: block;
-  max-height: 15em;
   margin-bottom: 1em;
+  padding: 0;
   }
 
   .left, .right {
-    min-height: calc(15em + (2 * #{$padding}));
-    padding: $card-padding;
+    min-height: 100%;
+    padding: 2em;
     box-sizing: border-box;
-    width: 100%;
+    width: calc(100% - 2em);
     overflow-y: auto;
+    overflow-x: auto;
+
   }
 
   .left {
@@ -35,7 +43,7 @@
 
   .right {
     border-top: $divider;
-
+    margin: 0 1em;
   }
 
   @media (min-width: 62.19em) {
@@ -51,6 +59,7 @@
       clear: right;
       border-left: $divider;
       border-top: none;
+      margin: 1em 0;
 
 
     }
@@ -105,7 +114,6 @@
 
   .info-subhead {
     width: calc(100% - 1.9em);
-    float: right;
     padding-left: 1.9em;
     margin: 0;
       li {
