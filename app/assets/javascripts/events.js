@@ -14,13 +14,50 @@ function lampPostMain() {
     siteLogo: select.element('.site-logo'),
     eventFilters: select.element('.event-filters'),
     eventFiltersToggleButton: select.element('.event-filters__toggle-button'),
-    eventFiltersFilterGroups: select.element('.event-filters__filters'),
+    eventFiltersFilterGroups: select.all('.event-filters__group'),
+    filters: select.children('.event-filters__filter'),
+    eventCards: select.all('.event-card'),
     shareableLinks: select.all('.shareable-link'),
     scrollPosition: function(element) {
       if(element) return element.scrollTop;
       return document.documentElement.scrollTop || DOM.body.scrollTop;
     }
   };
+
+  var TAGS = (function() {
+    var activeTags = [];
+
+    function add(tag) {
+      if(!have(tag)) {
+        return activeTags.push(tag);
+      }
+    }
+
+    function remove(tagToRemove) {
+      if(have(tagToRemove)) {
+        return activeTags = activeTags.filter(function(tag) {
+          return tag !== tagToRemove;
+        });
+      }
+    }
+
+    function have(tagToTest) {
+      return activeTags.filter(function(tag) {
+        return tag === tagToTest;
+      }).length > 0;
+    }
+
+    function list() {
+      return activeTags;
+    }
+
+    return {
+      add: add,
+      remove: remove,
+      have: have,
+      list: list
+    };
+  })();
 
 
   /*
@@ -40,7 +77,8 @@ function lampPostMain() {
   */
   window.addEventListener('scroll', throttle(updateHeader, 50));
   DOM.eventFiltersToggleButton.addEventListener('click', toggleFilters);
-  DOM.shareableLinks.forEach(setupShareableLink);
+  DOM.eventFiltersFilterGroups.each(setupFiltering);
+  DOM.shareableLinks.each(setupShareableLink);
 
 
   /*
@@ -83,6 +121,57 @@ function lampPostMain() {
 
   function toggleFilters() {
     DOM.sideBar.classList.toggle('filters-open');
+  }
+
+  function hideElement(element) {
+    element.classList.add('hidden');
+  }
+
+  function showElement(element) {
+    element.classList.remove('hidden');
+  }
+
+  function showAllElements(elements) {
+    elements.each(function(element) {
+      showElement(element);
+    });
+  }
+
+  function setupFiltering(filterGroup) {
+    var filters = DOM.filters.from(filterGroup);
+    filters.each(function(filter) {
+      filter.addEventListener('change', function(e) {
+        var tag = this.dataset.tag;
+        if(this.checked && !TAGS.have(tag)) {
+          TAGS.add(tag);
+        } else {
+          TAGS.remove(tag);
+        }
+        updateEventListing();
+        e.stopPropagation();
+      });
+    });
+  }
+
+  function updateEventListing() {
+    if(TAGS.list().length > 0) {
+      DOM.eventCards.each(function(eventCard) {
+        if(eventTagged(eventCard)) {
+          showElement(eventCard);
+        } else {
+          hideElement(eventCard);
+        }
+      });
+    } else {
+      showAllElements(DOM.eventCards);
+    }
+  }
+
+  function eventTagged(eventCard) {
+    var eventTags = eventCard.getAttribute('data-tags').split(' ');
+    return eventTags.filter(function(eventTag) {
+      return TAGS.have(eventTag);
+    }).length > 0;
   }
 
   function setupShareableLink(linkComponent) {

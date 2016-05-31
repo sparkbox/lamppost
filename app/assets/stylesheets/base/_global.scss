@@ -25,6 +25,10 @@ body {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 // Icons
 .icon-dark {
   fill: $gray-50;

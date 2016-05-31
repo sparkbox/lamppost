@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     if params[:topics] || params[:times] || params[:days] || params[:frequencies]
       @events = Event.tagged_with(params[:topics]||params[:times] || params[:days] ||params[:frequencies], :any => true)
     end
-    
+
     @topics = ActsAsTaggableOn::Tagging.where(context: 'topics').map { |tagging| tagging.tag.name }.uniq
     @days = ActsAsTaggableOn::Tagging.where(context: 'days').map { |tagging| tagging.tag.name }.uniq
     @times = ActsAsTaggableOn::Tagging.where(context: 'times').map { |tagging| tagging.tag.name }.uniq
