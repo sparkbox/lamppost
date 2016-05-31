@@ -18,17 +18,8 @@ def validate_name
 end
 
 def populate_tag_list
-  self.tag_list = []
-  self.topics.each do |topic|
-    self.tag_list << topic.name.parameterize.underscore
-  end
-  self.times.each do |topic|
-    self.tag_list << topic.name.parameterize.underscore
-  end
-  self.days.each do |topic|
-    self.tag_list << topic.name.parameterize.underscore
-  end
-  self.frequencies.each do |topic|
-    self.tag_list << topic.name.parameterize.underscore
+  self.tag_list = Array.new
+  self.taggings.each do |tagging|
+    self.tag_list << tagging.tag.name.tr(" ", "_")
   end
 end
