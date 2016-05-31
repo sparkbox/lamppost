@@ -10,13 +10,14 @@
     top: 0;
     left: 0;
     right: 0;
-    height: calc(100% - #{$toggle-filters-button-height});
 
     @media (min-width: $break-large) {
       position: relative;
       height: auto;
     }
   }
+
+  .filters-open & { height: 100%; }
 
   &__toggle-button {
     display: block;
@@ -58,7 +59,7 @@
     overflow: hidden;
 
     .filters-open & {
-      height: 100%;
+      height: calc(100% - #{$toggle-filters-button-height});
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
     }
