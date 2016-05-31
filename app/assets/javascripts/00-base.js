@@ -6,7 +6,7 @@ var select = {
 
   all: function(elements) {
     var nodeList = document.querySelectorAll(elements);
-    nodeList.forEach = function() {
+    nodeList.each = function() {
       return Array.prototype.forEach.apply(this, arguments);
     };
     return nodeList;
@@ -24,7 +24,7 @@ var select = {
     return {
       from: function(parentElement) {
         var nodeList = parentElement.querySelectorAll(children);
-        nodeList.forEach = function() {
+        nodeList.each = function() {
           return Array.prototype.forEach.apply(this, arguments);
         }
         return nodeList;
