@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @days = ActsAsTaggableOn::Tagging.where(context: 'days').map { |tagging| tagging.tag.name }.uniq
     @times = ActsAsTaggableOn::Tagging.where(context: 'times').map { |tagging| tagging.tag.name }.uniq
     @frequencies = ActsAsTaggableOn::Tagging.where(context: 'frequencies').map { |tagging| tagging.tag.name }.uniq
-    
+
 
     respond_to do |format|
       format.html  # index.html.erb
