@@ -97,7 +97,6 @@
   }
 
   &__checkbox {
-    min-width: 26%;
     flex-grow: 1;
     flex-basis: auto;
     margin: 0 $margin $margin 0;
@@ -105,8 +104,6 @@
     font-size: .875em;
     font-weight: $font-weight-body;
     color: $gray-20;
-
-    &:last-of-type { flex-grow: 0; flex-basis: 28%; }
 
     [type='checkbox'] {
       opacity: 0;

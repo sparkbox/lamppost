@@ -1,3 +1,15 @@
+.site-header {
+  border-bottom: $divider-dark;
+
+  @media (min-width: $break-large) {
+    border: 0;
+  }
+
+  .js & {
+    border: 0;
+  }
+}
+
 .site-city {
   margin: 0;
   padding: 0 0 ($padding * 3);
@@ -25,17 +37,14 @@
 }
 
 .site-about {
-  // "about" section will be hidden unless js loads
-  display: none;
   margin: 0 ($margin * 4) 0;
-  padding: ($padding * 2) 0;
-  border-bottom: $divider;
+  padding: $padding 0;
   color: $gray-20;
   font-weight: 300;
   line-height: 1.6;
   text-align: center;
 
-  .js & { display: block; }
+  .js & { border-bottom: $divider; }
 
   .compact & {
     padding: ($padding * 2) 0;
@@ -43,8 +52,6 @@
   }
 
   @media (min-width: $break-large) {
-    // always show this section on large screens
-    display: block;
     padding: ($padding * 4) 0;
     border-top: $divider;
   }
@@ -52,7 +59,7 @@
 }
 
 .site-about__text {
-  margin-bottom: $margin * 2;
+  margin-bottom: $margin;
 
   @media (min-width: $break-large) {
     margin-bottom: $margin * 4;
