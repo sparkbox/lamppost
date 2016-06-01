@@ -11,4 +11,8 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require_tree .
+//= require ./shims
+//= require ./utility
+//= require ./dom-selector
+//= require ./tag-manager
+//= require ./site-wide
