@@ -1,7 +1,13 @@
 .site-header {
   border-bottom: $divider-dark;
 
-  .js & { border: 0; }
+  @media (min-width: $break-large) {
+    border: 0;
+  }
+
+  .js & {
+    border: 0;
+  }
 }
 
 .site-city {
@@ -32,7 +38,7 @@
 
 .site-about {
   margin: 0 ($margin * 4) 0;
-  padding: ($padding * 2) 0;
+  padding: $padding 0;
   color: $gray-20;
   font-weight: 300;
   line-height: 1.6;
@@ -53,7 +59,7 @@
 }
 
 .site-about__text {
-  margin-bottom: $margin * 2;
+  margin-bottom: $margin;
 
   @media (min-width: $break-large) {
     margin-bottom: $margin * 4;
