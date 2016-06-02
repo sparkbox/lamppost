@@ -30,16 +30,16 @@
       <p><%= event.description %> </p>
       <ul>
         <% event.topic_list.each do |topic| %>
-        <li><%= topic %></li>
+        <li>&bull; <%= topic %></li>
         <% end %>
         <% event.time_list.each do |time| %>
-        <li><%= time %></li>
+        <li>&bull; <%= time %></li>
         <% end %>
         <% event.day_list.each do |day| %>
-        <li><%= day %></li>
+        <li>&bull; <%= day %></li>
         <% end %>
         <% event.frequency_list.each do |frequency| %>
-        <li><%= frequency %></li>
+        <li>&bull; <%= frequency %></li>
         <% end %>
       </ul>
     </div>
@@ -48,7 +48,7 @@
     <section class="card-back">
       <% if event.image_binary %>
       <div class="left">
-        <img class="card-image" src="data:<%= event.image_content_type %>;base64,<%= event.image_binary %>" alt="<%= event.name %> image" />
+        <img class="card-image" src="/events/<%= event.id%>.png" alt="<%= event.name %> image" />
       </div>
       <% end %>
       <div class="right">
