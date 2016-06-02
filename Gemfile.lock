@@ -38,6 +38,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
+    addressable (2.4.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.6.1)
       execjs
@@ -45,12 +46,20 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.5)
+    capybara (2.7.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (0.11.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
       mimemagic (>= 0.3.0)
+    cliver (0.3.2)
     codeclimate-test-reporter (0.5.0)
       simplecov (>= 0.7.1, < 1.0.0)
     coffee-rails (4.1.1)
@@ -102,6 +111,11 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
+    poltergeist (1.9.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     puma (3.4.0)
     rack (1.6.4)
     rack-pjax (0.8.0)
@@ -191,6 +205,11 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    websocket-driver (0.6.4)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -199,6 +218,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   autoprefixer-rails
   byebug
+  capybara
   carrierwave
   codeclimate-test-reporter
   jbuilder (~> 2.0)
@@ -206,6 +226,7 @@ DEPENDENCIES
   mini_magick
   newrelic_rpm
   pg (~> 0.15)
+  poltergeist
   puma
   rails (= 4.2.6)
   rails_admin
