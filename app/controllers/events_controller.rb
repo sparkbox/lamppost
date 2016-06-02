@@ -1,16 +1,19 @@
+require_relative "../models/topic"
+require_relative "../models/day"
+require_relative "../models/time"
+require_relative "../models/frequency"
 class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    if params[:topics] || params[:times] || params[:days] || params[:frequencies]
-      @events = Event.tagged_with(params[:topics]||params[:times] || params[:days] ||params[:frequencies], :any => true)
-    end
 
-    @topics = ActsAsTaggableOn::Tagging.where(context: 'topics').map { |tagging| tagging.tag.name }.uniq
-    @days = ActsAsTaggableOn::Tagging.where(context: 'days').map { |tagging| tagging.tag.name }.uniq
-    @times = ActsAsTaggableOn::Tagging.where(context: 'times').map { |tagging| tagging.tag.name }.uniq
-    @frequencies = ActsAsTaggableOn::Tagging.where(context: 'frequencies').map { |tagging| tagging.tag.name }.uniq
-
+    # if params[:topics] || params[:times] || params[:days] || params[:frequencies]
+    #   @events = Event.tagged_with(params[:topics]||params[:times] || params[:days] ||params[:frequencies], :any => true)
+    # end
+    @topics = Topic.tag_data(params[:topics])
+    @days  = Day.tag_data(params[:days])
+    @times = Time.tag_data(params[:times])
+    @frequencies  = Frequency.tag_data(params[:frequencies])
 
     respond_to do |format|
       format.html  # index.html.erb

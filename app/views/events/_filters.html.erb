@@ -12,10 +12,11 @@
 
   <div class="event-filters__group" data-filter-category="topics" role="group" aria-labelledby="filter-group-heading-topics">
     <h1 class="event-filters__group-heading" id="filter-group-heading-topics">Topics:</h1>
-    <% @topics.each do |topic| %>
+
+  <% @topics.each do |topic| %>
     <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= topic.tr(" ", "_") %>" id="tag-id-<%= topic %>" name="tag-id-<%= topic %>">
-      <label for="tag-id-<%= topic %>"><%= topic %></label>
+      <input class="event-filters__filter" type="checkbox" <%= topic.status%> data-tag="<%= topic.data_tag %>" id="tag-id-<%= topic.name %>" name="tag-id-<%= topic.name %>">
+      <label for="tag-id-<%= topic.name %>"><%= topic.name %></label>
     </div>
     <% end %>
   </div>
@@ -23,30 +24,30 @@
   <div class="event-filters__group" data-filter-category="time-of-day" role="group" aria-labelledby="filter-group-heading-timeofday">
     <h1 class="event-filters__group-heading" id="filter-group-heading-timeofday">Time of Day:</h1>
     <% @times.each do |time| %>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= time.tr(" ", "_") %>" id="tag-id-<%= time %>" name="tag-id-<%= time %>">
-      <label for="tag-id-<%= time %>"><%= time %></label>
-    </div>
-    <% end %>
+      <div class="event-filters__checkbox">
+        <input class="event-filters__filter" type="checkbox" <%= time.status%> data-tag="<%= time.data_tag %>" id="tag-id-<%= time.name %>" name="tag-id-<%= time.name %>">
+        <label for="tag-id-<%= time.name %>"><%= time.name %></label>
+      </div>
+      <% end %>
   </div>
 
   <div class="event-filters__group" data-filter-category="day-of-week" role="group" aria-labelledby="filter-group-heading-day">
     <h1 class="event-filters__group-heading" id="filter-group-heading-day">Day:</h1>
     <% @days.each do |day| %>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= day.tr(" ", "_") %>" id="tag-id-<%= day %>" name="tag-id-<%= day %>">
-      <label for="tag-id-<%= day %>"><%= day %></label>
-    </div>
-    <% end %>
+      <div class="event-filters__checkbox">
+        <input class="event-filters__filter" type="checkbox" <%= day.status%> data-tag="<%= day.data_tag %>" id="tag-id-<%= day.name %>" name="tag-id-<%= day.name %>">
+        <label for="tag-id-<%= day.name %>"><%= day.name %></label>
+      </div>
+      <% end %>
   </div>
 
   <div class="event-filters__group" data-filter-category="frequency" role="group" aria-labelledby="filter-group-heading-frequency">
     <h1 class="event-filters__group-heading" id="filter-group-heading-frequency">Frequency:</h1>
     <% @frequencies.each do |frequency| %>
-    <div class="event-filters__checkbox">
-      <input class="event-filters__filter" type="checkbox" data-tag="<%= frequency.tr(" ", "_") %>" id="tag-id-<%= frequency %>" name="tag-id-<%= frequency %>">
-      <label for="tag-id-<%= frequency %>"><%= frequency %></label>
-    </div>
-    <% end %>
+      <div class="event-filters__checkbox">
+        <input class="event-filters__filter" type="checkbox" <%= frequency.status%> data-tag="<%= frequency.data_tag %>" id="tag-id-<%= frequency.name %>" name="tag-id-<%= frequency.name %>">
+        <label for="tag-id-<%= frequency.name %>"><%= frequency.name %></label>
+      </div>
+      <% end %>
   </div>
 </div>
