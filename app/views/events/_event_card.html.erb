@@ -30,16 +30,16 @@
       <p><%= event.description %> </p>
       <ul>
         <% event.topic_list.each do |topic| %>
-        <li><%= topic %></li>
+        <li>&bull; <%= topic %></li>
         <% end %>
         <% event.time_list.each do |time| %>
-        <li><%= time %></li>
+        <li>&bull; <%= time %></li>
         <% end %>
         <% event.day_list.each do |day| %>
-        <li><%= day %></li>
+        <li>&bull; <%= day %></li>
         <% end %>
         <% event.frequency_list.each do |frequency| %>
-        <li><%= frequency %></li>
+        <li>&bull; <%= frequency %></li>
         <% end %>
       </ul>
     </div>
