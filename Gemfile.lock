@@ -81,6 +81,12 @@ GEM
     haml (4.0.7)
       tilt
     i18n (0.7.0)
+    jasmine-core (2.4.1)
+    jasmine-rails (0.12.4)
+      jasmine-core (>= 1.3, < 3.0)
+      phantomjs (>= 1.9)
+      railties (>= 3.2.0)
+      sprockets-rails
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -111,6 +117,7 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pg (0.18.4)
+    phantomjs (2.1.1.0)
     poltergeist (1.9.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -221,6 +228,7 @@ DEPENDENCIES
   capybara
   carrierwave
   codeclimate-test-reporter
+  jasmine-rails
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
@@ -239,4 +247,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.1
+   1.12.5

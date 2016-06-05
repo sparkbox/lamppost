@@ -27,6 +27,7 @@ end
 
 group :development, :test do
   gem 'byebug'
+  gem 'jasmine-rails'
 end
 
 group :development do

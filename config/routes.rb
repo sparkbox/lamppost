@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :events
 
