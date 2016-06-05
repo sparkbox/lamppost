@@ -14,5 +14,6 @@
 //= require ./shims
 //= require ./utility
 //= require ./dom-selector
+//= require ./query-string
 //= require ./tag-manager
 //= require ./site-wide
