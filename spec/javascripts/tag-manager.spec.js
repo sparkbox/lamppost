@@ -7,7 +7,7 @@ describe('TagManager',function(){
 
   it('has tag categories', function() {
     let tm = TagManager();
-    tm.add('greetings', []);
+    tm.add(null, 'greetings');
     let expected = {
       greetings: []
     };
@@ -16,7 +16,7 @@ describe('TagManager',function(){
 
   it('can add tags to any category', function() {
     let tm = TagManager();
-    tm.add('greetings', ['hi']);
+    tm.add(['hi'], 'greetings');
     let expected = {
       greetings: ['hi']
     };
@@ -25,9 +25,8 @@ describe('TagManager',function(){
 
   it('can remove tags from any category', function() {
     let tm = TagManager();
-    tm.add('greetings', ['hi']);
-    tm.add('greetings', ['hello']);
-    tm.remove('greetings', ['hello']);
+    tm.add(['hi', 'hello'], 'greetings');
+    tm.remove(['hello'], 'greetings');
     let expected = {
       greetings: ['hi']
     };
