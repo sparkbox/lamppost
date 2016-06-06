@@ -2,6 +2,10 @@ function TagManager(initTags) {
 
   var _activeTags = initTags || {};
 
+  function _categoryNames() {
+    return Object.getOwnPropertyNames(_activeTags);
+  }
+
   function _exists(item, arr, fromIndex) {
     return arr.indexOf(item, (fromIndex || 0)) > -1;
   }
@@ -18,6 +22,10 @@ function TagManager(initTags) {
     return _activeTags;
   }
 
+  function setTags(tagObject) {
+    return _activeTags = tagObject;
+  }
+
   function remove(removalList, category) {
     if(!_activeTags.hasOwnProperty(category)) return;
     _activeTags[category] = _activeTags[category].filter(function(tag) {
@@ -27,7 +35,7 @@ function TagManager(initTags) {
   }
 
   function has(tag, category) {
-    var categories = category ? [category] : Object.getOwnPropertyNames(_activeTags);
+    var categories = category ? [category] : _categoryNames();
     return categories.filter(function(cat) {
       return _exists(tag, _activeTags[cat]);
     }).length > 0;
@@ -48,11 +56,18 @@ function TagManager(initTags) {
     return _activeTags;
   }
 
+  function allTags() {
+    return _categoryNames().reduce(function(tagList, category) {
+      Array.prototype.push.apply(tagList, _activeTags[category]);
+      return tagList;
+    }, []);
+  }
+
   function serializeTags() {
-    var categoryNames = Object.getOwnPropertyNames(_activeTags),
-        categoryDelimiter;
-    var queryString = categoryNames.reduce(function(qs, category, i) {
-      categoryDelimiter = i < (categoryNames.length - 1) ? '&' : '';
+    if(allTags().length < 1) return '/';
+    var categoryDelimiter;
+    var queryString = _categoryNames().reduce(function(qs, category, i) {
+      categoryDelimiter = i < (_categoryNames().length - 1) ? '&' : '';
       return qs + category  + '=' + _activeTags[category].join(',') + categoryDelimiter;
     }, '?');
     return encodeURI(queryString);
@@ -60,10 +75,12 @@ function TagManager(initTags) {
 
   return {
     add: add,
+    setTags: setTags,
     remove: remove,
     has: has,
     category: category,
     tags: tags,
+    allTags: allTags,
     serializeTags: serializeTags
   };
 }
