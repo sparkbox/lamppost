@@ -23,9 +23,12 @@ function lampPostMain() {
   */
   DOM.html.classList.remove('no-js');
   DOM.html.classList.add('js');
+
+  Element.prototype.taggedWith = extensions.TaggedWith;
+
   var QS = QueryString();
-  var initialTags = QS.parse(window.location.search);
-  var TAG_MANAGER = TagManager(initialTags);
+  var TAG_MANAGER = TagManager(QS.parse(window.location.search));
+  var CARD_LIST = CardList(DOM.eventCards);
 
   /*
   ================================================================
@@ -58,6 +61,7 @@ function lampPostMain() {
   ================================================================
   */
   window.addEventListener('scroll', throttle(updateHeader, 50));
+  window.addEventListener('popstate', updatePageState);
   DOM.eventFiltersToggleButton.addEventListener('click', toggleFilters);
   DOM.eventFiltersFilterGroups.each(setupFiltering);
   DOM.shareableLinks.each(setupShareableLink);
@@ -85,14 +89,34 @@ function lampPostMain() {
     }
   }
 
+  function updatePageState() {
+    TAG_MANAGER.setTags(history.state);
+    updateFilters();
+    updateEventListing();
+  }
+
   function setupFiltering(filterGroup) {
-    var category = filterGroup.getAttribute('data-filter-category');
     var filters = DOM.filters.from(filterGroup);
+    var category = filterGroup.getAttribute('data-filter-category');
     filters.each(function(filter) {
       filter.addEventListener('change', function(e) {
-        updateTags.call(this, category, e);
+        updateTags.bind(filter)(category, e);
         updateEventListing(category);
-        history.pushState(null, null, TAG_MANAGER.serializeTags());
+        history.pushState(TAG_MANAGER.tags(), null, TAG_MANAGER.serializeTags());
+      });
+    });
+  }
+
+  function updateFilters() {
+    DOM.eventFiltersFilterGroups.each(function(filterGroup) {
+      var filters = DOM.filters.from(filterGroup);
+      filters.each(function(filter) {
+        var tag = filter.getAttribute('data-tag');
+        if(TAG_MANAGER.has(tag)) {
+          filter.checked = true;
+        } else {
+          filter.checked = false;
+        }
       });
     });
   }
@@ -108,26 +132,11 @@ function lampPostMain() {
   }
 
   function updateEventListing(tagCategory) {
-    if(TAG_MANAGER.category(tagCategory).list().length > 0) {
-      DOM.eventCards.each(updateEventCard);
-    } else {
-      showAllElements(DOM.eventCards);
-    }
-  }
-
-  function updateEventCard(eventCard) {
-    if(cardActive(eventCard)) {
-      showElement(eventCard);
-    } else {
-      hideElement(eventCard);
-    }
-  }
-
-  function cardActive(eventCard) {
-    var cardTags = eventCard.getAttribute('data-tags').split(' ');
-    return cardTags.filter(function(tag) {
-      return TAG_MANAGER.has(tag);
-    }).length > 0;
+    var tags = TAG_MANAGER.allTags();
+    var visCards = CARD_LIST.cardsWith(tags);
+    var hidCards = CARD_LIST.cardsWithout(tags);
+    visCards.forEach(showElement);
+    hidCards.forEach(hideElement);
   }
 
   function setupShareableLink(linkComponent) {
