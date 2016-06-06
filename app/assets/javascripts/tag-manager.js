@@ -31,6 +31,9 @@ function TagManager(initTags) {
     _activeTags[category] = _activeTags[category].filter(function(tag) {
       return !_exists(tag, removalList);
     });
+    if(_activeTags[category].length < 1) {
+      delete _activeTags[category];
+    }
     return _activeTags;
   }
 
