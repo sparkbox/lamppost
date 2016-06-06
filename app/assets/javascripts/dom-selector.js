@@ -7,7 +7,7 @@ function DomSelector() {
 
     all: function(elements) {
       var nodeList = document.querySelectorAll(elements);
-      nodeList.each = function() {
+      nodeList.forEach = function() {
         return Array.prototype.forEach.apply(this, arguments);
       };
       return nodeList;
@@ -25,7 +25,7 @@ function DomSelector() {
       return {
         from: function(parentElement) {
           var nodeList = parentElement.querySelectorAll(children);
-          nodeList.each = function() {
+          nodeList.forEach = function() {
             return Array.prototype.forEach.apply(this, arguments);
           }
           return nodeList;

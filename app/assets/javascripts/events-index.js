@@ -65,8 +65,8 @@ function lampPostMain() {
   window.addEventListener('scroll', throttle(updateHeader, 50));
   window.addEventListener('popstate', updatePageState);
   DOM.eventFiltersToggleButton.addEventListener('click', toggleFilters);
-  DOM.eventFiltersFilterGroups.each(setupFiltering);
-  DOM.shareableLinks.each(setupShareableLink);
+  DOM.eventFiltersFilterGroups.forEach(setupFiltering);
+  DOM.shareableLinks.forEach(setupShareableLink);
 
 
   /*
@@ -101,19 +101,24 @@ function lampPostMain() {
   function setupFiltering(filterGroup) {
     var filters = DOM.filters.from(filterGroup);
     var category = filterGroup.getAttribute('data-filter-category');
-    filters.each(function(filter) {
+    filters.forEach(function(filter) {
       filter.addEventListener('change', function(e) {
-        updateTags.bind(filter)(category, e);
+        updateTags.bind(filter)(category);
+        updateHistory();
         updateEventListing();
-        history.pushState(TAG_MANAGER.tags(), null, TAG_MANAGER.serializeTags());
+        e.stopPropagation();
       });
     });
+  }
+
+  function updateHistory() {
+    history.pushState(TAG_MANAGER.tags(), null, TAG_MANAGER.serializeTags());
   }
 
   function updateFilters() {
     DOM.eventFiltersFilterGroups.each(function(filterGroup) {
       var filters = DOM.filters.from(filterGroup);
-      filters.each(function(filter) {
+      filters.forEach(function(filter) {
         var tag = filter.getAttribute('data-tag');
         if(TAG_MANAGER.has(tag)) {
           filter.checked = true;
@@ -124,14 +129,13 @@ function lampPostMain() {
     });
   }
 
-  function updateTags(category, e) {
+  function updateTags(category) {
     var tag = this.getAttribute('data-tag');
     if(this.checked) {
       TAG_MANAGER.add([tag], category);
     } else {
       TAG_MANAGER.remove([tag], category);
     }
-    e.stopPropagation();
   }
 
   function updateEventListing() {
