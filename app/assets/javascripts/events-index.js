@@ -30,6 +30,7 @@ function lampPostMain() {
   var TAG_MANAGER = TagManager(QS.parse(window.location.search));
   var CARD_LIST = CardList(DOM.eventCards);
 
+
   /*
   ================================================================
     Helper Functions
@@ -54,6 +55,7 @@ function lampPostMain() {
   function toggleFilters() {
     DOM.sideBar.classList.toggle('filters-open');
   }
+  
 
   /*
   ================================================================
