@@ -55,7 +55,7 @@ function lampPostMain() {
   function toggleFilters() {
     DOM.sideBar.classList.toggle('filters-open');
   }
-  
+
 
   /*
   ================================================================
@@ -92,7 +92,8 @@ function lampPostMain() {
   }
 
   function updatePageState() {
-    TAG_MANAGER.setTags(history.state);
+    var pageState = history.state ? history.state : {};
+    TAG_MANAGER.setTags(pageState);
     updateFilters();
     updateEventListing();
   }
@@ -103,7 +104,7 @@ function lampPostMain() {
     filters.each(function(filter) {
       filter.addEventListener('change', function(e) {
         updateTags.bind(filter)(category, e);
-        updateEventListing(category);
+        updateEventListing();
         history.pushState(TAG_MANAGER.tags(), null, TAG_MANAGER.serializeTags());
       });
     });
@@ -133,7 +134,7 @@ function lampPostMain() {
     e.stopPropagation();
   }
 
-  function updateEventListing(tagCategory) {
+  function updateEventListing() {
     var tags = TAG_MANAGER.allTags();
     var visCards = CARD_LIST.cardsWith(tags);
     var hidCards = CARD_LIST.cardsWithout(tags);

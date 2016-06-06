@@ -3,7 +3,7 @@ function TagManager(initTags) {
   var _activeTags = initTags || {};
 
   function _categoryNames() {
-    return Object.getOwnPropertyNames(_activeTags);
+    return Object.getOwnPropertyNames(_activeTags) || [];
   }
 
   function _exists(item, arr, fromIndex) {
