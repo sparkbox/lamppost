@@ -37,7 +37,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   def store_binary file
      @model.image_binary = Base64.encode64(File.open(@model.image.file.file).read)
-     @model.image_content_type = self.content_type
+     @model.image_content_type = 'image/png'
      @model.save
   end
 
