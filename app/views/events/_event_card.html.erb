@@ -23,7 +23,7 @@
             <div class="icon-container">
               <%= render 'location_icon.html.erb' %>
             </div>
-            <%= event.location_name %>
+            <span class="location-name"><%= event.location_name %></span>
             <ul class="subhead info-subhead">
               <li><%= event.street_address %></li>
               <li><%= event.city %> <%= event.state %> <%= event.zipcode %></li>
