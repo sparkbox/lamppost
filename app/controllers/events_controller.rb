@@ -28,7 +28,10 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html  # show.html.erb
       format.json  { render :json => @event }
-      format.png { send_data Base64.decode64(@event.image_binary), :type => @event.image_content_type, :disposition => 'inline'}
+      format.png {
+        expires_in 1.year, :public => true
+        send_data Base64.decode64(@event.image_binary), :type => @event.image_content_type, :disposition => 'inline'
+      }
     end
   end
 
