@@ -116,7 +116,7 @@ function lampPostMain() {
   }
 
   function updateFilters() {
-    DOM.eventFiltersFilterGroups.each(function(filterGroup) {
+    DOM.eventFiltersFilterGroups.forEach(function(filterGroup) {
       var filters = DOM.filters.from(filterGroup);
       filters.forEach(function(filter) {
         var tag = filter.getAttribute('data-tag');
