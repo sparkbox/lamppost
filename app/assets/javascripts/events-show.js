@@ -1,7 +1,7 @@
-function lampPostMain() {  
+function lampPostMain() {
   DOM.eventCards = select.all('.event-card');
   DOM.shareableLinks = select.all('.shareable-link');
-  DOM.shareableLinks.each(setupShareableLink);
+  DOM.shareableLinks.forEach(setupShareableLink);
 
   function setupShareableLink(linkComponent) {
     var linkInput = select.child('.shareable-url-text-input').from(linkComponent);
