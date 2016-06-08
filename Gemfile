@@ -20,6 +20,11 @@ gem 'autoprefixer-rails'
 gem 'rails_admin_tag_list'
 gem 'acts-as-taggable-on', '~> 3.4'
 
+gem 'rack-cache'
+gem 'dalli'
+gem 'kgio'
+gem 'memcachier'
+
 group :test do
   gem 'capybara'
   gem 'poltergeist'

@@ -24,11 +24,34 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
+  # Cache static assets
+  config.action_controller.perform_caching = true
+  config.serve_static_assets = true
+
+  # --------------------------------------------------------------------------
+  # MEMCACHIER
+  # ----------
+
+  # Configure rails caching (action, fragment)
+  config.cache_store = :dalli_store
+
+  # Configure Rack::Cache (rack middleware, whole page / static assets) (we set
+  # value_max_bytes to 10MB, most memcache servers won't allow values larger
+  # than 1MB but this stops Rack::Cache returning a 5xx error. With this
+  # option, Rack::Cache just returns a miss).
+  client = Dalli::Client.new(ENV["MEMCACHIER_SERVERS"],
+                             :value_max_bytes => 10485760)
+  config.action_dispatch.rack_cache = {
+    :metastore    => client,
+    :entitystore  => client
+  }
+  config.static_cache_control = "public, max-age=2592000"
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # Do not fallback to assets pipelines if a precompiled asset is missed.
   config.assets.compile = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
@@ -55,7 +78,7 @@ Rails.application.configure do
   config.logger = Logger.new(STDOUT)
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'

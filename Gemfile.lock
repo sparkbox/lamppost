@@ -70,6 +70,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    dalli (2.7.6)
     debug_inspector (0.0.2)
     docile (1.1.5)
     erubis (2.7.0)
@@ -100,10 +101,12 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kgio (2.10.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    memcachier (0.0.2)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
@@ -125,6 +128,8 @@ GEM
       websocket-driver (>= 0.2.0)
     puma (3.4.0)
     rack (1.6.4)
+    rack-cache (1.6.1)
+      rack (>= 0.4)
     rack-pjax (0.8.0)
       nokogiri (~> 1.5)
       rack (~> 1.1)
@@ -228,14 +233,18 @@ DEPENDENCIES
   capybara
   carrierwave
   codeclimate-test-reporter
+  dalli
   jasmine-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kgio
+  memcachier
   mini_magick
   newrelic_rpm
   pg (~> 0.15)
   poltergeist
   puma
+  rack-cache
   rails (= 4.2.6)
   rails_admin
   rails_admin_tag_list
@@ -245,6 +254,9 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+RUBY VERSION
+   ruby 2.2.1p85
 
 BUNDLED WITH
    1.12.5

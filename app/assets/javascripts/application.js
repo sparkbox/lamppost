@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require ./shims
 //= require ./utility
+//= require ./dom-extensions
 //= require ./dom-selector
 //= require ./query-string
 //= require ./tag-manager
+//= require ./card-list
 //= require ./site-wide

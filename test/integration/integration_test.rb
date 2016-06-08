@@ -8,14 +8,9 @@ class JSTest < ActionDispatch::IntegrationTest
     Capybara.current_driver = Capybara.javascript_driver
   end
 
-  test 'page should have content' do
-    visit '/events'
-    assert page.has_selector?('main')
-  end
-
-  # test 'filters should filter' do
+  # test 'page should have content' do
   #   visit '/events'
-  #   check('tag-id-Ruby')
+  #   assert page.has_selector?('main')
   # end
 
 end

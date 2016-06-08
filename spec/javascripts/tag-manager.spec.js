@@ -33,6 +33,17 @@ describe('TagManager',function(){
     expect(tm.tags()).toEqual(expected);
   });
 
+  it('can set the tag object explicitly', function() {
+    let tm = TagManager();
+    tm.setTags({
+      greetings: ['hi', 'hello']
+    });
+    let expected = {
+      greetings: ['hi', 'hello']
+    };
+    expect(tm.tags()).toEqual(expected);
+  });
+
   it('knows what tags it has', function() {
     let tm = TagManager({
       greetings: ['hi', 'hello'],
@@ -59,6 +70,15 @@ describe('TagManager',function(){
     });
     let category = tm.category('greetings');
     expect(category.list()).toEqual(['hi', 'hello']);
+  });
+
+  it('can list all tags as a flat array', function() {
+    let tm = TagManager({
+      greetings: ['hi', 'hello'],
+      names: ['jane', 'jim']
+    });
+    let expected = ['hi', 'hello', 'jane', 'jim'];
+    expect(tm.allTags()).toEqual(expected);
   });
 
   it('can serialize all tags', function() {
