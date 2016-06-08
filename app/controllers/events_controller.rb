@@ -1,19 +1,13 @@
-require_relative "../models/topic"
-require_relative "../models/day"
-require_relative "../models/time"
-require_relative "../models/frequency"
+require_relative "../models/tag"
 class EventsController < ApplicationController
 
   def index
     @events = Event.all
 
-    # if params[:topics] || params[:times] || params[:days] || params[:frequencies]
-    #   @events = Event.tagged_with(params[:topics]||params[:times] || params[:days] ||params[:frequencies], :any => true)
-    # end
-    @topics = Topic.tag_data(params[:topics])
-    @days  = Day.tag_data(params[:days])
-    @times = Time.tag_data(params[:times])
-    @frequencies  = Frequency.tag_data(params[:frequencies])
+    @topics = tag_data(params[:topics],'topics')
+    @days  = tag_data(params[:days],'days')
+    @times = tag_data(params[:times],'times')
+    @frequencies  = tag_data(params[:frequencies],'frequencies')
 
     respond_to do |format|
       format.html  { expires_in 1.day, :public => true } # index.html.erb
