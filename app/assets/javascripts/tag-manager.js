@@ -73,7 +73,7 @@ function TagManager(initTags) {
       categoryDelimiter = i < (_categoryNames().length - 1) ? '&' : '';
       return qs + category  + '=' + _activeTags[category].join(',') + categoryDelimiter;
     }, '?');
-    return encodeURI(queryString);
+    return queryString;
   }
 
   return {

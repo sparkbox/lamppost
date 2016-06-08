@@ -13,7 +13,7 @@ def tag_data(parameters, category)
   tags.each do |tag|
     tag_obj = Tag.new
     tag_obj.name = tag
-    tag_obj.data_tag = tag.tr(" ", "_")
+    tag_obj.data_tag = URI.encode(tag)
     tag_obj.status = tag_list.include?(tag) ? "checked" : ""
     tag_data << tag_obj
   end
