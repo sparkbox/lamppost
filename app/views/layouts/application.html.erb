@@ -11,6 +11,9 @@
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
+  <!--[if lte IE 10]>
+    <%= stylesheet_link_tag "ie" %>
+  <![endif]-->
   <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/655912/7659752/css/fonts.css" />
   <%= auto_discovery_link_tag :rss, events_url(:format => :rss) %>
 </head>

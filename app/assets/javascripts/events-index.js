@@ -112,6 +112,7 @@ function lampPostMain() {
   }
 
   function updateHistory() {
+    if(!history.pushState) return;
     history.pushState(TAG_MANAGER.tags(), null, TAG_MANAGER.serializeTags());
   }
 

@@ -1,0 +1,9 @@
+// ie10/9 Specific Styles
+
+@import 'base/variables';
+
+.event-card {
+  @media (min-width: $break-large) {
+    margin-left: $sidebar-width;
+  }
+}

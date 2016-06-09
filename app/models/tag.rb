@@ -8,7 +8,7 @@ end
 
 def tag_data(parameters, category)
   tag_list = ActsAsTaggableOn.default_parser.new(parameters).parse
-  tags = ActsAsTaggableOn::Tagging.where(context: category).map { |tagging| tagging.tag.name }.uniq
+  tags = all_tags category
   tag_data = []
   tags.each do |tag|
     tag_obj = Tag.new
