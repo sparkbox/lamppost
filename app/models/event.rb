@@ -2,27 +2,25 @@ class Event < ActiveRecord::Base
 
   has_many :links, dependent: :destroy
   before_create :validate_name
-  before_save :populate_tag_list
   validates :name, presence: true
   validates_uniqueness_of :name
   mount_uploader :image, ImageUploader
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   acts_as_taggable_on :topics, :times, :days, :frequencies
-end
 
-def validate_name
-  approved = Blacklist.approved?(self.name)
-  errors.add(:name, 'Name is not accepted. Please enter new.')if !approved
-  approved
-end
+  def entire_tag_list
+    tags = topics.collect { |topic| URI.encode(topic.name) }
+    tags += times.collect { |time| URI.encode(time.name) }
+    tags +=  days.collect { |day| URI.encode(day.name) }
+    tags +=  frequencies.collect { |frequency| URI.encode(frequency.name) }
+    tags.join ' '
+  end
 
-def populate_tag_list
-  tags_list_array = Array.new
-  tags_list_array << ActsAsTaggableOn::Tagging.all.where(context: "topics").map {|tagging| URI.encode(tagging.tag.name) }
-  tags_list_array << ActsAsTaggableOn::Tagging.all.where(context: "times").map {|tagging|  URI.encode(tagging.tag.name)  }
-  tags_list_array << ActsAsTaggableOn::Tagging.all.where(context: "days").map {|tagging|  URI.encode(tagging.tag.name)  }
-  tags_list_array << ActsAsTaggableOn::Tagging.all.where(context: "frequencies").map {|tagging|  URI.encode(tagging.tag.name) }
+  def validate_name
+    approved = Blacklist.approved?(self.name)
+    errors.add(:name, 'Name is not accepted. Please enter new.')if !approved
+    approved
+  end
 
-  self.tag_list =  tags_list_array.join(" ")
 end
