@@ -6,4 +6,8 @@
   @media (min-width: $break-large) {
     margin-left: $sidebar-width;
   }
+
+  .card-front .right ul li {
+    display: inline-block;
+  }
 }
