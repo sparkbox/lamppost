@@ -92,7 +92,6 @@ function lampPostMain() {
   }
 
   function updatePageState() {
-    console.log(history.state);
     var pageState = history.state ? history.state : {};
     TAG_MANAGER.setTags(pageState);
     updateFilters();
