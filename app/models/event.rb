@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
 
   has_many :links, dependent: :destroy
   before_create :validate_name
-  after_save :populate_tag_list
+  before_save :populate_tag_list
   validates :name, presence: true
   validates_uniqueness_of :name
   mount_uploader :image, ImageUploader
