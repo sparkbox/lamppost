@@ -92,6 +92,7 @@ function lampPostMain() {
   }
 
   function updatePageState() {
+    console.log(history.state);
     var pageState = history.state ? history.state : {};
     TAG_MANAGER.setTags(pageState);
     updateFilters();
@@ -112,6 +113,7 @@ function lampPostMain() {
   }
 
   function updateHistory() {
+    if(!history.pushState) return;
     history.pushState(TAG_MANAGER.tags(), null, TAG_MANAGER.serializeTags());
   }
 
