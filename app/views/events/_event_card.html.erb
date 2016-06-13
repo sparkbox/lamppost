@@ -57,9 +57,9 @@
         </ul>
       </div>
       <div class="card-shareable-links">
-        <h4 class="subhead">Shareable Link</h4>
+        <h4 class="subhead"><%= label_tag("shareable-url-#{event.id}", "Sharable Link") %></h4>
         <div class="shareable-link">
-          <%= text_field_tag 'shareable-url', event_url(event), class: 'shareable-url-text-input', readonly: true %>
+          <%= text_field_tag "shareable-url-#{event.id}", event_url(event), class: 'shareable-url-text-input', readonly: true %>
         </div>
       </div>
       <div class="card-report">
