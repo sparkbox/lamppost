@@ -19,10 +19,6 @@ body {
   box-sizing: border-box;
   padding-top: $padding * 4;
   max-height: 100%;
-
-  @media(min-width: $break-large) {
-    margin-left: $sidebar-width;
-  }
 }
 
 .hidden {

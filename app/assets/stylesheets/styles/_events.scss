@@ -11,6 +11,10 @@
   min-height: 20em;
   overflow: auto;
   line-height: 1.5em;
+
+  @media (min-width: $break-large) {
+    margin-left: $sidebar-width + ($margin * 4);
+  }
 }
 
 .card-front {
@@ -205,7 +209,7 @@
     ul {
       margin-top: 1em;
       li {
-        display: inline;
+        display: inline-block;
         margin-right: .5em;
         white-space: nowrap;
       }
