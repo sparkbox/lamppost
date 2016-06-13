@@ -2,3 +2,74 @@
 
 @import 'base/variables';
 @import 'base/colors';
+
+.site-city {
+  margin: $margin 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.25em;
+
+  .compact & {
+    margin: $margin 0;
+    padding: 0;
+    border: 0;
+    font-size: 1.25em;
+  }
+}
+
+
+
+
+.site-about {
+  padding: ($padding * 4) 0;
+  border-top: $divider;
+
+  .js & { border-bottom: $divider; }
+
+  .compact & {
+    padding: ($padding * 4) 0;
+    border-top: $divider;
+  }
+}
+
+.site-about__text {
+  margin-bottom: $margin;
+
+  @media (min-width: $break-large) {
+    margin-bottom: $margin * 4;
+  }
+}
+
+
+
+
+
+
+.site-logo {
+  height: 290px;
+
+  .logo-text-lines { transform: none; opacity: 1; }
+  .logo-lightpost-small { opacity: 0; }
+  .logo-text,
+  .logo-lightpost-small,
+  .logo-showerhead {
+    transform: none;
+  }
+
+  @media (min-width: $break-large) {
+
+    .compact & {
+      height: 290px;
+
+      .logo-text-lines { transform: none; opacity: 1; }
+      .logo-lightpost-small { opacity: 0; }
+      .logo-text,
+      .logo-lightpost-small,
+      .logo-showerhead {
+        transform: none;
+      }
+
+      .logo-lightpost-small { opacity: 0; }
+    }
+  }
+}

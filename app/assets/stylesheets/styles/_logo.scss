@@ -1,33 +1,80 @@
 .site-logo {
+  position: relative;
+  margin: 0 auto;
+  width: 336px;
+  max-width: 100%;
+  height: 46px;
   font-size: 1em;
   text-align: center;
+  overflow: hidden;
+  transition: height .4s ease-out;
 
-  .lamp-post-logo {
-    width: 336px;
-    max-width: 100%;
-    height: 46px;
-    transition: height .4s ease-out;
+  a {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-component {
+    position: absolute;
+    width: 100%;
+    overflow: visible;
+    transition: transform .4s ease-out;
+  }
+
+  .logo-text {
+    transform: scale(0.6) translate(2em, -19.5em);
+    will-change: transform;
+  }
+
+  .logo-text-lines {
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity .4s ease-out;
+  }
+
+  .logo-lightpost-small {
+    transform: scale(0.75) translate(-8em, -2.5em);
+    will-change: transform, opacity;
+    transition: opacity .8s ease-out, transform .4s ease-out;
+  }
+
+  .logo-showerhead {
+    transform: scale(0.75) translate(-8em, -2.5em);
+    will-change: transform;
+  }
+
+  @media (min-width: $break-large) {
+    height: 290px;
+
+    .logo-text-lines { transform: none; opacity: 1; }
+    .logo-lightpost-small { opacity: 0; }
+
+    .logo-text,
+    .logo-lightpost-small,
+    .logo-showerhead {
+      transform: none;
+    }
 
     .compact & {
       height: 46px;
 
-      .logo-text { transform: scale(0.6) translate(10em, -13.7em); }
+      .logo-text { transform: scale(0.6) translate(2em, -19.5em); }
       .logo-text-lines { opacity: 0; }
-      .logo-showerhead { transform: scale(0.75) translate(-4em, .5em);}
-
+      .logo-showerhead { transform: scale(0.75) translate(-8em, -2.5em); }
       .logo-lightpost-small {
-        transform: scale(0.75) translate(-4em, .5em);
+        transform: scale(0.75) translate(-8em, -2.5em);
         opacity: 1;
       }
     }
+  }
 
-    g {
-      transition: transform .4s ease-out;
-    }
+  .lamp-post-logo {
+    width: 100%;
+    height: 290px;
 
-    .logo-path {
-      fill: $highlight;
-    }
+    .logo-path { fill: $highlight; }
 
     .logo-line {
       stroke: $highlight;
@@ -41,39 +88,6 @@
       stroke-linecap: round;
     }
 
-    .logo-text-lines {
-      opacity: 0;
-      will-change: opacity;
-      transition: opacity .4s ease-out;
-    }
-
-    .logo-text {
-      transform: scale(0.6) translate(10em, -13.7em);
-      will-change: transform;
-    }
-
-    .logo-lightpost-small {
-      transform: scale(0.75) translate(-4em, .5em);
-      will-change: transform, opacity;
-      transition: opacity .8s ease-out, transform .4s ease-out;
-    }
-
-    .logo-showerhead {
-      transform: scale(0.75) translate(-4em, .5em);
-      will-change: transform;
-    }
-
-    @media (min-width: $break-large) {
-      height: 290px;
-
-      .logo-text-lines { transform: none; opacity: 1; }
-      .logo-lightpost-small { opacity: 0; }
-
-      .logo-text,
-      .logo-lightpost-small,
-      .logo-showerhead {
-        transform: none;
-      }
-    }
+    @media (min-width: $break-large) { width: 336px; }
   }
 }
