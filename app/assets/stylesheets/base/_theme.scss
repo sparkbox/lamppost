@@ -1,3 +1,5 @@
+// Colors
+
 $white: #ffffff; //white
 $gray-20: #cccccc; //grey 20%
 $gray-30: #9B9B9B; //grey 30%
@@ -7,3 +9,23 @@ $black: #000000; //black
 $highlight: #F0DF1C;
 $highlight-dim: rgba(#F0DF1C, 0.2);
 $highlight-bright: #F9ED00;
+
+
+// Icons
+.icon-dark {
+  fill: $gray-50;
+}
+.icon-light {
+  fill: $highlight;
+}
+.icon-stroke {
+  stroke: $gray-50;
+}
+
+.icon-white {
+  fill: $white;
+}
+
+.svg-icon {
+  height: 1em;
+}
