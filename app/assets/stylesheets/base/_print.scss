@@ -1,0 +1,30 @@
+@media print {
+
+  .side-bar,
+  .card-image,
+  .card-offsite-links,
+  .card-report  {
+    display: none !important;
+  }
+
+  .card-shareable-links {
+    .subhead,
+    .copy-button {
+      display: none !important;
+    }
+  }
+
+  .right,
+  .left {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .right {
+    margin: 0 1em !important;
+  }
+}
+
+@page {
+
+}
