@@ -10,11 +10,19 @@ class Event < ActiveRecord::Base
   acts_as_taggable_on :topics, :times, :days, :frequencies
 
   def entire_tag_list
-    tags = topics.collect { |topic| URI.encode(topic.name) }
-    tags += times.collect { |time| URI.encode(time.name) }
-    tags +=  days.collect { |day| URI.encode(day.name) }
-    tags +=  frequencies.collect { |frequency| URI.encode(frequency.name) }
-    tags.join ' '
+    tags = topics.collect { |topic| uri_encode(topic.name) }
+    tags += times.collect { |time| uri_encode(time.name) }
+    tags +=  days.collect { |day| uri_encode(day.name) }
+    tags +=  frequencies.collect { |frequency| uri_encode(frequency.name) }
+    tags
+  end
+
+  def joined_tag_list
+    entire_tag_list.join ' '
+  end
+
+  def uri_encode(name)
+    URI.encode(name)
   end
 
   def validate_name
@@ -23,4 +31,9 @@ class Event < ActiveRecord::Base
     approved
   end
 
+  def tag_queried(queried_tags)
+    if queried_tags.length > 0 then
+      'hidden' if entire_tag_list.length == (entire_tag_list - queried_tags.collect { |tag| uri_encode(tag) }).length
+    end
+  end
 end

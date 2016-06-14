@@ -1,7 +1,7 @@
 // ie9 Specific Styles
 
 @import 'base/variables';
-@import 'base/colors';
+@import 'base/theme';
 
 .site-city {
   margin: $margin 0;
@@ -16,8 +16,6 @@
     font-size: 1.25em;
   }
 }
-
-
 
 
 .site-about {
