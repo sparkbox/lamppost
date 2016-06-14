@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @frequencies  = tag_data(params[:frequencies],'frequencies')
 
     respond_to do |format|
-      format.html  { expires_in 1.day, :public => true } # index.html.erb
+      format.html  {  } # index.html.erb
       format.json  { render :json => @events }
       format.rss { render :layout => false }
     end
