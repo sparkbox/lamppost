@@ -1,0 +1,70 @@
+.about-page {
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+
+  .about-header {
+    .about-title {
+      font-size: 3.5em;
+      margin: 1em 0 .25em 0;
+      text-transform: uppercase;
+      color: $highlight;
+      display: inline-block;
+    }
+    .about-button {
+      display: inline-block;
+      max-width: 40%;
+      color: $highlight;
+      font-size: .75em;
+      font-weight: 300;
+      text-transform: uppercase;
+      border: 1px solid $highlight;
+      padding: .5em;
+      box-sizing: border-box;
+      font-weight: $font-weight-select;
+      transition: all .25s ease;
+
+      &:hover, &:active {
+        background-color: $highlight;
+        border: 1px solid $highlight;
+        color: $gray-70;
+
+
+      }
+
+    }
+
+  }
+
+
+  .about-content {
+    text-align: left;
+    background-color: $white;
+    color: $gray-70;
+    padding: 2.5em;
+    margin: 2em auto;
+    line-height: 1.5em;
+    max-width: 54.88em;
+    box-sizing: border-box;
+
+    h1, h2, p {
+      margin-bottom: 1.5em;
+    }
+
+    h2, h3{
+      color: $gray-50;
+    }
+
+    h3 {
+      margin-bottom: 1em;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      line-height: 1em;
+      border-bottom: $divider;
+      padding-bottom: .5em;
+    }
+  }
+
+}
