@@ -1,4 +1,4 @@
-<article class="event-card <%= event.tag_queried(@params)%>" data-tags="<%= event.joined_tag_list %>">
+<article role="article" class="event-card <%= event.tag_queried(@params)%>" data-tags="<%= event.joined_tag_list %>">
   <section class="card-front">
     <div class="left">
       <% if event.image_binary %>
