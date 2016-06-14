@@ -25,29 +25,23 @@ body {
   display: none;
 }
 
-// Icons
-.icon-dark {
-  fill: $gray-50;
-}
-.icon-light {
-  fill: $highlight;
-}
-.icon-stroke {
-  stroke: $gray-50;
-}
-
-.icon-white {
-  fill: $white;
-}
-
-.svg-icon {
-  height: 1em;
-}
-
 .copyright-section {
   font-style: italic;
   font-size: .75em;
   margin-bottom: 2em;
   text-align: center;
   color: $gray-20;
+}
+
+.inline-link {
+  &:link, &:visited {
+    color: $gray-70;
+    font-style: italic;
+    border-bottom: 1px solid $gray-70;
+  }
+
+  &:hover, &:active {
+    color: $gray-30;
+    border-bottom: 1px solid $gray-30;
+  }
 }
