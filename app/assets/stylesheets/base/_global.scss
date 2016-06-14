@@ -51,3 +51,16 @@ body {
   text-align: center;
   color: $gray-20;
 }
+
+.inline-link {
+  &:link, &:visited {
+    color: $gray-70;
+    font-style: italic;
+    border-bottom: 1px solid $gray-70;
+  }
+
+  &:hover, &:active {
+    color: $gray-30;
+    border-bottom: 1px solid $gray-30;
+  }
+}
