@@ -68,10 +68,22 @@
 
 .site-about__link {
   display: inline-block;
-  width: 40%;
+  max-width: 40%;
   color: $highlight;
-  font-size: .75em;
+  font-size: .85em;
   font-weight: 300;
-  text-decoration: underline;
   text-transform: uppercase;
+  border-bottom: 1px solid $highlight;
+  transition: all .25s ease;
+  box-sizing: border-box;
+
+  &:hover, &:active {
+    color: $white;
+    border-bottom: 1px solid $white;
+
+  }
+
+  &:first-of-type {
+    margin-right: 6em;
+  }
 }
