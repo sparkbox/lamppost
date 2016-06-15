@@ -32,7 +32,7 @@ class Event < ActiveRecord::Base
   end
 
   def tag_queried(queried_tags)
-    if queried_tags.length > 0 then
+    if queried_tags && queried_tags.length > 0 then
       'hidden' if entire_tag_list.length == (entire_tag_list - queried_tags.collect { |tag| uri_encode(tag) }).length
     end
   end
