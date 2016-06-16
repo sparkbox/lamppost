@@ -8,10 +8,10 @@
     "DATABASE_URL": {
       "required": true
     },
-    "DEV_USER_NAME": {
+    "ADMIN_USER": {
       "required": true
     },
-    "DEV_PASSWORD": {
+    "ADMIN_PASSWORD": {
       "required": true
     }
   },
