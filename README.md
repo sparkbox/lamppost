@@ -1,6 +1,6 @@
 # local-events-project
 #### *an aggregate of local tech events*
-Using Rails and PostgreSQL
+Using Rails and PostgreSQL 
 
 #### Code Climate
 [![Code Climate](https://codeclimate.com/github/sparkbox/local-events-project/badges/gpa.svg)](https://codeclimate.com/github/sparkbox/local-events-project)
