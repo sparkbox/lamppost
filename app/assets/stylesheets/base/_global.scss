@@ -35,6 +35,8 @@ body {
   @media (min-width: $break-large) {
     text-align: right;
     padding-right: $padding * 6;
+
+    .full-width & { text-align: center; }
   }
 }
 

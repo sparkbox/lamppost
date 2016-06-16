@@ -1,9 +1,3 @@
-.single-card {
-  margin-top: $card-margin;
-
-  .event-card { margin-left: $card-margin; }
-}
-
 .event-card {
   background-color: $white;
   color: $gray-50;
@@ -13,6 +7,10 @@
   min-height: 20em;
   overflow: auto;
   line-height: 1.5em;
+
+  .single-card & { margin-top: $card-margin; }
+
+  .full-width & { margin-left: $card-margin; }
 
   @media (min-width: $break-large) {
     margin-left: $sidebar-width + ($margin * 4);
