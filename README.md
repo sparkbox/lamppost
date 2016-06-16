@@ -12,7 +12,7 @@ Using Rails and PostgreSQL
 *Code Climate consolidates the results from a suite of static analysis tools into a single, real-time report, giving your team the information it needs to identify hotspots, evaluate new approaches, and improve code quality. Check out Code Climate's [getting started guide](https://docs.codeclimate.com/docs/getting-started-with-code-climate) for more information.*
 
 #### Circle CI
-[![Circle CI](https://circleci.com/gh/sparkbox/local-events-project.svg?style=svg)](https://circleci.com/gh/sparkbox/local-events-project)
+[![CircleCI](https://circleci.com/gh/sparkbox/lamppost.svg?style=svg)](https://circleci.com/gh/sparkbox/lamppost)
 
 *Circle CI is an automated testing tool designed to make our code better. This badge shows whether tests have passed or failed. Read more in Circle CI's [getting started guide](https://circleci.com/docs/getting-started/).*
 
@@ -26,7 +26,7 @@ Using Rails and PostgreSQL
   - `$ rake db:migrate`
 
 ### Rails Admin
-This project uses Rails Admin for database entry. To set up your admin username and password, see the `.env.example` file in the project root folder. 
+This project uses Rails Admin for database entry. To set up your admin username and password, see the `.env.example` file in the project root folder.
 
 ### Testing
 Run the Rails tests with:
