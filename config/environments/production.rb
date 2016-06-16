@@ -30,7 +30,7 @@ Rails.application.configure do
   # ----------
 
   # Configure rails caching (action, fragment)
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, nil, { :namespace => LampPost, :expires_in => 1.day, :compress => true }
 
   # Configure Rack::Cache (rack middleware, whole page / static assets) (we set
   # value_max_bytes to 10MB, most memcache servers won't allow values larger
