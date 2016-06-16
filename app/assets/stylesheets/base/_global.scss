@@ -36,7 +36,7 @@ body {
     text-align: right;
     padding-right: $padding * 6;
 
-    .full-width & { text-align: center; }
+    .full-width & , &.full-width { text-align: center; }
   }
 }
 
