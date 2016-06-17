@@ -34,6 +34,7 @@ end
 group :development, :test do
   gem 'byebug'
   gem 'jasmine-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
