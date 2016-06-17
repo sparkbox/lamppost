@@ -9,6 +9,10 @@ class Event < ActiveRecord::Base
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   acts_as_taggable_on :topics, :times, :days, :frequencies
 
+  def to_param
+    "#{id} #{name}".parameterize
+  end
+
   def entire_tag_list
     tags = topics.collect { |topic| uri_encode(topic.name) }
     tags += times.collect { |time| uri_encode(time.name) }
