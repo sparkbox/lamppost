@@ -1,6 +1,6 @@
 # local-events-project
 #### *an aggregate of local tech events*
-Using Rails and PostgreSQL 
+Using Rails and PostgreSQL
 
 #### Code Climate
 [![Code Climate](https://codeclimate.com/github/sparkbox/local-events-project/badges/gpa.svg)](https://codeclimate.com/github/sparkbox/local-events-project)
@@ -26,7 +26,7 @@ Using Rails and PostgreSQL
   - `$ rake db:migrate`
 
 ### Rails Admin
-This project uses Rails Admin for database entry. To set up your admin username and password, see the `.env.example` file in the project root folder.
+This project uses Rails Admin for database entry. For local development, you'll need to set up your admin username and password. Copy `.env.example` to `.env` in the project root folder. Set the variables `ADMIN_USER` and `ADMIN_PASSWORD` to whatever you like. Those will be your admin credentials when developing locally. Note that the `.env` file can be used to set any environment variables locally, which can be very useful. You'll need to set the production environment variables separately.
 
 ### Testing
 Run the Rails tests with:
@@ -58,6 +58,8 @@ In production, [Rails doesn't send errors to stdout by default](https://devcente
 ```bash
 $ heroku logs --tail --app app-name
 ```
+### Analytics
+The standard Google analytics script is inlined at the bottom of the application markup. See [app/views/layouts/application.html.erb](https://github.com/sparkbox/lamppost/blob/master/app/views/layouts/appl ication.html.erb#L55). For the script to work in production, you will need to set an environment variable with the name `GA_KEY`.
 
 ## License
 
