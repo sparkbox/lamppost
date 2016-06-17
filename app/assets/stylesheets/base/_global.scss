@@ -8,17 +8,19 @@ body {
   overflow-y: scroll;
 }
 
-.page-wrapper {
-  position: relative;
-  max-width: $page-wrapper-width;
-  margin: 0 auto;
-}
-
 .main {
   position: relative;
   box-sizing: border-box;
-  padding-top: $padding * 4;
+  padding: ($padding * 4);
   max-height: 100%;
+
+  @media (min-width: $break-large) {
+    padding-left: ($padding * 4 + $sidebar-width);
+  }
+
+  @media (min-width: $break-extra-large) {
+    // place-holder
+  }
 }
 
 .hidden {

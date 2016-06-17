@@ -1,15 +1,14 @@
 .event-card {
-  background-color: $white;
-  color: $gray-50;
-  margin: 0 0 2em 0;
-  padding: $card-padding;
   box-sizing: border-box;
+  margin-bottom: $card-margin;
+  padding: $card-padding;
   min-height: 20em;
   overflow: auto;
+  background-color: $white;
+  color: $gray-50;
   line-height: 1.5em;
 
   .single-card & { margin-top: $card-margin; }
-
   .full-width & { margin-left: $card-margin; }
 
   @media (min-width: $break-large) {
