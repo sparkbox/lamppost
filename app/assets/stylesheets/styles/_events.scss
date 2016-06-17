@@ -1,7 +1,7 @@
 .event-card {
   background-color: $white;
   color: $gray-50;
-  margin: 0 $card-margin $card-margin;
+  margin: 0 0 2em 0;
   padding: $card-padding;
   box-sizing: border-box;
   min-height: 20em;
@@ -13,6 +13,7 @@
   .full-width & { margin-left: $card-margin; }
 
   @media (min-width: $break-large) {
+    margin: 0 $card-margin;
     margin-left: $sidebar-width + ($margin * 4);
   }
 }
@@ -39,7 +40,7 @@
 
   .left, .right {
     min-height: 100%;
-    padding: 2em;
+    padding: 2em 0;
     box-sizing: border-box;
     width: calc(100% - 2em);
     overflow-y: auto;
@@ -57,10 +58,14 @@
   }
 
   @media (min-width: 62.19em) {
-    .left {
+    .left, .right {
       width: 50%;
+      padding: 2em;
+    }
+    .left {
       float: left;
       clear: left;
+
     }
 
     .right {

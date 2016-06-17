@@ -25,6 +25,14 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
+
+  config.model 'Event' do
+    edit do
+      exclude_fields :tag_list
+    end
+  end
+
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

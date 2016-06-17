@@ -15,6 +15,7 @@ gem 'rails_admin'
 gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'carrierwave-imageoptimizer'
 gem 'autoprefixer-rails'
 
 gem 'rails_admin_tag_list'
