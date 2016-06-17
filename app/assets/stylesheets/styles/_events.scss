@@ -10,11 +10,6 @@
 
   .single-card & { margin-top: $card-margin; }
   .full-width & { margin-left: $card-margin; }
-
-  @media (min-width: $break-large) {
-    margin: 0 $card-margin;
-    margin-left: $sidebar-width + ($margin * 4);
-  }
 }
 
 .card-front {
