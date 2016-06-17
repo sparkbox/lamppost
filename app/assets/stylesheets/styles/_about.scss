@@ -4,34 +4,10 @@
   box-sizing: border-box;
 
   .about-header {
-    .about-title {
-      font-size: 3.5em;
-      margin: 1em 0 .25em 0;
-      text-transform: uppercase;
-      color: $highlight;
-      display: inline-block;
-    }
-    .about-button {
-      display: inline-block;
-      max-width: 40%;
-      color: $highlight;
-      font-size: .75em;
-      font-weight: 300;
-      text-transform: uppercase;
-      border: 1px solid $highlight;
-      padding: .5em;
-      box-sizing: border-box;
-      font-weight: $font-weight-select;
-      transition: all .25s ease;
-
-      &:hover, &:active {
-        background-color: $highlight;
-        border: 1px solid $highlight;
-        color: $gray-70;
-
-
-      }
-
+    margin: 2em;
+    .about-logo {
+      width: 33.33%;
+      min-width: 18em;
     }
 
   }

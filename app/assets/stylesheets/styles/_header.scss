@@ -38,7 +38,7 @@
 
 .site-about {
   margin: 0 ($margin * 4) 0;
-  padding: $padding 0;
+  padding: ($padding * 2) 0;
   color: $gray-20;
   font-weight: 300;
   line-height: 1.6;
@@ -47,8 +47,11 @@
   .js & { border-bottom: $divider; }
 
   .compact & {
-    padding: ($padding * 2) 0;
     border-top: 0;
+
+    @media (min-width: $break-large) {
+      padding: ($padding * 4) 0;
+    }
   }
 
   @media (min-width: $break-large) {

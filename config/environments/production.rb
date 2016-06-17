@@ -23,17 +23,14 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
-  # Cache static assets
   config.action_controller.perform_caching = true
-  config.serve_static_assets = true
 
   # --------------------------------------------------------------------------
   # MEMCACHIER
   # ----------
 
   # Configure rails caching (action, fragment)
-  config.cache_store = :dalli_store
+  config.cache_store = :dalli_store, nil, { :namespace => LampPost, :expires_in => 1.day, :compress => true }
 
   # Configure Rack::Cache (rack middleware, whole page / static assets) (we set
   # value_max_bytes to 10MB, most memcache servers won't allow values larger

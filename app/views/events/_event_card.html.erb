@@ -1,5 +1,4 @@
-<article role="article" class="event-card <%= event.tag_queried(@params)%>" data-tags="<%= event.joined_tag_list %>">
-  <section class="card-front">
+<article role="article" class="event-card card-front <%= event.tag_queried(@params)%>" data-tags="<%= event.joined_tag_list %>">
     <div class="left">
       <% if event.image_binary %>
       <div class="card-image-container">
@@ -36,16 +35,16 @@
       <p><%= event.description %> </p>
       <ul>
         <% event.topic_list.each do |topic| %>
-        <li>&bull; <%= topic %></li>
+        <li class="capitalize">&bull; <%= topic %></li>
         <% end %>
         <% event.time_list.each do |time| %>
-        <li>&bull; <%= time %></li>
+        <li class="capitalize">&bull; <%= time %></li>
         <% end %>
         <% event.day_list.each do |day| %>
-        <li>&bull; <%= day %></li>
+        <li class="capitalize">&bull; <%= day %></li>
         <% end %>
         <% event.frequency_list.each do |frequency| %>
-        <li>&bull; <%= frequency %></li>
+        <li class="capitalize">&bull; <%= frequency %></li>
         <% end %>
       </ul>
       <div class="card-offsite-links">
@@ -68,6 +67,4 @@
         </p>
       </div>
     </div>
-  </section>
-
 </article>
