@@ -8,7 +8,7 @@
   color: $gray-50;
   line-height: 1.5em;
 
-  .single-card & { margin-top: $card-margin; }
+  .single-card & { margin: $card-margin; }
   .full-width & { margin-left: $card-margin; }
 }
 
