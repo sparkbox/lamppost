@@ -53,7 +53,7 @@ function lampPostMain() {
   }
 
   function toggleFilters() {
-    DOM.sideBar.classList.toggle('filters-open');
+    DOM.body.classList.toggle('filters-open');
   }
 
 

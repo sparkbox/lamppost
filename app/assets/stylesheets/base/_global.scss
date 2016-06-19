@@ -14,9 +14,19 @@ body {
   padding: ($padding * 4) 0;
   max-height: 100%;
 
+  .filters-open & {
+    height: 0;
+    overflow: hidden;
+  }
+
   @media (min-width: $break-large) {
     padding-left: ($padding * 4 + $sidebar-width);
     padding-right: $padding * 4;
+
+    .filters-open & {
+      height: auto;
+      overflow: visible;
+    }
   }
 
   @media (min-width: $break-extra-large) {
