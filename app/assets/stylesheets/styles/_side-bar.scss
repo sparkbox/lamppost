@@ -5,7 +5,6 @@
   box-sizing: border-box;
   position: relative;
   height: auto;
-  padding: ($padding * 3) 0 0;
   background: #333;
   border-top: 4px solid $highlight;
   overflow: visible;
@@ -16,7 +15,6 @@
     position: fixed;
     width: $sidebar-width;
     height: 100%;
-    padding: ($padding * 4) 0 0;
     overflow-y: scroll;
   }
 

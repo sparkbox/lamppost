@@ -1,13 +1,29 @@
 .site-header {
+  margin-top: 1.5em;
   border-bottom: $divider-dark;
+  transition: transform .3s ease-out;
+
+  .js & { border: 0; }
+
+  .filters-open & {
+    margin-top: 0;
+    height: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+
+    @media (min-width: $break-large) {
+      margin-top: 2em;
+      height: auto;
+      opacity: 1;
+      transform: none;
+    }
+  }
 
   @media (min-width: $break-large) {
+    margin-top: 2em;
     border: 0;
   }
 
-  .js & {
-    border: 0;
-  }
 }
 
 .site-city {

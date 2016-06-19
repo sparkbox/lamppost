@@ -6,6 +6,8 @@ body {
   background-color: $gray-70;
   color: $white;
   overflow-y: scroll;
+
+  &.filters-open { min-height: 100%; }
 }
 
 .main {
@@ -16,7 +18,10 @@ body {
 
   .filters-open & {
     height: 0;
+    padding: 0;
     overflow: hidden;
+
+    @media (min-width: $break-large) { padding: ($padding * 4) 0; }
   }
 
   @media (min-width: $break-large) {
