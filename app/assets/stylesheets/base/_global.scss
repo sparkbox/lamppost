@@ -21,7 +21,9 @@ body {
     padding: 0;
     overflow: hidden;
 
-    @media (min-width: $break-large) { padding: ($padding * 4) 0; }
+    @media (min-width: $break-large) {
+      padding: ($padding * 4) ($padding * 4) ($padding * 4) ($padding * 4 + $sidebar-width);
+    }
   }
 
   @media (min-width: $break-large) {
