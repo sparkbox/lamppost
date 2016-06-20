@@ -18,10 +18,7 @@
     overflow-y: scroll;
   }
 
-  @media (min-width: $break-extra-large) {
-    width: 25%;
-    min-width: $sidebar-width;
-  }
+  @media (min-width: $break-extra-large) { width: 25%; }
 
   &.fixed-top { margin-bottom: $toggle-filters-button-height; }
 }

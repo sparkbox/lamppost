@@ -37,7 +37,7 @@ body {
   }
 
   @media (min-width: $break-extra-large) {
-    // place-holder
+    padding-left: calc((#{$padding} *  4) + 25%);
   }
 }
 
