@@ -53,11 +53,8 @@ class Event < ActiveRecord::Base
   end
 
   def g_maps_format_address
-    [
-      street_address.split(' ').join('+'),
-      city.split(' ').join('+'),
-      state.split(' ').join('+'),
-      zipcode
-    ].join(',')
+    [ street_address, city, state, zipcode ].map do |address_part|
+      address_part.split(' ').join('+') if address_part
+    end.join(',')
   end
 end
