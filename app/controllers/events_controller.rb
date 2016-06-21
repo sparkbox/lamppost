@@ -3,9 +3,8 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @params = ActsAsTaggableOn.default_parser.new([params[:topics],params[:days],params[:times],params[:frequencies]]).parse
     @topics = tag_data(params[:topics],'topics')
-    @days  = tag_data(params[:days],'days')
+    @days  = order_days(tag_data(params[:days],'days'))
     @times = tag_data(params[:times],'times')
     @frequencies  = tag_data(params[:frequencies],'frequencies')
 

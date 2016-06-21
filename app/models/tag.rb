@@ -19,3 +19,16 @@ def tag_data(parameters, category)
   end
   tag_data
 end
+
+def order_days(day_tags)
+  days_sorted = Array.new
+  if day_tags && day_tags.length > 0 then
+   days_of_week = Date::DAYNAMES
+   days_of_week.each do |day|
+     if day_tags.find {|item| item.name == day} then
+       days_sorted << day_tags.fetch(day_tags.find_index {|item| item.name == day})
+     end
+   end
+ end
+ days_sorted
+end
