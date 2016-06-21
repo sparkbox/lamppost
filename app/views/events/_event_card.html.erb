@@ -23,7 +23,7 @@
               <%= render 'location_icon.html.erb' %>
             </div>
             <span class="location-name">
-              <a href="<%= event.g_maps_link %>"><%= event.location_name %></a>
+              <a class="inline-link" href="<%= event.g_maps_link %>" title="See Map"><%= event.location_name %></a>
             </span>
             <ul class="subhead info-subhead">
               <li><%= event.street_address %></li>
