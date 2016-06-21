@@ -13,7 +13,7 @@ body {
 .main {
   position: relative;
   box-sizing: border-box;
-  padding: ($padding * 4) 0;
+  padding: ($padding * 2) 0;
   max-height: 100%;
 
   .filters-open & {
@@ -27,8 +27,7 @@ body {
   }
 
   @media (min-width: $break-large) {
-    padding-left: ($padding * 4 + $sidebar-width);
-    padding-right: $padding * 4;
+    padding: ($padding * 4) ($padding * 4) ($padding * 4) ($padding * 4 + $sidebar-width);
 
     .filters-open & {
       height: auto;
