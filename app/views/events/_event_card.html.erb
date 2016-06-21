@@ -35,16 +35,16 @@
       <p><%= event.description %> </p>
       <ul>
         <% event.topic_list.each do |topic| %>
-        <li class="capitalize">&bull; <%= topic %></li>
+        <li>&bull; <%= topic %></li>
         <% end %>
         <% event.time_list.each do |time| %>
-        <li class="capitalize">&bull; <%= time %></li>
+        <li>&bull; <%= time %></li>
         <% end %>
         <% event.day_list.each do |day| %>
-        <li class="capitalize">&bull; <%= day %></li>
+        <li>&bull; <%= day %></li>
         <% end %>
         <% event.frequency_list.each do |frequency| %>
-        <li class="capitalize">&bull; <%= frequency %></li>
+        <li>&bull; <%= frequency %></li>
         <% end %>
       </ul>
       <div class="card-offsite-links">
