@@ -12,7 +12,7 @@ def tag_data(parameters, category)
   tag_data = []
   tags.each do |tag|
     tag_obj = Tag.new
-    tag_obj.name = tag
+    tag_obj.name = tag.titleize
     tag_obj.data_tag = URI.encode(tag)
     tag_obj.status = tag_list.include?(tag) ? "checked" : ""
     tag_data << tag_obj
