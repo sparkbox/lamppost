@@ -40,4 +40,21 @@ class Event < ActiveRecord::Base
       'hidden' if entire_tag_list.length == (entire_tag_list - queried_tags.collect { |tag| uri_encode(tag) }).length
     end
   end
+
+  def g_maps_link
+    if g_maps_address_searchable
+      "https://google.com/maps/place/#{g_maps_format_address}"
+    end
+  end
+
+  private
+  def g_maps_address_searchable
+    (location_name != "") && (street_address != "") && ((city != "") || (zipcode != ""))
+  end
+
+  def g_maps_format_address
+    [ street_address, city, state, zipcode ].map do |address_part|
+      address_part.split(' ').join('+') if address_part
+    end.join(',')
+  end
 end

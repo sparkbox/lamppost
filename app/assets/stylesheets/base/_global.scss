@@ -61,18 +61,32 @@ body {
 }
 
 .inline-link {
+  transition: all .2s ease-out;
+
   &:link, &:visited {
     color: $gray-70;
-    font-style: italic;
-    border-bottom: 1px solid $gray-70;
+    border-bottom: 2px solid $highlight;
   }
 
   &:hover, &:active {
     color: $gray-30;
-    border-bottom: 1px solid $gray-30;
+    border-bottom: 2px solid $gray-30;
   }
 }
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.footer-link{
+  transition: all .2s ease;
+  &:link, &:visited {
+    color: $gray-30;
+    border-bottom: 1px solid $gray-30;
+  }
+
+  &:hover, &:active {
+    color: $highlight;
+    border-bottom: 1px solid $highlight;
+  }
 }
