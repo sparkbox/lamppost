@@ -77,3 +77,16 @@ body {
 .capitalize {
   text-transform: capitalize;
 }
+
+.footer-link{
+  transition: all .2s ease;
+  &:link, &:visited {
+    color: $gray-30;
+    border-bottom: 1px solid $gray-30;
+  }
+
+  &:hover, &:active {
+    color: $highlight;
+    border-bottom: 1px solid $highlight;
+  }
+}
