@@ -2,7 +2,7 @@ require_relative "../models/tag"
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.all.expired
     @topics = tag_data(params[:topics],'topics')
     @days  = order_days(tag_data(params[:days],'days'))
     @times = tag_data(params[:times],'times')
@@ -37,6 +37,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :id, :topic_list, :time_list, :day_list, :frequency_list)
+      params.require(:event).permit(:name, :id, :topic_list, :time_list, :day_list, :frequency_list, :expires)
     end
 end
