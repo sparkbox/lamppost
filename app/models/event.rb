@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   acts_as_taggable_on :topics, :times, :days, :frequencies
-  default_scope { where("expires IS NULL OR expires > ?", Time.now) }
+  default_scope { where("expires IS NULL OR expires >= ?", Time.now) }
   def to_param
     "#{id} #{name}".parameterize
   end
