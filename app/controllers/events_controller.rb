@@ -2,7 +2,7 @@ require_relative "../models/tag"
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.all.expired
     @topics = tag_data(params[:topics],'topics')
     @days  = order_days(tag_data(params[:days],'days'))
     @times = tag_data(params[:times],'times')
