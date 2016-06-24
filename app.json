@@ -1,11 +1,15 @@
 {
-  "name": "lamp-post",
-  "description": "",
+  "name": "Lamppost",
+  "description": "An aggregate of local tech events",
+  "website": "https://lamppost.io",
   "scripts": {
     "postdeploy": "rake db:migrate"
   },
   "env": {
-    "DATABASE_URL": {
+    "CITY": {
+      "required": true
+    },
+    "ADMIN_EMAIL": {
       "required": true
     },
     "ADMIN_USER": {
@@ -18,7 +22,8 @@
   "formation": {
   },
   "addons": [
-
+    "heroku-postgresql:hobby-dev",
+    "memcachier:dev"
   ],
   "buildpacks": [
     {
