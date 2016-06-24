@@ -23,7 +23,3 @@ xml.rss :version => "2.0" do
     end
   end
 end
-
-# t.binary   "image_binary"
-# t.text     "image_content_type"
-# t.datetime "expires"
