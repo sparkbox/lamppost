@@ -11,8 +11,9 @@ We love [Heroku](https://www.heroku.com/) and recommend using it to deploy your 
 
 1. Fork this repository to your own GitHub account.
 
-2. Push this button.  
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+2. Push this button.
+
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 3. Fill out a few environment variables so Heroku can build your app. The following table outlines what you'll need.
 
