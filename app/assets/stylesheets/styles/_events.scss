@@ -204,7 +204,10 @@
     }
     ul.tag-list {
       columns: 1;
-      @media (min-width: 50em) { columns: 2; }
+      @media (min-width: 50em) {
+        columns: 2;
+        li { display: block; }
+      }
       @media (min-width: 72em) { columns: 3; }
     }
 
