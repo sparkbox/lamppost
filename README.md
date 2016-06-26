@@ -22,6 +22,7 @@ Using Rails and PostgreSQL
 1. Clone the repository
 2. From the command line, run:
   - `$ bundle install`
+      + If bundle fails on
   - `$ rake db:create`
   - `$ rake db:migrate`
 
