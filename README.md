@@ -22,7 +22,14 @@ Using Rails and PostgreSQL
 1. Clone the repository
 2. From the command line, run:
   - `$ bundle install`
-      + If bundle fails on
+    + If your on a Mac and **_bundle_** fails installing PostgresSQL - "_An error occurred while installing pg (0.18.4), and Bundler cannot continue._" - try installing PostgresSQL with **_brew_**:
+      + `$ brew update`
+      + `$ brew install postgresql`  
+    + Make sure PostgresSQL is running before continuing.
+      + To have launchd start postgresql now and restart at login:  
+        `$ brew services start postgresql`
+      + Or, if you don't want/need a background service you can just run:  
+        `$ postgres -D /usr/local/var/postgres`
   - `$ rake db:create`
   - `$ rake db:migrate`
 
