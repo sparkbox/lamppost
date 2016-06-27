@@ -59,7 +59,7 @@ In production, [Rails doesn't send errors to stdout by default](https://devcente
 $ heroku logs --tail --app app-name
 ```
 ### Analytics
-The standard Google analytics script is inlined at the bottom of the application markup. See [app/views/layouts/application.html.erb](https://github.com/sparkbox/lamppost/blob/master/app/views/layouts/application.html.erb#L55). For the script to work in production, you will need to set an environment variable with the name `GA_KEY`.
+The standard Google Analytics script is inlined at the bottom of the application markup. See [app/views/layouts/application.html.erb](https://github.com/sparkbox/lamppost/blob/master/app/views/layouts/application.html.erb#L55). For the script to work in production, you will need to set an environment variable with the name `GA_KEY`.
 
 ## License
 
