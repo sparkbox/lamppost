@@ -73,7 +73,7 @@ The [Heroku Toolbelt](https://toolbelt.heroku.com/) is a great tool. Use it to v
 $ heroku logs --tail --app <app-name>
 ```
 ### Analytics
-The standard Google analytics script is inlined at the bottom of the application markup. See [app/views/layouts/application.html.erb](https://github.com/sparkbox/lamppost/blob/master/app/views/layouts/application.html.erb). For the script to work in production, you will need to set an environment variable with the name `GA_KEY`. You can use the Heroku toolbelt to do this. From your project directory:
+The standard Google Analytics script is inlined at the bottom of the application markup. See [app/views/layouts/application.html.erb](https://github.com/sparkbox/lamppost/blob/master/app/views/layouts/application.html.erb). For the script to work in production, you will need to set an environment variable with the name `GA_KEY`. You can use the Heroku toolbelt to do this. From your project directory:
 ```bash
 $ heroku config:set GA_KEY=your-google-analytics-key
 ```
