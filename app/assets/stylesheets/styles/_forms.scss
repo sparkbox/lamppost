@@ -29,5 +29,42 @@
   &:checked + label:before {
     background: $highlight;
   }
+
+}
+
+.button {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .75em;
+  transition: all .25s ease;
+  box-sizing: border-box;
+  color: $gray-50;
+  background-color: $highlight;
+  border: 2px solid $highlight;
+  font-size: .8em;
+  margin: .5em;
+
+  &:hover {
+    border: 2px solid $gray-50;
+  }
+
+  &:active {
+    background-color: $white;
+  }
+}
+
+input[type="text"] {
   
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+.submission-form {
+  input[type="text"],
+  input[type="submit"],
+  label {
+    display: block;
+  }
 }
