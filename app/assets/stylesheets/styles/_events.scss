@@ -1,6 +1,6 @@
 .event-card {
   box-sizing: border-box;
-  margin-bottom: $card-margin;
+  margin: 0 ($card-margin / 2) $card-margin;
   padding: $card-padding;
   min-height: 20em;
   overflow: auto;
@@ -8,27 +8,32 @@
   color: $gray-50;
   line-height: 1.5em;
 
+  @media (min-width: $break-large) { margin: 0 0 $card-margin; }
+  @media (min-width: 62em) { padding: $card-padding * 2; }
+
   .single-card & { margin: $card-margin; }
-  .full-width & { margin-left: $card-margin; }
 }
 
 .card-front {
 
   .card-button {
+<<<<<<< HEAD
     margin-right: $margin;
     display: inline-block;
+=======
+    margin: 0 $margin $margin 0;
+>>>>>>> master
   }
 
   .card-image-container {
-    width: 90%;
-    margin: 2em auto;
+    width: 100%;
+    margin: 0 auto 2em;
     text-align: center;
-
   }
 
   .card-image {
     max-height: 12em;
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0;
   }
@@ -41,50 +46,40 @@
     overflow-y: auto;
     overflow-x: auto;
     margin: auto;
-
-  }
-
-  .left {
   }
 
   .right {
     border-top: $divider;
-    margin: 1em 1em;
+    margin: 0 1em;
   }
 
-  @media (min-width: 62.19em) {
+  @media (min-width: 62em) {
+
     .left, .right {
       width: 50%;
-      padding: 2em;
     }
+
     .left {
+      padding: 0 2em 0 0;
       float: left;
       clear: left;
-
     }
 
     .right {
       width: 50%;
+      padding: 0 0 0 2em;
       float: right;
       clear: right;
       border-left: $divider;
       border-top: none;
-      margin: 1em 0;
-
-
+      margin: 0;
     }
 
   }
 
-  @media (min-width: 70.88em) {
-    .left {
-      width: 40%;
-    }
-
-    .right {
-      width: 60%;
-    }
-
+  @media (min-width: 72em) {
+    .left { width: 40%; }
+    .right { width: 60%; }
   }
 
 
@@ -97,16 +92,13 @@
   }
 
   .card-left-info {
-    li {
-    padding-top: 1em;
-    }
+    li { padding-top: 1em; }
   }
 
   .icon-container {
     width: 1.5em;
     min-height: 100%;
     float: left;
-
   }
 
   .time-info, .location-name {
@@ -126,23 +118,27 @@
     width: calc(100% - 1.9em);
     padding-left: 1.9em;
     margin: 0;
-      li {
-        padding: 0;
-      }
+
+    li { padding: 0; }
   }
+
+  .card-offsite-links {
+    margin-top: 2em;
+  }
+
   .card-shareable-links {
-      margin-top: 2em;
-      box-sizing: border-box;
-      padding: 0;
-      width: 90%;
-      display: inline-block;
-      border-bottom: none;
-      @media (min-width: 70.88em){
-        border-bottom: 2px solid $highlight;
-      }
+    margin-top: 2em;
+    box-sizing: border-box;
+    padding: 0;
+    width: 90%;
+    display: inline-block;
+    border-bottom: none;
+
+    @media (min-width: 70.88em){
+      border-bottom: 2px solid $highlight;
+    }
 
     .shareable-link{
-
 
       input[type=text] {
         border-style: none;
@@ -157,11 +153,8 @@
         margin: 0;
         border-bottom: 2px solid $highlight;
         text-overflow: ellipsis;
-        &:focus {
-          font-weight: $font-weight-select;
 
-
-        }
+        &:focus { font-weight: $font-weight-select; }
 
         @media (min-width: 70.88em){
           border-bottom: none;
@@ -213,11 +206,21 @@
         margin-right: .5em;
         white-space: nowrap;
       }
-    //   columns: 2;
-    //
-    //   @media (min-width: 71.63em) {
-    //     columns: 3;
-    // }
+    }
+    ul.tag-list {
+      columns: 1;
+      @media (min-width: 50em) {
+        columns: 2;
+        li { display: block; }
+      }
+      @media (min-width: 72em) { columns: 3; }
+    }
+
+    ul.offsite-links {
+      margin: 0;
+      li {
+        margin-right: 0;
+      }
     }
   }
 }

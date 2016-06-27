@@ -35,7 +35,7 @@
     </div>
     <div class="right">
       <p><%= event.description %> </p>
-      <ul>
+      <ul class="tag-list">
         <% event.topic_list.each do |topic| %>
         <li>&bull; <%= topic %></li>
         <% end %>
@@ -51,7 +51,7 @@
       </ul>
       <div class="card-offsite-links">
         <h4 class="subhead">Offsite Links</h4>
-        <ul>
+        <ul class="offsite-links">
           <% event.links.each do |link| %>
           <li><a href="<%= link.url %>" title="<%= link.title %>" class="button card-button"><%= link.title %></a></li>
           <% end %>
