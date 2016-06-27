@@ -89,3 +89,21 @@ body {
     border-bottom: 1px solid $highlight;
   }
 }
+
+// Icons
+.icon-dark {
+  fill: $gray-50;
+}
+.icon-light {
+  fill: $highlight;
+}
+.icon-stroke {
+  stroke: $gray-50;
+}
+.icon-white {
+  fill: $white;
+}
+
+.svg-icon {
+  height: 1em;
+}

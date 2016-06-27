@@ -1,31 +1,13 @@
 // Colors
 
 $white: #ffffff; //white
+$black: #000000; //black
+
 $gray-20: #cccccc; //grey 20%
 $gray-30: #9B9B9B; //grey 30%
 $gray-50: #4A4A4A; //grey 50%
 $gray-70: #292929; //grey 70%
-$black: #000000; //black
+
 $highlight: #F0DF1C;
-$highlight-dim: rgba(#F0DF1C, 0.2);
+$highlight-dim: rgba($highlight, 0.2);
 $highlight-bright: #F9ED00;
-
-
-// Icons
-.icon-dark {
-  fill: $gray-50;
-}
-.icon-light {
-  fill: $highlight;
-}
-.icon-stroke {
-  stroke: $gray-50;
-}
-
-.icon-white {
-  fill: $white;
-}
-
-.svg-icon {
-  height: 1em;
-}
