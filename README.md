@@ -53,7 +53,7 @@ Lamp Post uses the [Gotham](http://www.typography.com/fonts/gotham/webfonts/) we
 You'll want to fill out your own about page. To do this, edit `app/views/about/_about_content.html.erb`.
 
 ### Setup DNS & SSL
-Lamp Post is configured to force SSL. This can be overridden if need be (see below). To setup SSL with DNSimple:
+Lamp Post is configured to force [SSL (https)](https://support.google.com/webmasters/answer/6073543?hl=en). This can be overridden if need be (see below). To setup SSL with DNSimple:
 
 1. [Add an alias record to your domain](https://support.dnsimple.com/articles/domain-apex-heroku/#point-using-alias) (we use DNSimple)
 2. [Purchase an SSL certificate](https://dnsimple.com/ssl-certificates)
