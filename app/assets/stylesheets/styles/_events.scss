@@ -17,7 +17,9 @@
 .card-front {
 
   .card-button {
-
+    margin-right: $margin;
+    margin-left: 0;
+    display: inline-block;
   }
 
   .card-image-container {

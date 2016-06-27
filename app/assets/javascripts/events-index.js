@@ -156,7 +156,7 @@ function lampPostMain() {
 
     if(document.queryCommandSupported('copy')) {
       copyButton = document.createElement('button');
-      copyButton.classList.add('card-button', 'copy-button');
+      copyButton.classList.add('button', 'card-button', 'copy-button');
       copyButton.setAttribute('title', 'Copy Link');
       copyButton.innerHTML = 'Copy Link to Clipboard';
       linkComponent.appendChild(copyButton);
