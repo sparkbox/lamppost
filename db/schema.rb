@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20160622160617) do
     t.string   "name"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "image"
     t.text     "when"
     t.text     "description"
     t.boolean  "recurring"
-    t.string   "image"
     t.text     "street_address"
     t.text     "city"
     t.text     "state"
