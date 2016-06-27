@@ -19,9 +19,9 @@ We love [Heroku](https://www.heroku.com/) and recommend using it to deploy your 
 
 | Variable Name  | Explanation |
 | -------------  | ----------- |
-| CITY           | The name of the city or area for this Lamppost |
-| ADMIN_EMAIL    | The email for the event submissions and general contact  |
-| ADMIN_USER     | The user name you choose to login to the administrative section of the site  |
+| CITY | The name of the city or area for this Lamppost |
+| ADMIN_EMAIL | The email for the event submissions and general contact  |
+| ADMIN_USER | The user name you choose to login to the administrative section of the site  |
 | ADMIN_PASSWORD | The password for above |
 | GA_KEY | (optional) Google Analytics key |
 
