@@ -16,6 +16,10 @@ Using Rails and PostgreSQL
 
 *Circle CI is an automated testing tool designed to make our code better. This badge shows whether tests have passed or failed. Read more in Circle CI's [getting started guide](https://circleci.com/docs/getting-started/).*
 
+## Enhancements
+  + Add user ability to add local event detail from data feeds (API and/or RSS feeds). 
+
+
 ## Development
 
 ### Quick Setup
