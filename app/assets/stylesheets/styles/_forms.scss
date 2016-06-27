@@ -1,3 +1,39 @@
+.submit-form-container {
+    max-width: 25em;
+    margin: 2em auto;
+    background-color: $white;
+    padding: 3em;
+    color: $gray-50;
+
+
+    .submission-form {
+      padding-top: 1em;
+      text-align: left;
+      & label {
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+
+      textarea {
+        width: 18em;
+        height: 5em;
+      }
+
+      [type='text'], [type='url'], [type='email'] {
+        width: 18em;
+      }
+
+    }
+
+    .button {
+      display: block;
+      margin: 2em 0;
+    }
+
+
+}
+
+
 [type='checkbox'].checkbox {
   opacity: 0;
   float: left;
@@ -54,7 +90,7 @@
 }
 
 input[type="text"] {
-  
+
 }
 
 input[type="submit"] {
