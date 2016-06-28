@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :events
 
   get '/about' => 'about#index', as: 'about'
+  get 'submit' => 'submit#index', as: 'submit'
 
   get 'events/index'
   # get 'about/index'
