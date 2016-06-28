@@ -1,78 +1,85 @@
-# local-events-project
-#### *an aggregate of local tech events*
-Using Rails and PostgreSQL
+# Lamp Post
+**An aggregate of local tech events**  
+Built with Ruby on Rails, Sass, and PostgreSQL
 
-#### Code Climate
-[![Code Climate](https://codeclimate.com/github/sparkbox/local-events-project/badges/gpa.svg)](https://codeclimate.com/github/sparkbox/local-events-project)
+[![CircleCI](https://circleci.com/gh/sparkbox/lamppost.svg?style=svg)](https://circleci.com/gh/sparkbox/lamppost) [![Code Climate](https://codeclimate.com/github/sparkbox/local-events-project/badges/gpa.svg)](https://codeclimate.com/github/sparkbox/local-events-project) [![Test Coverage](https://codeclimate.com/github/sparkbox/local-events-project/badges/coverage.svg)](https://codeclimate.com/github/sparkbox/local-events-project/coverage)
 
-[![Test Coverage](https://codeclimate.com/github/sparkbox/local-events-project/badges/coverage.svg)](https://codeclimate.com/github/sparkbox/local-events-project/coverage)
+Lamp Post is a project aimed at making tech events more accessible to the public. It's a consolidated listing that is simple to navigate and has a focus on content. Built on the idea that it could be easily replicated, we invite you (yes, you) to use this repository as a starting point and deploy a site for your own city. This README serves to help you get up and running with minimal fuss.
 
-[![Issue Count](https://codeclimate.com/github/sparkbox/local-events-project/badges/issue_count.svg)](https://codeclimate.com/github/sparkbox/local-events-project)
+*Efforts to make Lamp Post more usable by the community are underway. Setup instructions below will change as the app becomes more generic and customizable.*
 
-*Code Climate consolidates the results from a suite of static analysis tools into a single, real-time report, giving your team the information it needs to identify hotspots, evaluate new approaches, and improve code quality. Check out Code Climate's [getting started guide](https://docs.codeclimate.com/docs/getting-started-with-code-climate) for more information.*
+Ready to setup a Lamp Post for your own local dev scene? Read on.
 
-#### Circle CI
-[![CircleCI](https://circleci.com/gh/sparkbox/lamppost.svg?style=svg)](https://circleci.com/gh/sparkbox/lamppost)
+## Setup Your Own Lamp Post
+We love [Heroku](https://www.heroku.com/) and recommend using it to deploy your Lamp Post. To do that, follow the three steps below and you'll be up in two shakes.
 
-*Circle CI is an automated testing tool designed to make our code better. This badge shows whether tests have passed or failed. Read more in Circle CI's [getting started guide](https://circleci.com/docs/getting-started/).*
+1. Fork this repository to your own GitHub account.
 
-## Enhancements
-  + Add user ability to add local event detail from data feeds (API and/or RSS feeds). 
+2. Push this button.
 
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## Development
+3. Fill out a few environment variables so Heroku can build your app. The following table outlines what you'll need.
 
-### Quick Setup
-1. Clone the repository
-2. From the command line, run:
-  - `$ bundle install`
-    + If your on a Mac and **_bundle_** fails installing PostgresSQL - "_An error occurred while installing pg (0.18.4), and Bundler cannot continue._" - try installing PostgresSQL with **_brew_**:
-      + `$ brew update`
-      + `$ brew install postgresql`  
-    + Make sure PostgresSQL is running before continuing.
-      + To have launchd start postgresql now and restart at login:  
-        `$ brew services start postgresql`
-      + Or, if you don't want/need a background service you can just run:  
-        `$ postgres -D /usr/local/var/postgres`
-  - `$ rake db:create`
-  - `$ rake db:migrate`
+| Variable Name  | Explanation |
+| -------------  | ----------- |
+| CITY | The name of the city or area for this Lamp Post |
+| ADMIN_EMAIL | The email for the event submissions and general contact  |
+| ADMIN_USER | The user name you choose to login to the administrative section of the site  |
+| ADMIN_PASSWORD | The password for above |
+| GA_KEY | (optional) Google Analytics key |
 
-### Rails Admin
-This project uses Rails Admin for database entry. For local development, you'll need to set up your admin username and password. Copy `.env.example` to `.env` in the project root folder. Set the variables `ADMIN_USER` and `ADMIN_PASSWORD` to whatever you like. Those will be your admin credentials when developing locally. Note that the `.env` file can be used to set any environment variables locally, which can be very useful. You'll need to set the production environment variables separately.
+Login to your new Lamp Post at `http://<your-app-name>.herokuapp.com/admin` and start adding events. You can further customize your deployment with a custom URL and other goodies by following the steps below.
 
-### Testing
-Run the Rails tests with:
-```bash
-$ rake
+## Customize It
+### Theming
+Lamp Post is theme-able.
+
+### Fonts
+Lamp Post uses the [Gotham](http://www.typography.com/fonts/gotham/webfonts/) webfont, available for purchase from [typography.com](http://www.typography.com/). If you want to use a free font, we suggest a sans-serif system font stack. You can edit the `font-family` mixin:
+```scss
+/*
+  File to edit:
+  app/assets/stylesheets/base/_mixins.scss */
+
+@mixin font-family($weight) {
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: $weight;
+}
 ```
 
-## Production
+### About Page
+You'll want to fill out your own about page. To do this, edit `app/views/about/_about_content.html.erb`.
 
-### Heroku Setup
-This setup assumes you have a version of the app in a GitHub repository.
+### Setup DNS & SSL
+Lamp Post is configured to force [SSL (https)](https://support.google.com/webmasters/answer/6073543?hl=en). This can be overridden if need be (see below). To setup SSL with DNSimple:
 
-1. [Create a new app from the Heroku dashboard](https://dashboard.heroku.com/new)
-2. Under the deploy section of the newly created app dashboard:
-  - create a new pipeline
-  - connect the app to github
-3. Go to the new pipeline you just created:
-  - enable review apps
-  - enable automatic deployment from master branch
-
-### Setup DNS with SSL on Heroku
 1. [Add an alias record to your domain](https://support.dnsimple.com/articles/domain-apex-heroku/#point-using-alias) (we use DNSimple)
 2. [Purchase an SSL certificate](https://dnsimple.com/ssl-certificates)
 3. [Add the SSL cert to Heroku](https://devcenter.heroku.com/articles/ssl-endpoint#setting-up-ssl-on-heroku)
-4. [configure the app to force ssl](https://robots.thoughtbot.com/ssl-for-rails-with-heroku-and-dnsimple#prepare-rails-app)
 
-### Debugging
-In production, [Rails doesn't send errors to stdout by default](https://devcenter.heroku.com/articles/logging#writing-to-your-log). To get those errors sent to the heroku log, `config/environments/development.rb` has been modified with `config.logger = Logger.new(STDOUT)`. With this configuration in place, use the heroku toolbelt to get runtime errors:
+If you wish to serve your app over regular old http, you will need to change the configuration:
+```ruby
+# File to edit:
+# config/environments/production.rb
+
+config.force_ssl = false
+```
+
+### Application Errors and Debugging
+The [Heroku Toolbelt](https://toolbelt.heroku.com/) is a great tool. Use it to view the application logs.
 ```bash
-$ heroku logs --tail --app app-name
+$ heroku logs --tail --app <app-name>
 ```
 ### Analytics
-The standard Google analytics script is inlined at the bottom of the application markup. See [app/views/layouts/application.html.erb](https://github.com/sparkbox/lamppost/blob/master/app/views/layouts/application.html.erb#L55). For the script to work in production, you will need to set an environment variable with the name `GA_KEY`.
+The standard Google Analytics script is inlined at the bottom of the application markup. See [app/views/layouts/application.html.erb](https://github.com/sparkbox/lamppost/blob/master/app/views/layouts/application.html.erb). For the script to work in production, you will need to set an environment variable with the name `GA_KEY`. You can use the Heroku toolbelt to do this. From your project directory:
+```bash
+$ heroku config:set GA_KEY=your-google-analytics-key
+```
 
-## License
+## Contributing
+Contributions to this project are welcome and appreciated. Feel free to [file an issue](https://github.com/sparkbox/lamppost/issues) or, if you're feeling up to it, fork this repo and open a pull request. Bug fixes and feature requests are welcome. Is our documentation lacking? Spelling errors? We're all ears.
 
+#### License
 &copy; 2016 Sparkbox Apprenticeship
