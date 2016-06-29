@@ -1,6 +1,6 @@
 .site-header {
   margin-top: 1.5em;
-  border-bottom: $divider-dark;
+  border-bottom: $side-bar-divider;
   transition: transform .3s ease-out;
 
   .js & { border: 0; }
@@ -29,18 +29,18 @@
 .site-city {
   margin: 0;
   padding: 0 0 ($padding * 3);
-  border-bottom: $divider-dark;
+  border-bottom: $side-bar-divider;
   font-size: 0.75em;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: .5em;
   text-align: center;
-  color: $white;
+  color: $site-city-color;
 
   .compact & {
     margin: 0;
     padding: 0 0 ($padding * 3);
-    border-bottom: $divider-dark;
+    border-bottom: $side-bar-divider;
     font-size: 0.75em;
   }
 
@@ -55,7 +55,7 @@
 .site-about {
   margin: 0 ($margin * 4) 0;
   padding: ($padding * 2) 0;
-  color: $gray-20;
+  color: $site-about-color;
   font-weight: 300;
   line-height: 1.6;
   text-align: center;

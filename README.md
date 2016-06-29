@@ -33,7 +33,7 @@ Login to your new Lamp Post at `http://<your-app-name>.herokuapp.com/admin` and 
 
 ## Customize It
 ### Theming
-Lamp Post is theme-able.
+Lamp Post can be customized with the color of your choice. We have included the default Dark theme, along with an optional Light theme. Head into `app/assets/stylesheets/base/_theme.scss` to edit the colors of your own Lamp Post.
 
 ### Fonts
 Lamp Post uses the [Gotham](http://www.typography.com/fonts/gotham/webfonts/) webfont, available for purchase from [typography.com](http://www.typography.com/). If you want to use a free font, we suggest a sans-serif system font stack. You can edit the `font-family` mixin:
@@ -48,9 +48,6 @@ Lamp Post uses the [Gotham](http://www.typography.com/fonts/gotham/webfonts/) we
   font-weight: $weight;
 }
 ```
-
-### About Page
-You'll want to fill out your own about page. To do this, edit `app/views/about/_about_content.html.erb`.
 
 ### Setup DNS & SSL
 Lamp Post is configured to force [SSL (https)](https://support.google.com/webmasters/answer/6073543?hl=en). This can be overridden if need be (see below). To setup SSL with DNSimple:

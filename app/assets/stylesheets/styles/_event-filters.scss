@@ -31,9 +31,9 @@
     margin: 0;
     padding: ($padding * 3) 0;
     width: 100%;
-    background-color: #333;
+    background-color: $side-bar-background;
     border: 0;
-    border-bottom: $divider-dark;
+    border-bottom: $side-bar-divider;
     font-weight: $font-weight-body;
     font-size: 0.75em;
     text-transform: uppercase;
@@ -62,7 +62,7 @@
   &__filters {
     padding: 0 ($padding * 4);
     height: 0;
-    background-color: #333;
+    background-color: $side-bar-background;
     overflow: hidden;
     opacity: 0;
     transition: opacity .3s ease-out;
@@ -99,7 +99,7 @@
     font-weight: $font-weight-select;
     text-transform: uppercase;
     margin-bottom: .75em;
-    color: $white;
+    color: $site-topics-color;
   }
 
   &__checkbox {
@@ -109,7 +109,7 @@
     border: 1px solid $highlight;
     font-size: .875em;
     font-weight: $font-weight-body;
-    color: $gray-20;
+    color: $filter-text-color;
 
     [type='checkbox'] {
       opacity: 0;
@@ -118,12 +118,12 @@
 
     [type='checkbox'] {
       &:hover + label,
-      &:focus + label { background: $gray-70; }
+      &:focus + label { background: $filter-hover-background; }
     }
 
     [type='checkbox']:checked + label {
       background: $highlight;
-      color: $gray-70;
+      color: $filter-checked-color;
     }
 
     label {

@@ -1,11 +1,59 @@
-// Colors
+// Theme Colors
+
+// Default Yellow Theme (Use Theme Dark)
+$highlight: #F0DF1C;
+$highlight-bright: #F9ED00;  //This should be a color slightly whiter than your highlight color.
+
+// Sample Blue Theme (Use Theme Light)
+// $highlight: #000060;
+// $highlight-bright:#000075;
+
+// Other Colors
 
 $white: #ffffff; //white
+$black: #000000; //black
 $gray-20: #cccccc; //grey 20%
 $gray-30: #9B9B9B; //grey 30%
 $gray-50: #4A4A4A; //grey 50%
+$gray-60: #333; //grey 60%
 $gray-70: #292929; //grey 70%
-$black: #000000; //black
-$highlight: #F0DF1C;
-$highlight-dim: rgba(#F0DF1C, 0.2);
-$highlight-bright: #F9ED00;
+$highlight-dim: rgba($highlight, 0.2);
+
+// Design
+$divider: 2px solid rgba(155, 155, 155, .3);
+$divider-dark: 2px solid #191919;
+$divider-light: 2px solid #7B7B7B;
+
+// ************************************** //
+
+// We've included an optional Light theme for use with dark highlight colors. Play around!
+
+// Theme Dark
+$body-background: $gray-70;
+$side-bar-background: $gray-60;
+$site-about-color: $gray-20;
+$side-bar-divider: $divider-dark;
+$footer-text: $gray-20;
+$filter-text-color: $gray-20;
+$button-color: $gray-50;
+$icon-accent-color: $gray-50;
+$logo-flash: $white;
+$site-city-color: $white;
+$site-topics-color: $white;
+$filter-hover-background: $gray-70;
+$filter-checked-color: $gray-70;
+
+// // Theme Light
+// $body-background: $gray-20;
+// $side-bar-background: $white;
+// $site-about-color: $gray-70;
+// $side-bar-divider: $divider-light;
+// $footer-text: $gray-50;
+// $filter-text-color: $gray-60;
+// $button-color: $gray-20;
+// $icon-accent-color: $gray-30;
+// $logo-flash: $gray-20;
+// $site-city-color: $gray-50;
+// $site-topics-color: $gray-50;
+// $filter-hover-background: $gray-20;
+// $filter-checked-color: $white;

@@ -5,7 +5,7 @@
   box-sizing: border-box;
   position: relative;
   height: auto;
-  background: #333;
+  background: $side-bar-background;
   border-top: 4px solid $highlight;
   overflow: visible;
   transition: transform .4s ease-out;
