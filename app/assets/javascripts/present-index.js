@@ -1,16 +1,27 @@
 var cards = select.all(".present-card");
-var curCardIndex = -1;
+var curCardIndex = 0;
+var zNum = 0;
 
-function changeCard(card) {
-  card.style.zIndex = "1"
-}
+// function changeCard(card) {
+//   zNum = -1;
+//   card.style.zIndex = zNum;
+// }
 
-function advanceCard() {
+
+function advanceCard(card) {
+  console.log(curCardIndex);
+  // changeCard(cards[curCardIndex]);
+
+  cards[curCardIndex].style.zIndex = zNum;
+  ++zNum;
+
+  if (curCardIndex >= cards.length) {
+    curCardIndex = 0;
+  } else {
     ++curCardIndex;
-    if (curCardIndex >= cards.length) {
-        curCardIndex = 0;
-    }
-    changeCard(cards[curCardIndex]);
+  }
 }
 
-var intervalID = setInterval(advanceCard, 5000);
+var intervalID = setInterval(advanceCard, 1000);
+
+// clearInterval(intervalID)
