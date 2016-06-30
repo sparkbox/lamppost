@@ -97,8 +97,8 @@
   box-sizing: border-box;
 
   &:hover, &:active {
-    color: $white;
-    border-bottom: 1px solid $white;
+    color: $side-bar-link-hover;
+    border-bottom: 1px solid $side-bar-link-hover;
 
   }
 
