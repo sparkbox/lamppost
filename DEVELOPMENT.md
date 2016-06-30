@@ -7,12 +7,12 @@
 ### Quick Local Setup
 1. Clone the repository
 2. Define database for environments in database.yml
-```bash
-development:
-  adapter: sqlite3
-  database: lamp-post_development
-  pool: 5
-```
+  ```bash
+  development: 
+    adapter: sqlite3
+    database: lamp-post_development
+    pool: 5
+  ```
 3. From the command line, run:
 ```bash
 $ bundle install
