@@ -26,8 +26,6 @@ gem 'dalli'
 gem 'kgio'
 gem 'memcachier'
 
-gem 'sqlite3', :group => :development, :test
-
 group :test do
   gem 'capybara'
   gem 'poltergeist'
@@ -37,6 +35,7 @@ group :development, :test do
   gem 'byebug'
   gem 'jasmine-rails'
   gem 'dotenv-rails'
+  gem 'sqlite3'
 end
 
 group :development do
