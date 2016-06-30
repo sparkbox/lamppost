@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/about' => 'about#index', as: 'about'
   get 'submit' => 'submit#index', as: 'submit'
 
+  get 'present' => 'present#index', as: 'present'
+
   get 'events/index'
   # get 'about/index'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -14,13 +14,13 @@
             <div class="subhead info-subhead">Recurring</div>
             <% end %>
             <div class="icon-container">
-              <%= render 'time_icon.html.erb' %>
+              <%= render 'events/time_icon.html.erb' %>
             </div>
             <span class="time-info"><%= event.when %></span>
           </li>
           <li>
             <div class="icon-container">
-              <%= render 'location_icon.html.erb' %>
+              <%= render 'events/location_icon.html.erb' %>
             </div>
             <span class="location-name">
               <a class="inline-link" href="<%= event.g_maps_link %>" title="See Map"><%= event.location_name %></a>

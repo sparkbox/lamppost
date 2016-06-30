@@ -1,0 +1,7 @@
+<main class="present-page">
+  <% @events.each do |event| %>
+    <div id="present-<%=event.id%>" class="present-card">
+      <%= render partial: 'events/event_card', locals: { event: event } %>
+    <div>
+  <% end %>
+</main>
