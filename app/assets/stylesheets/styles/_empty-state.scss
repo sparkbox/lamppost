@@ -1,0 +1,43 @@
+.empty {
+  background-color: $gray-60;
+  border: 4px solid $highlight;
+  text-align: center;
+  font-weight: 200px;
+  min-height: 0;
+
+  .empty-card {
+    width: 80%;
+    margin: 3em auto;
+  }
+
+  .empty-button {
+    text-transform: uppercase;
+    padding: .75em;
+    transition: all .25s ease;
+    background-color: #F0DF1C;
+    border: 2px solid #F0DF1C;
+    margin: .5em;
+    max-width: 15em;
+    display: inline-block;
+
+    & a:link, a:visited {
+      color: $gray-50;
+
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+
+    }
+
+    &:hover {
+      border: 2px solid #4A4A4A;
+    }
+
+  }
+}
+
+.empty-card-title {
+  color: #ffffff;
+  font-size: 1.7em;
+  margin-bottom: .7em;
+}
