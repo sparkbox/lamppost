@@ -1,3 +1,7 @@
-<% @events.each do |event| %>
+<% if @events.any? %>
+  <% @events.each do |event| %>
   <%= render partial: 'event_card', locals: { event: event } %>
+<% end %>
+  <% else %>
+  <%= render 'empty_state' %>
 <% end %>
