@@ -1,0 +1,242 @@
+.event-card {
+  box-sizing: border-box;
+  margin: 0 ($card-margin / 2) $card-margin;
+  padding: $card-padding;
+  min-height: 20em;
+  overflow: auto;
+  background-color: $white;
+  color: $gray-50;
+  line-height: 1.5em;
+
+  @media (min-width: $break-large) { margin: 0 0 $card-margin; }
+  @media (min-width: 62em) { padding: $card-padding * 2; }
+
+  @media (min-width: $break-extra-large) {
+    width: 40%;
+    flex-grow: 1;
+    &:nth-child(odd) { margin-right: 2em; }
+    &:last-of-type { margin-right: 0; }
+  }
+  
+  .single-card & { margin: $card-margin; }
+}
+
+.card-front {
+
+  .card-button {
+    margin-right: $margin;
+    margin-left: 0;
+    display: inline-block;
+  }
+
+  .card-image-container {
+    width: 100%;
+    margin: 0 auto 2em;
+    text-align: center;
+  }
+
+  .card-image {
+    max-height: 12em;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .left, .right {
+    min-height: 100%;
+    padding: 2em 0;
+    box-sizing: border-box;
+    width: calc(100% - 2em);
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: auto;
+  }
+
+  .right {
+    border-top: $divider;
+    margin: 0 1em;
+  }
+
+  @media (min-width: 62em) {
+
+    .left, .right {
+      width: 50%;
+    }
+
+    .left {
+      padding: 0 2em 0 0;
+      float: left;
+      clear: left;
+    }
+
+    .right {
+      width: 50%;
+      padding: 0 0 0 2em;
+      float: right;
+      clear: right;
+      border-left: $divider;
+      border-top: none;
+      margin: 0;
+    }
+
+  }
+
+  @media (min-width: 72em) {
+    .left { width: 40%; }
+    .right { width: 60%; }
+  }
+
+
+  .event-title {
+    font-weight: $font-weight-head;
+    color: $gray-50;
+    padding: 0;
+    font-size: 2em;
+    line-height: 1em;
+  }
+
+  .card-left-info {
+    li { padding-top: 1em; }
+  }
+
+  .icon-container {
+    width: 1.5em;
+    min-height: 100%;
+    float: left;
+  }
+
+  .time-info, .location-name {
+    display: inline-block;
+    width: calc(100% - 1.5em);
+  }
+
+  .subhead {
+    color: $gray-30;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: $font-weight-body;
+    margin-top: $margin;
+  }
+
+  .info-subhead {
+    width: calc(100% - 1.9em);
+    padding-left: 1.9em;
+    margin: 0;
+
+    li { padding: 0; }
+  }
+
+  .card-offsite-links {
+    margin-top: 2em;
+  }
+
+  .card-shareable-links {
+    margin-top: 2em;
+    box-sizing: border-box;
+    padding: 0;
+    width: 90%;
+    display: inline-block;
+    border-bottom: none;
+
+    @media (min-width: 70.88em){
+      border-bottom: 2px solid $highlight;
+    }
+
+    .shareable-link{
+
+      input[type=text] {
+        border-style: none;
+        font: inherit;
+        color: inherit;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding-top: .7em;
+        white-space: nowrap;
+        width: 100%;
+        outline: none;
+        margin: 0;
+        border-bottom: 2px solid $highlight;
+        text-overflow: ellipsis;
+
+        &:focus { font-weight: $font-weight-select; }
+
+        @media (min-width: 70.88em){
+          border-bottom: none;
+          width: calc(100% - 13em);
+        }
+
+      }
+
+      .copy-button {
+        @include font-family($font-weight-body);
+        text-align: center;
+        margin-top: 1em;
+        max-width: 16em;
+        cursor: pointer;
+
+        @media (min-width: 70.88em) {
+          position: relative;
+          float: right;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .card-report {
+    color: $gray-30;
+    font-size: .8em;
+    margin-top: 2em;
+
+    .report-link {
+      border-bottom: 1px solid $gray-30;
+      color: $gray-30;
+
+      &:hover, &:active {
+        border-bottom: 1px solid $gray-70;
+        color: $gray-70;
+        font-weight: $font-weight-head;
+      }
+    }
+  }
+}
+
+.card-front {
+  .right {
+    ul {
+      margin-top: 1em;
+      li {
+        display: inline-block;
+        margin-right: .5em;
+        white-space: nowrap;
+      }
+    }
+    ul.tag-list {
+      columns: 1;
+      @media (min-width: 50em) {
+        columns: 2;
+        li { display: block; }
+      }
+      @media (min-width: 72em) { columns: 3; }
+    }
+
+    ul.offsite-links {
+      margin: 0;
+      li {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.card-back {
+  .right {
+    ul {
+      margin: 0;
+      li {
+        margin-top: 1em;
+        display: inline-block;
+      }
+    }
+  }
+}
