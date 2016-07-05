@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
   before_filter :redirect_subdomain
   
   def redirect_subdomain
-    if request.host == "www.#{request.domain}.io"
-      redirect_to "https://#{request.domain}.io" + request.fullpath
+    if request.host == "www.#{request.domain(2)}"
+      redirect_to "https://#{request.domain + request.fullpath}"
     end
+    p "Domain: #{request.domain(2)}"
+    p "Host: #{request.host}"
   end
 
 end

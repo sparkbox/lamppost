@@ -29,8 +29,6 @@ function lampPostMain() {
   var QS = QueryString();
   var TAG_MANAGER = TagManager(QS.parse(window.location.search));
   var CARD_LIST = CardList(DOM.eventCards);
-
-  // I MADE SOME CHANGES!!!!!
     
   /*
   ================================================================
