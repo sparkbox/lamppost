@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
+ruby '2.6.6'
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'carrierwave-imageoptimizer'
 gem 'autoprefixer-rails'
+gem 'mimemagic', '~> 0.3'
 
 gem 'rails_admin_tag_list'
 gem 'acts-as-taggable-on', '~> 3.4'
